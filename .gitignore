@@ -14,6 +14,7 @@
 .env*.local
 *.pem
 *.key
+.env.development
 
 # --- Frontend (Expo / React Native / Node) ---
 # 프로젝트 관련 프론트엔드 설정
@@ -47,3 +48,4 @@ backend/dist/
 # --- 기타 빌드 결과물 ---
 bin/
 obj/
+

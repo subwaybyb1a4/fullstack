@@ -59,15 +59,20 @@ export default function RouteResults() {
     const fetchResults = async () => {
       try {
         setLoading(true);
+        console.log("🚀 현재 호출 중인 주소:", process.env.EXPO_PUBLIC_API_URL);
 
         // 1. 서버에 경로 검색 요청 (POST 방식)
         const response = await axios.post(
-          "http://172.16.30.230:8000/api/routes/search",
-          {
+          `${process.env.EXPO_PUBLIC_API_URL}/api/routes/search`,          {
             from_station: fromStation,
             to_station: toStation,
             searched_time: new Date().toISOString(), // 서버 분석용 현재 시간 전송
           },
+          {
+            headers: {
+              "ngrok-skip-browser-warning": "69420",
+            },
+          }
         );
 
         const data = response.data;

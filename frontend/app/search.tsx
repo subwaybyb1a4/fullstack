@@ -91,6 +91,26 @@ const rankAndGroupStations = (query: string): GroupedStation[] => {
   return grouped;
 };
 
+// 1. 호선별 색상을 정의한 함수
+const getLineColor = (line: string) => {
+  const lineColors: { [key: string]: { bg: string; text: string } } = {
+    "01호선": { bg: "#E5F0F9", text: "#0052A4" },
+    "02호선": { bg: "#ECF7ED", text: "#3CB44A" },
+    "03호선": { bg: "#FDF2E8", text: "#EF7C1C" },
+    "04호선": { bg: "#E5F6FC", text: "#00A5DE" },
+    "05호선": { bg: "#F5F0F7", text: "#996CAC" },
+    "06호선": { bg: "#FAF2EB", text: "#CD7C2F" },
+    "07호선": { bg: "#F1F2E5", text: "#747F00" },
+    "08호선": { bg: "#FCE8F0", text: "#E6186C" },
+    "09호선": { bg: "#F8F7F4", text: "#BDB092" },
+    "경의선": { bg: "#E9F5F3", text: "#77C4A3" },
+    "공항철도": { bg: "#E5F2F9", text: "#0090D2" },
+    "수인분당": { bg: "#FFF9E6", text: "#F5A200" },
+  };
+  // 해당하는 호선이 없으면 기본 회색 처리
+  return lineColors[line] || { bg: "#F3F4F6", text: "#6B7280" };
+};
+
 export default function SearchScreen() {
   const router = useRouter();
   const [from, setFrom] = useState("");
@@ -134,11 +154,19 @@ export default function SearchScreen() {
       <Text style={styles.stationName}>{item.name}</Text>
 
       <View style={styles.badgeWrap}>
-        {item.lines.map((line) => (
-          <Text key={`${item.id}-${line}`} style={styles.lineBadge}>
-            {line}
-          </Text>
-        ))}
+        {item.lines.map((line) => {
+          const { bg, text } = getLineColor(line);
+          // ✅ line이 "01호선" 형태일 때 앞의 '0'을 제거 (예: 1호선)
+          const displayLine = line.replace(/^0/, "");
+          return (
+            <Text
+              key={`${item.id}-${line}`}
+              style={[styles.lineBadge, { backgroundColor: bg, color: text }]}
+            >
+              {displayLine}
+            </Text>
+          );
+        })}
       </View>
     </TouchableOpacity>
   );
@@ -309,8 +337,8 @@ const styles = StyleSheet.create({
   },
   lineBadge: {
     fontSize: 12,
-    color: "#15803D",
-    backgroundColor: "#DCFCE7",
+    //color: "#15803D",
+    //backgroundColor: "#DCFCE7",
     paddingHorizontal: 8,
     paddingVertical: 3,
     borderRadius: 999,
