@@ -6,6 +6,8 @@ JSON 형식의 route를 받아서 혼잡도를 계산하고 LLM 설명을 추가
 import pandas as pd
 import numpy as np
 import json
+
+from app.api.routes import Route 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
