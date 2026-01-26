@@ -1,0 +1,5595 @@
+[
+  {
+    "id": "1907",
+    "name": "가능",
+    "line": "01호선",
+    "stationCode": "1907",
+    "externalCode": "109"
+  },
+  {
+    "id": "1702",
+    "name": "가산디지털단지",
+    "line": "01호선",
+    "stationCode": "1702",
+    "externalCode": "P142"
+  },
+  {
+    "id": "1816",
+    "name": "간석",
+    "line": "01호선",
+    "stationCode": "1816",
+    "externalCode": "155"
+  },
+  {
+    "id": "1801",
+    "name": "개봉",
+    "line": "01호선",
+    "stationCode": "1801",
+    "externalCode": "143"
+  },
+  {
+    "id": "1705",
+    "name": "관악",
+    "line": "01호선",
+    "stationCode": "1705",
+    "externalCode": "P146"
+  },
+  {
+    "id": "1750",
+    "name": "광명",
+    "line": "01호선",
+    "stationCode": "1750",
+    "externalCode": "P144-1"
+  },
+  {
+    "id": "1019",
+    "name": "광운대",
+    "line": "01호선",
+    "stationCode": "1019",
+    "externalCode": "119"
+  },
+  {
+    "id": "1701",
+    "name": "구로",
+    "line": "01호선",
+    "stationCode": "1701",
+    "externalCode": "141"
+  },
+  {
+    "id": "1813",
+    "name": "구일",
+    "line": "01호선",
+    "stationCode": "1813",
+    "externalCode": "142"
+  },
+  {
+    "id": "1709",
+    "name": "군포",
+    "line": "01호선",
+    "stationCode": "1709",
+    "externalCode": "P150"
+  },
+  {
+    "id": "1708",
+    "name": "금정",
+    "line": "01호선",
+    "stationCode": "1708",
+    "externalCode": "P149"
+  },
+  {
+    "id": "1703",
+    "name": "금천구청",
+    "line": "01호선",
+    "stationCode": "1703",
+    "externalCode": "P144"
+  },
+  {
+    "id": "1002",
+    "name": "남영",
+    "line": "01호선",
+    "stationCode": "1002",
+    "externalCode": "134"
+  },
+  {
+    "id": "1004",
+    "name": "노량진",
+    "line": "01호선",
+    "stationCode": "1004",
+    "externalCode": "136"
+  },
+  {
+    "id": "1908",
+    "name": "녹양",
+    "line": "01호선",
+    "stationCode": "1908",
+    "externalCode": "108"
+  },
+  {
+    "id": "1021",
+    "name": "녹천",
+    "line": "01호선",
+    "stationCode": "1021",
+    "externalCode": "117"
+  },
+  {
+    "id": "1729",
+    "name": "당정",
+    "line": "01호선",
+    "stationCode": "1729",
+    "externalCode": "P151"
+  },
+  {
+    "id": "1005",
+    "name": "대방",
+    "line": "01호선",
+    "stationCode": "1005",
+    "externalCode": "137"
+  },
+  {
+    "id": "1910",
+    "name": "덕계",
+    "line": "01호선",
+    "stationCode": "1910",
+    "externalCode": "106"
+  },
+  {
+    "id": "1911",
+    "name": "덕정",
+    "line": "01호선",
+    "stationCode": "1911",
+    "externalCode": "105"
+  },
+  {
+    "id": "1902",
+    "name": "도봉",
+    "line": "01호선",
+    "stationCode": "1902",
+    "externalCode": "114"
+  },
+  {
+    "id": "1903",
+    "name": "도봉산",
+    "line": "01호선",
+    "stationCode": "1903",
+    "externalCode": "113"
+  },
+  {
+    "id": "1817",
+    "name": "도원",
+    "line": "01호선",
+    "stationCode": "1817",
+    "externalCode": "159"
+  },
+  {
+    "id": "1823",
+    "name": "도화",
+    "line": "01호선",
+    "stationCode": "1823",
+    "externalCode": "157"
+  },
+  {
+    "id": "1714",
+    "name": "독산",
+    "line": "01호선",
+    "stationCode": "1714",
+    "externalCode": "P143"
+  },
+  {
+    "id": "0155",
+    "name": "동대문",
+    "line": "01호선",
+    "stationCode": "0155",
+    "externalCode": "128"
+  },
+  {
+    "id": "1915",
+    "name": "동두천",
+    "line": "01호선",
+    "stationCode": "1915",
+    "externalCode": "101"
+  },
+  {
+    "id": "1913",
+    "name": "동두천중앙",
+    "line": "01호선",
+    "stationCode": "1913",
+    "externalCode": "103"
+  },
+  {
+    "id": "0159",
+    "name": "동묘앞",
+    "line": "01호선",
+    "stationCode": "0159",
+    "externalCode": "127"
+  },
+  {
+    "id": "1808",
+    "name": "동암",
+    "line": "01호선",
+    "stationCode": "1808",
+    "externalCode": "154"
+  },
+  {
+    "id": "1811",
+    "name": "동인천",
+    "line": "01호선",
+    "stationCode": "1811",
+    "externalCode": "160"
+  },
+  {
+    "id": "1727",
+    "name": "두정",
+    "line": "01호선",
+    "stationCode": "1727",
+    "externalCode": "P168"
+  },
+  {
+    "id": "1904",
+    "name": "망월사",
+    "line": "01호선",
+    "stationCode": "1904",
+    "externalCode": "112"
+  },
+  {
+    "id": "1707",
+    "name": "명학",
+    "line": "01호선",
+    "stationCode": "1707",
+    "externalCode": "P148"
+  },
+  {
+    "id": "1901",
+    "name": "방학",
+    "line": "01호선",
+    "stationCode": "1901",
+    "externalCode": "115"
+  },
+  {
+    "id": "1405",
+    "name": "배방",
+    "line": "01호선",
+    "stationCode": "1405",
+    "externalCode": "P174"
+  },
+  {
+    "id": "1807",
+    "name": "백운",
+    "line": "01호선",
+    "stationCode": "1807",
+    "externalCode": "153"
+  },
+  {
+    "id": "1716",
+    "name": "병점",
+    "line": "01호선",
+    "stationCode": "1716",
+    "externalCode": "P157"
+  },
+  {
+    "id": "1914",
+    "name": "보산",
+    "line": "01호선",
+    "stationCode": "1914",
+    "externalCode": "102"
+  },
+  {
+    "id": "1401",
+    "name": "봉명",
+    "line": "01호선",
+    "stationCode": "1401",
+    "externalCode": "P170"
+  },
+  {
+    "id": "1815",
+    "name": "부개",
+    "line": "01호선",
+    "stationCode": "1815",
+    "externalCode": "151"
+  },
+  {
+    "id": "1804",
+    "name": "부천",
+    "line": "01호선",
+    "stationCode": "1804",
+    "externalCode": "148"
+  },
+  {
+    "id": "1806",
+    "name": "부평",
+    "line": "01호선",
+    "stationCode": "1806",
+    "externalCode": "152"
+  },
+  {
+    "id": "1749",
+    "name": "서동탄",
+    "line": "01호선",
+    "stationCode": "1749",
+    "externalCode": "P157-1"
+  },
+  {
+    "id": "0150",
+    "name": "서울역",
+    "line": "01호선",
+    "stationCode": "0150",
+    "externalCode": "133"
+  },
+  {
+    "id": "1722",
+    "name": "서정리",
+    "line": "01호선",
+    "stationCode": "1722",
+    "externalCode": "P163"
+  },
+  {
+    "id": "1018",
+    "name": "석계",
+    "line": "01호선",
+    "stationCode": "1018",
+    "externalCode": "120"
+  },
+  {
+    "id": "1704",
+    "name": "석수",
+    "line": "01호선",
+    "stationCode": "1704",
+    "externalCode": "P145"
+  },
+  {
+    "id": "1711",
+    "name": "성균관대",
+    "line": "01호선",
+    "stationCode": "1711",
+    "externalCode": "P153"
+  },
+  {
+    "id": "1725",
+    "name": "성환",
+    "line": "01호선",
+    "stationCode": "1725",
+    "externalCode": "P166"
+  },
+  {
+    "id": "1715",
+    "name": "세류",
+    "line": "01호선",
+    "stationCode": "1715",
+    "externalCode": "P156"
+  },
+  {
+    "id": "1717",
+    "name": "세마",
+    "line": "01호선",
+    "stationCode": "1717",
+    "externalCode": "P158"
+  },
+  {
+    "id": "1814",
+    "name": "소사",
+    "line": "01호선",
+    "stationCode": "1814",
+    "externalCode": "147"
+  },
+  {
+    "id": "1916",
+    "name": "소요산",
+    "line": "01호선",
+    "stationCode": "1916",
+    "externalCode": "100"
+  },
+  {
+    "id": "1805",
+    "name": "송내",
+    "line": "01호선",
+    "stationCode": "1805",
+    "externalCode": "150"
+  },
+  {
+    "id": "1721",
+    "name": "송탄",
+    "line": "01호선",
+    "stationCode": "1721",
+    "externalCode": "P162"
+  },
+  {
+    "id": "1713",
+    "name": "수원",
+    "line": "01호선",
+    "stationCode": "1713",
+    "externalCode": "P155"
+  },
+  {
+    "id": "0151",
+    "name": "시청",
+    "line": "01호선",
+    "stationCode": "0151",
+    "externalCode": "132"
+  },
+  {
+    "id": "1032",
+    "name": "신길",
+    "line": "01호선",
+    "stationCode": "1032",
+    "externalCode": "138"
+  },
+  {
+    "id": "1007",
+    "name": "신도림",
+    "line": "01호선",
+    "stationCode": "1007",
+    "externalCode": "140"
+  },
+  {
+    "id": "0156",
+    "name": "신설동",
+    "line": "01호선",
+    "stationCode": "0156",
+    "externalCode": "126"
+  },
+  {
+    "id": "1017",
+    "name": "신이문",
+    "line": "01호선",
+    "stationCode": "1017",
+    "externalCode": "121"
+  },
+  {
+    "id": "1408",
+    "name": "신창",
+    "line": "01호선",
+    "stationCode": "1408",
+    "externalCode": "P177"
+  },
+  {
+    "id": "1402",
+    "name": "쌍용",
+    "line": "01호선",
+    "stationCode": "1402",
+    "externalCode": "P171"
+  },
+  {
+    "id": "1403",
+    "name": "아산",
+    "line": "01호선",
+    "stationCode": "1403",
+    "externalCode": "P172"
+  },
+  {
+    "id": "1706",
+    "name": "안양",
+    "line": "01호선",
+    "stationCode": "1706",
+    "externalCode": "P147"
+  },
+  {
+    "id": "1909",
+    "name": "양주",
+    "line": "01호선",
+    "stationCode": "1909",
+    "externalCode": "107"
+  },
+  {
+    "id": "1803",
+    "name": "역곡",
+    "line": "01호선",
+    "stationCode": "1803",
+    "externalCode": "146"
+  },
+  {
+    "id": "1919",
+    "name": "연천",
+    "line": "01호선",
+    "stationCode": "1919",
+    "externalCode": "100-3"
+  },
+  {
+    "id": "1006",
+    "name": "영등포",
+    "line": "01호선",
+    "stationCode": "1006",
+    "externalCode": "139"
+  },
+  {
+    "id": "1802",
+    "name": "오류동",
+    "line": "01호선",
+    "stationCode": "1802",
+    "externalCode": "144"
+  },
+  {
+    "id": "1719",
+    "name": "오산",
+    "line": "01호선",
+    "stationCode": "1719",
+    "externalCode": "P160"
+  },
+  {
+    "id": "1718",
+    "name": "오산대",
+    "line": "01호선",
+    "stationCode": "1718",
+    "externalCode": "P159"
+  },
+  {
+    "id": "1821",
+    "name": "온수",
+    "line": "01호선",
+    "stationCode": "1821",
+    "externalCode": "145"
+  },
+  {
+    "id": "1407",
+    "name": "온양온천",
+    "line": "01호선",
+    "stationCode": "1407",
+    "externalCode": "P176"
+  },
+  {
+    "id": "1016",
+    "name": "외대앞",
+    "line": "01호선",
+    "stationCode": "1016",
+    "externalCode": "122"
+  },
+  {
+    "id": "1003",
+    "name": "용산",
+    "line": "01호선",
+    "stationCode": "1003",
+    "externalCode": "135"
+  },
+  {
+    "id": "1020",
+    "name": "월계",
+    "line": "01호선",
+    "stationCode": "1020",
+    "externalCode": "118"
+  },
+  {
+    "id": "1710",
+    "name": "의왕",
+    "line": "01호선",
+    "stationCode": "1710",
+    "externalCode": "P152"
+  },
+  {
+    "id": "1906",
+    "name": "의정부",
+    "line": "01호선",
+    "stationCode": "1906",
+    "externalCode": "110"
+  },
+  {
+    "id": "1812",
+    "name": "인천",
+    "line": "01호선",
+    "stationCode": "1812",
+    "externalCode": "161"
+  },
+  {
+    "id": "1918",
+    "name": "전곡",
+    "line": "01호선",
+    "stationCode": "1918",
+    "externalCode": "100-2"
+  },
+  {
+    "id": "0157",
+    "name": "제기동",
+    "line": "01호선",
+    "stationCode": "0157",
+    "externalCode": "125"
+  },
+  {
+    "id": "1810",
+    "name": "제물포",
+    "line": "01호선",
+    "stationCode": "1810",
+    "externalCode": "158"
+  },
+  {
+    "id": "0152",
+    "name": "종각",
+    "line": "01호선",
+    "stationCode": "0152",
+    "externalCode": "131"
+  },
+  {
+    "id": "0153",
+    "name": "종로3가",
+    "line": "01호선",
+    "stationCode": "0153",
+    "externalCode": "130"
+  },
+  {
+    "id": "0154",
+    "name": "종로5가",
+    "line": "01호선",
+    "stationCode": "0154",
+    "externalCode": "129"
+  },
+  {
+    "id": "1809",
+    "name": "주안",
+    "line": "01호선",
+    "stationCode": "1809",
+    "externalCode": "156"
+  },
+  {
+    "id": "1822",
+    "name": "중동",
+    "line": "01호선",
+    "stationCode": "1822",
+    "externalCode": "149"
+  },
+  {
+    "id": "1912",
+    "name": "지행",
+    "line": "01호선",
+    "stationCode": "1912",
+    "externalCode": "104"
+  },
+  {
+    "id": "1726",
+    "name": "직산",
+    "line": "01호선",
+    "stationCode": "1726",
+    "externalCode": "P167"
+  },
+  {
+    "id": "1720",
+    "name": "진위",
+    "line": "01호선",
+    "stationCode": "1720",
+    "externalCode": "P161"
+  },
+  {
+    "id": "1022",
+    "name": "창동",
+    "line": "01호선",
+    "stationCode": "1022",
+    "externalCode": "116"
+  },
+  {
+    "id": "1728",
+    "name": "천안",
+    "line": "01호선",
+    "stationCode": "1728",
+    "externalCode": "P169"
+  },
+  {
+    "id": "0158",
+    "name": "청량리",
+    "line": "01호선",
+    "stationCode": "0158",
+    "externalCode": "124"
+  },
+  {
+    "id": "1917",
+    "name": "청산",
+    "line": "01호선",
+    "stationCode": "1917",
+    "externalCode": "100-1"
+  },
+  {
+    "id": "1404",
+    "name": "탕정",
+    "line": "01호선",
+    "stationCode": "1404",
+    "externalCode": "P173"
+  },
+  {
+    "id": "1724",
+    "name": "평택",
+    "line": "01호선",
+    "stationCode": "1724",
+    "externalCode": "P165"
+  },
+  {
+    "id": "1723",
+    "name": "평택지제",
+    "line": "01호선",
+    "stationCode": "1723",
+    "externalCode": "P164"
+  },
+  {
+    "id": "1712",
+    "name": "화서",
+    "line": "01호선",
+    "stationCode": "1712",
+    "externalCode": "P154"
+  },
+  {
+    "id": "1015",
+    "name": "회기",
+    "line": "01호선",
+    "stationCode": "1015",
+    "externalCode": "123"
+  },
+  {
+    "id": "1905",
+    "name": "회룡",
+    "line": "01호선",
+    "stationCode": "1905",
+    "externalCode": "111"
+  },
+  {
+    "id": "0222",
+    "name": "강남",
+    "line": "02호선",
+    "stationCode": "0222",
+    "externalCode": "222"
+  },
+  {
+    "id": "0214",
+    "name": "강변",
+    "line": "02호선",
+    "stationCode": "0214",
+    "externalCode": "214"
+  },
+  {
+    "id": "0212",
+    "name": "건대입구",
+    "line": "02호선",
+    "stationCode": "0212",
+    "externalCode": "212"
+  },
+  {
+    "id": "0223",
+    "name": "교대",
+    "line": "02호선",
+    "stationCode": "0223",
+    "externalCode": "223"
+  },
+  {
+    "id": "0232",
+    "name": "구로디지털단지",
+    "line": "02호선",
+    "stationCode": "0232",
+    "externalCode": "232"
+  },
+  {
+    "id": "0213",
+    "name": "구의",
+    "line": "02호선",
+    "stationCode": "0213",
+    "externalCode": "213"
+  },
+  {
+    "id": "0200",
+    "name": "까치산",
+    "line": "02호선",
+    "stationCode": "0200",
+    "externalCode": "234-4"
+  },
+  {
+    "id": "0227",
+    "name": "낙성대",
+    "line": "02호선",
+    "stationCode": "0227",
+    "externalCode": "227"
+  },
+  {
+    "id": "0237",
+    "name": "당산",
+    "line": "02호선",
+    "stationCode": "0237",
+    "externalCode": "237"
+  },
+  {
+    "id": "0233",
+    "name": "대림",
+    "line": "02호선",
+    "stationCode": "0233",
+    "externalCode": "233"
+  },
+  {
+    "id": "0247",
+    "name": "도림천",
+    "line": "02호선",
+    "stationCode": "0247",
+    "externalCode": "234-1"
+  },
+  {
+    "id": "0205",
+    "name": "동대문역사문화공원",
+    "line": "02호선",
+    "stationCode": "0205",
+    "externalCode": "205"
+  },
+  {
+    "id": "0210",
+    "name": "뚝섬",
+    "line": "02호선",
+    "stationCode": "0210",
+    "externalCode": "210"
+  },
+  {
+    "id": "0235",
+    "name": "문래",
+    "line": "02호선",
+    "stationCode": "0235",
+    "externalCode": "235"
+  },
+  {
+    "id": "0225",
+    "name": "방배",
+    "line": "02호선",
+    "stationCode": "0225",
+    "externalCode": "225"
+  },
+  {
+    "id": "0229",
+    "name": "봉천",
+    "line": "02호선",
+    "stationCode": "0229",
+    "externalCode": "229"
+  },
+  {
+    "id": "0226",
+    "name": "사당",
+    "line": "02호선",
+    "stationCode": "0226",
+    "externalCode": "226"
+  },
+  {
+    "id": "0219",
+    "name": "삼성",
+    "line": "02호선",
+    "stationCode": "0219",
+    "externalCode": "219"
+  },
+  {
+    "id": "0207",
+    "name": "상왕십리",
+    "line": "02호선",
+    "stationCode": "0207",
+    "externalCode": "207"
+  },
+  {
+    "id": "0228",
+    "name": "서울대입구",
+    "line": "02호선",
+    "stationCode": "0228",
+    "externalCode": "228"
+  },
+  {
+    "id": "0224",
+    "name": "서초",
+    "line": "02호선",
+    "stationCode": "0224",
+    "externalCode": "224"
+  },
+  {
+    "id": "0220",
+    "name": "선릉",
+    "line": "02호선",
+    "stationCode": "0220",
+    "externalCode": "220"
+  },
+  {
+    "id": "0211",
+    "name": "성수",
+    "line": "02호선",
+    "stationCode": "0211",
+    "externalCode": "211"
+  },
+  {
+    "id": "0201",
+    "name": "시청",
+    "line": "02호선",
+    "stationCode": "0201",
+    "externalCode": "201"
+  },
+  {
+    "id": "0245",
+    "name": "신답",
+    "line": "02호선",
+    "stationCode": "0245",
+    "externalCode": "211-2"
+  },
+  {
+    "id": "0206",
+    "name": "신당",
+    "line": "02호선",
+    "stationCode": "0206",
+    "externalCode": "206"
+  },
+  {
+    "id": "0231",
+    "name": "신대방",
+    "line": "02호선",
+    "stationCode": "0231",
+    "externalCode": "231"
+  },
+  {
+    "id": "0234",
+    "name": "신도림",
+    "line": "02호선",
+    "stationCode": "0234",
+    "externalCode": "234"
+  },
+  {
+    "id": "0230",
+    "name": "신림",
+    "line": "02호선",
+    "stationCode": "0230",
+    "externalCode": "230"
+  },
+  {
+    "id": "0246",
+    "name": "신설동",
+    "line": "02호선",
+    "stationCode": "0246",
+    "externalCode": "211-4"
+  },
+  {
+    "id": "0249",
+    "name": "신정네거리",
+    "line": "02호선",
+    "stationCode": "0249",
+    "externalCode": "234-3"
+  },
+  {
+    "id": "0240",
+    "name": "신촌",
+    "line": "02호선",
+    "stationCode": "0240",
+    "externalCode": "240"
+  },
+  {
+    "id": "0242",
+    "name": "아현",
+    "line": "02호선",
+    "stationCode": "0242",
+    "externalCode": "242"
+  },
+  {
+    "id": "0248",
+    "name": "양천구청",
+    "line": "02호선",
+    "stationCode": "0248",
+    "externalCode": "234-2"
+  },
+  {
+    "id": "0221",
+    "name": "역삼",
+    "line": "02호선",
+    "stationCode": "0221",
+    "externalCode": "221"
+  },
+  {
+    "id": "0236",
+    "name": "영등포구청",
+    "line": "02호선",
+    "stationCode": "0236",
+    "externalCode": "236"
+  },
+  {
+    "id": "0208",
+    "name": "왕십리",
+    "line": "02호선",
+    "stationCode": "0208",
+    "externalCode": "208"
+  },
+  {
+    "id": "0244",
+    "name": "용답",
+    "line": "02호선",
+    "stationCode": "0244",
+    "externalCode": "211-1"
+  },
+  {
+    "id": "0250",
+    "name": "용두",
+    "line": "02호선",
+    "stationCode": "0250",
+    "externalCode": "211-3"
+  },
+  {
+    "id": "0203",
+    "name": "을지로3가",
+    "line": "02호선",
+    "stationCode": "0203",
+    "externalCode": "203"
+  },
+  {
+    "id": "0204",
+    "name": "을지로4가",
+    "line": "02호선",
+    "stationCode": "0204",
+    "externalCode": "204"
+  },
+  {
+    "id": "0202",
+    "name": "을지로입구",
+    "line": "02호선",
+    "stationCode": "0202",
+    "externalCode": "202"
+  },
+  {
+    "id": "0241",
+    "name": "이대",
+    "line": "02호선",
+    "stationCode": "0241",
+    "externalCode": "241"
+  },
+  {
+    "id": "0216",
+    "name": "잠실",
+    "line": "02호선",
+    "stationCode": "0216",
+    "externalCode": "216"
+  },
+  {
+    "id": "0215",
+    "name": "잠실나루",
+    "line": "02호선",
+    "stationCode": "0215",
+    "externalCode": "215"
+  },
+  {
+    "id": "0217",
+    "name": "잠실새내",
+    "line": "02호선",
+    "stationCode": "0217",
+    "externalCode": "217"
+  },
+  {
+    "id": "0218",
+    "name": "종합운동장",
+    "line": "02호선",
+    "stationCode": "0218",
+    "externalCode": "218"
+  },
+  {
+    "id": "0243",
+    "name": "충정로",
+    "line": "02호선",
+    "stationCode": "0243",
+    "externalCode": "243"
+  },
+  {
+    "id": "0209",
+    "name": "한양대",
+    "line": "02호선",
+    "stationCode": "0209",
+    "externalCode": "209"
+  },
+  {
+    "id": "0238",
+    "name": "합정",
+    "line": "02호선",
+    "stationCode": "0238",
+    "externalCode": "238"
+  },
+  {
+    "id": "0239",
+    "name": "홍대입구",
+    "line": "02호선",
+    "stationCode": "0239",
+    "externalCode": "239"
+  },
+  {
+    "id": "0340",
+    "name": "가락시장",
+    "line": "03호선",
+    "stationCode": "0340",
+    "externalCode": "350"
+  },
+  {
+    "id": "0317",
+    "name": "경복궁",
+    "line": "03호선",
+    "stationCode": "0317",
+    "externalCode": "327"
+  },
+  {
+    "id": "0341",
+    "name": "경찰병원",
+    "line": "03호선",
+    "stationCode": "0341",
+    "externalCode": "351"
+  },
+  {
+    "id": "0329",
+    "name": "고속터미널",
+    "line": "03호선",
+    "stationCode": "0329",
+    "externalCode": "339"
+  },
+  {
+    "id": "0330",
+    "name": "교대",
+    "line": "03호선",
+    "stationCode": "0330",
+    "externalCode": "340"
+  },
+  {
+    "id": "0310",
+    "name": "구파발",
+    "line": "03호선",
+    "stationCode": "0310",
+    "externalCode": "320"
+  },
+  {
+    "id": "0324",
+    "name": "금호",
+    "line": "03호선",
+    "stationCode": "0324",
+    "externalCode": "334"
+  },
+  {
+    "id": "0331",
+    "name": "남부터미널",
+    "line": "03호선",
+    "stationCode": "0331",
+    "externalCode": "341"
+  },
+  {
+    "id": "0313",
+    "name": "녹번",
+    "line": "03호선",
+    "stationCode": "0313",
+    "externalCode": "323"
+  },
+  {
+    "id": "1953",
+    "name": "대곡",
+    "line": "03호선",
+    "stationCode": "1953",
+    "externalCode": "314"
+  },
+  {
+    "id": "0337",
+    "name": "대청",
+    "line": "03호선",
+    "stationCode": "0337",
+    "externalCode": "347"
+  },
+  {
+    "id": "0335",
+    "name": "대치",
+    "line": "03호선",
+    "stationCode": "0335",
+    "externalCode": "345"
+  },
+  {
+    "id": "1958",
+    "name": "대화",
+    "line": "03호선",
+    "stationCode": "1958",
+    "externalCode": "309"
+  },
+  {
+    "id": "0334",
+    "name": "도곡",
+    "line": "03호선",
+    "stationCode": "0334",
+    "externalCode": "344"
+  },
+  {
+    "id": "0316",
+    "name": "독립문",
+    "line": "03호선",
+    "stationCode": "0316",
+    "externalCode": "326"
+  },
+  {
+    "id": "0322",
+    "name": "동대입구",
+    "line": "03호선",
+    "stationCode": "0322",
+    "externalCode": "332"
+  },
+  {
+    "id": "1955",
+    "name": "마두",
+    "line": "03호선",
+    "stationCode": "1955",
+    "externalCode": "312"
+  },
+  {
+    "id": "0333",
+    "name": "매봉",
+    "line": "03호선",
+    "stationCode": "0333",
+    "externalCode": "343"
+  },
+  {
+    "id": "0315",
+    "name": "무악재",
+    "line": "03호선",
+    "stationCode": "0315",
+    "externalCode": "325"
+  },
+  {
+    "id": "1954",
+    "name": "백석",
+    "line": "03호선",
+    "stationCode": "1954",
+    "externalCode": "313"
+  },
+  {
+    "id": "0312",
+    "name": "불광",
+    "line": "03호선",
+    "stationCode": "0312",
+    "externalCode": "322"
+  },
+  {
+    "id": "1950",
+    "name": "삼송",
+    "line": "03호선",
+    "stationCode": "1950",
+    "externalCode": "318"
+  },
+  {
+    "id": "0339",
+    "name": "수서",
+    "line": "03호선",
+    "stationCode": "0339",
+    "externalCode": "349"
+  },
+  {
+    "id": "0327",
+    "name": "신사",
+    "line": "03호선",
+    "stationCode": "0327",
+    "externalCode": "337"
+  },
+  {
+    "id": "0318",
+    "name": "안국",
+    "line": "03호선",
+    "stationCode": "0318",
+    "externalCode": "328"
+  },
+  {
+    "id": "0326",
+    "name": "압구정",
+    "line": "03호선",
+    "stationCode": "0326",
+    "externalCode": "336"
+  },
+  {
+    "id": "0323",
+    "name": "약수",
+    "line": "03호선",
+    "stationCode": "0323",
+    "externalCode": "333"
+  },
+  {
+    "id": "0332",
+    "name": "양재",
+    "line": "03호선",
+    "stationCode": "0332",
+    "externalCode": "342"
+  },
+  {
+    "id": "0311",
+    "name": "연신내",
+    "line": "03호선",
+    "stationCode": "0311",
+    "externalCode": "321"
+  },
+  {
+    "id": "0342",
+    "name": "오금",
+    "line": "03호선",
+    "stationCode": "0342",
+    "externalCode": "352"
+  },
+  {
+    "id": "0325",
+    "name": "옥수",
+    "line": "03호선",
+    "stationCode": "0325",
+    "externalCode": "335"
+  },
+  {
+    "id": "1951",
+    "name": "원당",
+    "line": "03호선",
+    "stationCode": "1951",
+    "externalCode": "316"
+  },
+  {
+    "id": "1948",
+    "name": "원흥",
+    "line": "03호선",
+    "stationCode": "1948",
+    "externalCode": "317"
+  },
+  {
+    "id": "0320",
+    "name": "을지로3가",
+    "line": "03호선",
+    "stationCode": "0320",
+    "externalCode": "330"
+  },
+  {
+    "id": "0338",
+    "name": "일원",
+    "line": "03호선",
+    "stationCode": "0338",
+    "externalCode": "348"
+  },
+  {
+    "id": "0328",
+    "name": "잠원",
+    "line": "03호선",
+    "stationCode": "0328",
+    "externalCode": "338"
+  },
+  {
+    "id": "1956",
+    "name": "정발산",
+    "line": "03호선",
+    "stationCode": "1956",
+    "externalCode": "311"
+  },
+  {
+    "id": "0319",
+    "name": "종로3가",
+    "line": "03호선",
+    "stationCode": "0319",
+    "externalCode": "329"
+  },
+  {
+    "id": "1957",
+    "name": "주엽",
+    "line": "03호선",
+    "stationCode": "1957",
+    "externalCode": "310"
+  },
+  {
+    "id": "0309",
+    "name": "지축",
+    "line": "03호선",
+    "stationCode": "0309",
+    "externalCode": "319"
+  },
+  {
+    "id": "0321",
+    "name": "충무로",
+    "line": "03호선",
+    "stationCode": "0321",
+    "externalCode": "331"
+  },
+  {
+    "id": "0336",
+    "name": "학여울",
+    "line": "03호선",
+    "stationCode": "0336",
+    "externalCode": "346"
+  },
+  {
+    "id": "0314",
+    "name": "홍제",
+    "line": "03호선",
+    "stationCode": "0314",
+    "externalCode": "324"
+  },
+  {
+    "id": "1952",
+    "name": "화정",
+    "line": "03호선",
+    "stationCode": "1952",
+    "externalCode": "315"
+  },
+  {
+    "id": "1451",
+    "name": "경마공원",
+    "line": "04호선",
+    "stationCode": "1451",
+    "externalCode": "436"
+  },
+  {
+    "id": "1757",
+    "name": "고잔",
+    "line": "04호선",
+    "stationCode": "1757",
+    "externalCode": "451"
+  },
+  {
+    "id": "1453",
+    "name": "과천",
+    "line": "04호선",
+    "stationCode": "1453",
+    "externalCode": "438"
+  },
+  {
+    "id": "1458",
+    "name": "금정",
+    "line": "04호선",
+    "stationCode": "1458",
+    "externalCode": "443"
+  },
+  {
+    "id": "0417",
+    "name": "길음",
+    "line": "04호선",
+    "stationCode": "0417",
+    "externalCode": "417"
+  },
+  {
+    "id": "0434",
+    "name": "남태령",
+    "line": "04호선",
+    "stationCode": "0434",
+    "externalCode": "434"
+  },
+  {
+    "id": "0411",
+    "name": "노원",
+    "line": "04호선",
+    "stationCode": "0411",
+    "externalCode": "411"
+  },
+  {
+    "id": "1452",
+    "name": "대공원",
+    "line": "04호선",
+    "stationCode": "1452",
+    "externalCode": "437"
+  },
+  {
+    "id": "1752",
+    "name": "대야미",
+    "line": "04호선",
+    "stationCode": "1752",
+    "externalCode": "446"
+  },
+  {
+    "id": "0421",
+    "name": "동대문",
+    "line": "04호선",
+    "stationCode": "0421",
+    "externalCode": "421"
+  },
+  {
+    "id": "0422",
+    "name": "동대문역사문화공원",
+    "line": "04호선",
+    "stationCode": "0422",
+    "externalCode": "422"
+  },
+  {
+    "id": "0431",
+    "name": "동작",
+    "line": "04호선",
+    "stationCode": "0431",
+    "externalCode": "431"
+  },
+  {
+    "id": "0424",
+    "name": "명동",
+    "line": "04호선",
+    "stationCode": "0424",
+    "externalCode": "424"
+  },
+  {
+    "id": "0415",
+    "name": "미아",
+    "line": "04호선",
+    "stationCode": "0415",
+    "externalCode": "415"
+  },
+  {
+    "id": "0416",
+    "name": "미아사거리",
+    "line": "04호선",
+    "stationCode": "0416",
+    "externalCode": "416"
+  },
+  {
+    "id": "1753",
+    "name": "반월",
+    "line": "04호선",
+    "stationCode": "1753",
+    "externalCode": "447"
+  },
+  {
+    "id": "1457",
+    "name": "범계",
+    "line": "04호선",
+    "stationCode": "1457",
+    "externalCode": "442"
+  },
+  {
+    "id": "0408",
+    "name": "별내별가람",
+    "line": "04호선",
+    "stationCode": "0408",
+    "externalCode": "408"
+  },
+  {
+    "id": "0409",
+    "name": "불암산",
+    "line": "04호선",
+    "stationCode": "0409",
+    "externalCode": "409"
+  },
+  {
+    "id": "0433",
+    "name": "사당",
+    "line": "04호선",
+    "stationCode": "0433",
+    "externalCode": "433"
+  },
+  {
+    "id": "1751",
+    "name": "산본",
+    "line": "04호선",
+    "stationCode": "1751",
+    "externalCode": "444"
+  },
+  {
+    "id": "0428",
+    "name": "삼각지",
+    "line": "04호선",
+    "stationCode": "0428",
+    "externalCode": "428"
+  },
+  {
+    "id": "0410",
+    "name": "상계",
+    "line": "04호선",
+    "stationCode": "0410",
+    "externalCode": "410"
+  },
+  {
+    "id": "1754",
+    "name": "상록수",
+    "line": "04호선",
+    "stationCode": "1754",
+    "externalCode": "448"
+  },
+  {
+    "id": "0426",
+    "name": "서울역",
+    "line": "04호선",
+    "stationCode": "0426",
+    "externalCode": "426"
+  },
+  {
+    "id": "1450",
+    "name": "선바위",
+    "line": "04호선",
+    "stationCode": "1450",
+    "externalCode": "435"
+  },
+  {
+    "id": "0418",
+    "name": "성신여대입구",
+    "line": "04호선",
+    "stationCode": "0418",
+    "externalCode": "418"
+  },
+  {
+    "id": "1763",
+    "name": "수리산",
+    "line": "04호선",
+    "stationCode": "1763",
+    "externalCode": "445"
+  },
+  {
+    "id": "0414",
+    "name": "수유",
+    "line": "04호선",
+    "stationCode": "0414",
+    "externalCode": "414"
+  },
+  {
+    "id": "0427",
+    "name": "숙대입구",
+    "line": "04호선",
+    "stationCode": "0427",
+    "externalCode": "427"
+  },
+  {
+    "id": "1760",
+    "name": "신길온천",
+    "line": "04호선",
+    "stationCode": "1760",
+    "externalCode": "454"
+  },
+  {
+    "id": "0429",
+    "name": "신용산",
+    "line": "04호선",
+    "stationCode": "0429",
+    "externalCode": "429"
+  },
+  {
+    "id": "0413",
+    "name": "쌍문",
+    "line": "04호선",
+    "stationCode": "0413",
+    "externalCode": "413"
+  },
+  {
+    "id": "1759",
+    "name": "안산",
+    "line": "04호선",
+    "stationCode": "1759",
+    "externalCode": "453"
+  },
+  {
+    "id": "0406",
+    "name": "오남",
+    "line": "04호선",
+    "stationCode": "0406",
+    "externalCode": "406"
+  },
+  {
+    "id": "1762",
+    "name": "오이도",
+    "line": "04호선",
+    "stationCode": "1762",
+    "externalCode": "456"
+  },
+  {
+    "id": "0430",
+    "name": "이촌",
+    "line": "04호선",
+    "stationCode": "0430",
+    "externalCode": "430"
+  },
+  {
+    "id": "1455",
+    "name": "인덕원",
+    "line": "04호선",
+    "stationCode": "1455",
+    "externalCode": "440"
+  },
+  {
+    "id": "1454",
+    "name": "정부과천청사",
+    "line": "04호선",
+    "stationCode": "1454",
+    "externalCode": "439"
+  },
+  {
+    "id": "1761",
+    "name": "정왕",
+    "line": "04호선",
+    "stationCode": "1761",
+    "externalCode": "455"
+  },
+  {
+    "id": "1756",
+    "name": "중앙",
+    "line": "04호선",
+    "stationCode": "1756",
+    "externalCode": "450"
+  },
+  {
+    "id": "0405",
+    "name": "진접",
+    "line": "04호선",
+    "stationCode": "0405",
+    "externalCode": "405"
+  },
+  {
+    "id": "0412",
+    "name": "창동",
+    "line": "04호선",
+    "stationCode": "0412",
+    "externalCode": "412"
+  },
+  {
+    "id": "1758",
+    "name": "초지",
+    "line": "04호선",
+    "stationCode": "1758",
+    "externalCode": "452"
+  },
+  {
+    "id": "0432",
+    "name": "총신대입구",
+    "line": "04호선",
+    "stationCode": "0432",
+    "externalCode": "432"
+  },
+  {
+    "id": "0423",
+    "name": "충무로",
+    "line": "04호선",
+    "stationCode": "0423",
+    "externalCode": "423"
+  },
+  {
+    "id": "1456",
+    "name": "평촌",
+    "line": "04호선",
+    "stationCode": "1456",
+    "externalCode": "441"
+  },
+  {
+    "id": "1755",
+    "name": "한대앞",
+    "line": "04호선",
+    "stationCode": "1755",
+    "externalCode": "449"
+  },
+  {
+    "id": "0419",
+    "name": "한성대입구",
+    "line": "04호선",
+    "stationCode": "0419",
+    "externalCode": "419"
+  },
+  {
+    "id": "0420",
+    "name": "혜화",
+    "line": "04호선",
+    "stationCode": "0420",
+    "externalCode": "420"
+  },
+  {
+    "id": "0425",
+    "name": "회현",
+    "line": "04호선",
+    "stationCode": "0425",
+    "externalCode": "425"
+  },
+  {
+    "id": "2549",
+    "name": "강동",
+    "line": "05호선",
+    "stationCode": "2549",
+    "externalCode": "548"
+  },
+  {
+    "id": "2562",
+    "name": "강일",
+    "line": "05호선",
+    "stationCode": "2562",
+    "externalCode": "554"
+  },
+  {
+    "id": "2559",
+    "name": "개롱",
+    "line": "05호선",
+    "stationCode": "2559",
+    "externalCode": "P553"
+  },
+  {
+    "id": "2512",
+    "name": "개화산",
+    "line": "05호선",
+    "stationCode": "2512",
+    "externalCode": "511"
+  },
+  {
+    "id": "2560",
+    "name": "거여",
+    "line": "05호선",
+    "stationCode": "2560",
+    "externalCode": "P554"
+  },
+  {
+    "id": "2553",
+    "name": "고덕",
+    "line": "05호선",
+    "stationCode": "2553",
+    "externalCode": "552"
+  },
+  {
+    "id": "2530",
+    "name": "공덕",
+    "line": "05호선",
+    "stationCode": "2530",
+    "externalCode": "529"
+  },
+  {
+    "id": "2547",
+    "name": "광나루",
+    "line": "05호선",
+    "stationCode": "2547",
+    "externalCode": "546"
+  },
+  {
+    "id": "2534",
+    "name": "광화문",
+    "line": "05호선",
+    "stationCode": "2534",
+    "externalCode": "533"
+  },
+  {
+    "id": "2545",
+    "name": "군자",
+    "line": "05호선",
+    "stationCode": "2545",
+    "externalCode": "544"
+  },
+  {
+    "id": "2551",
+    "name": "굽은다리",
+    "line": "05호선",
+    "stationCode": "2551",
+    "externalCode": "550"
+  },
+  {
+    "id": "2550",
+    "name": "길동",
+    "line": "05호선",
+    "stationCode": "2550",
+    "externalCode": "549"
+  },
+  {
+    "id": "2513",
+    "name": "김포공항",
+    "line": "05호선",
+    "stationCode": "2513",
+    "externalCode": "512"
+  },
+  {
+    "id": "2519",
+    "name": "까치산",
+    "line": "05호선",
+    "stationCode": "2519",
+    "externalCode": "518"
+  },
+  {
+    "id": "2543",
+    "name": "답십리",
+    "line": "05호선",
+    "stationCode": "2543",
+    "externalCode": "542"
+  },
+  {
+    "id": "2537",
+    "name": "동대문역사문화공원",
+    "line": "05호선",
+    "stationCode": "2537",
+    "externalCode": "536"
+  },
+  {
+    "id": "2555",
+    "name": "둔촌동",
+    "line": "05호선",
+    "stationCode": "2555",
+    "externalCode": "P549"
+  },
+  {
+    "id": "2515",
+    "name": "마곡",
+    "line": "05호선",
+    "stationCode": "2515",
+    "externalCode": "514"
+  },
+  {
+    "id": "2542",
+    "name": "마장",
+    "line": "05호선",
+    "stationCode": "2542",
+    "externalCode": "541"
+  },
+  {
+    "id": "2561",
+    "name": "마천",
+    "line": "05호선",
+    "stationCode": "2561",
+    "externalCode": "P555"
+  },
+  {
+    "id": "2529",
+    "name": "마포",
+    "line": "05호선",
+    "stationCode": "2529",
+    "externalCode": "528"
+  },
+  {
+    "id": "2552",
+    "name": "명일",
+    "line": "05호선",
+    "stationCode": "2552",
+    "externalCode": "551"
+  },
+  {
+    "id": "2521",
+    "name": "목동",
+    "line": "05호선",
+    "stationCode": "2521",
+    "externalCode": "520"
+  },
+  {
+    "id": "2563",
+    "name": "미사",
+    "line": "05호선",
+    "stationCode": "2563",
+    "externalCode": "555"
+  },
+  {
+    "id": "2516",
+    "name": "발산",
+    "line": "05호선",
+    "stationCode": "2516",
+    "externalCode": "515"
+  },
+  {
+    "id": "2557",
+    "name": "방이",
+    "line": "05호선",
+    "stationCode": "2557",
+    "externalCode": "P551"
+  },
+  {
+    "id": "2511",
+    "name": "방화",
+    "line": "05호선",
+    "stationCode": "2511",
+    "externalCode": "510"
+  },
+  {
+    "id": "2554",
+    "name": "상일동",
+    "line": "05호선",
+    "stationCode": "2554",
+    "externalCode": "553"
+  },
+  {
+    "id": "2533",
+    "name": "서대문",
+    "line": "05호선",
+    "stationCode": "2533",
+    "externalCode": "532"
+  },
+  {
+    "id": "2514",
+    "name": "송정",
+    "line": "05호선",
+    "stationCode": "2514",
+    "externalCode": "513"
+  },
+  {
+    "id": "2539",
+    "name": "신금호",
+    "line": "05호선",
+    "stationCode": "2539",
+    "externalCode": "538"
+  },
+  {
+    "id": "2526",
+    "name": "신길",
+    "line": "05호선",
+    "stationCode": "2526",
+    "externalCode": "525"
+  },
+  {
+    "id": "2520",
+    "name": "신정",
+    "line": "05호선",
+    "stationCode": "2520",
+    "externalCode": "519"
+  },
+  {
+    "id": "2546",
+    "name": "아차산",
+    "line": "05호선",
+    "stationCode": "2546",
+    "externalCode": "545"
+  },
+  {
+    "id": "2531",
+    "name": "애오개",
+    "line": "05호선",
+    "stationCode": "2531",
+    "externalCode": "530"
+  },
+  {
+    "id": "2523",
+    "name": "양평",
+    "line": "05호선",
+    "stationCode": "2523",
+    "externalCode": "522"
+  },
+  {
+    "id": "2528",
+    "name": "여의나루",
+    "line": "05호선",
+    "stationCode": "2528",
+    "externalCode": "527"
+  },
+  {
+    "id": "2527",
+    "name": "여의도",
+    "line": "05호선",
+    "stationCode": "2527",
+    "externalCode": "526"
+  },
+  {
+    "id": "2524",
+    "name": "영등포구청",
+    "line": "05호선",
+    "stationCode": "2524",
+    "externalCode": "523"
+  },
+  {
+    "id": "2525",
+    "name": "영등포시장",
+    "line": "05호선",
+    "stationCode": "2525",
+    "externalCode": "524"
+  },
+  {
+    "id": "2558",
+    "name": "오금",
+    "line": "05호선",
+    "stationCode": "2558",
+    "externalCode": "P552"
+  },
+  {
+    "id": "2522",
+    "name": "오목교",
+    "line": "05호선",
+    "stationCode": "2522",
+    "externalCode": "521"
+  },
+  {
+    "id": "2556",
+    "name": "올림픽공원",
+    "line": "05호선",
+    "stationCode": "2556",
+    "externalCode": "P550"
+  },
+  {
+    "id": "2541",
+    "name": "왕십리",
+    "line": "05호선",
+    "stationCode": "2541",
+    "externalCode": "540"
+  },
+  {
+    "id": "2517",
+    "name": "우장산",
+    "line": "05호선",
+    "stationCode": "2517",
+    "externalCode": "516"
+  },
+  {
+    "id": "2536",
+    "name": "을지로4가",
+    "line": "05호선",
+    "stationCode": "2536",
+    "externalCode": "535"
+  },
+  {
+    "id": "2544",
+    "name": "장한평",
+    "line": "05호선",
+    "stationCode": "2544",
+    "externalCode": "543"
+  },
+  {
+    "id": "2535",
+    "name": "종로3가",
+    "line": "05호선",
+    "stationCode": "2535",
+    "externalCode": "534"
+  },
+  {
+    "id": "2548",
+    "name": "천호",
+    "line": "05호선",
+    "stationCode": "2548",
+    "externalCode": "547"
+  },
+  {
+    "id": "2538",
+    "name": "청구",
+    "line": "05호선",
+    "stationCode": "2538",
+    "externalCode": "537"
+  },
+  {
+    "id": "2532",
+    "name": "충정로",
+    "line": "05호선",
+    "stationCode": "2532",
+    "externalCode": "531"
+  },
+  {
+    "id": "2566",
+    "name": "하남검단산",
+    "line": "05호선",
+    "stationCode": "2566",
+    "externalCode": "558"
+  },
+  {
+    "id": "2565",
+    "name": "하남시청",
+    "line": "05호선",
+    "stationCode": "2565",
+    "externalCode": "557"
+  },
+  {
+    "id": "2564",
+    "name": "하남풍산",
+    "line": "05호선",
+    "stationCode": "2564",
+    "externalCode": "556"
+  },
+  {
+    "id": "2540",
+    "name": "행당",
+    "line": "05호선",
+    "stationCode": "2540",
+    "externalCode": "539"
+  },
+  {
+    "id": "2518",
+    "name": "화곡",
+    "line": "05호선",
+    "stationCode": "2518",
+    "externalCode": "517"
+  },
+  {
+    "id": "2641",
+    "name": "고려대",
+    "line": "06호선",
+    "stationCode": "2641",
+    "externalCode": "640"
+  },
+  {
+    "id": "2627",
+    "name": "공덕",
+    "line": "06호선",
+    "stationCode": "2627",
+    "externalCode": "626"
+  },
+  {
+    "id": "2625",
+    "name": "광흥창",
+    "line": "06호선",
+    "stationCode": "2625",
+    "externalCode": "624"
+  },
+  {
+    "id": "2616",
+    "name": "구산",
+    "line": "06호선",
+    "stationCode": "2616",
+    "externalCode": "615"
+  },
+  {
+    "id": "2630",
+    "name": "녹사평",
+    "line": "06호선",
+    "stationCode": "2630",
+    "externalCode": "629"
+  },
+  {
+    "id": "2626",
+    "name": "대흥",
+    "line": "06호선",
+    "stationCode": "2626",
+    "externalCode": "625"
+  },
+  {
+    "id": "2614",
+    "name": "독바위",
+    "line": "06호선",
+    "stationCode": "2614",
+    "externalCode": "613"
+  },
+  {
+    "id": "2644",
+    "name": "돌곶이",
+    "line": "06호선",
+    "stationCode": "2644",
+    "externalCode": "643"
+  },
+  {
+    "id": "2637",
+    "name": "동묘앞",
+    "line": "06호선",
+    "stationCode": "2637",
+    "externalCode": "636"
+  },
+  {
+    "id": "2619",
+    "name": "디지털미디어시티",
+    "line": "06호선",
+    "stationCode": "2619",
+    "externalCode": "618"
+  },
+  {
+    "id": "2621",
+    "name": "마포구청",
+    "line": "06호선",
+    "stationCode": "2621",
+    "externalCode": "620"
+  },
+  {
+    "id": "2622",
+    "name": "망원",
+    "line": "06호선",
+    "stationCode": "2622",
+    "externalCode": "621"
+  },
+  {
+    "id": "2633",
+    "name": "버티고개",
+    "line": "06호선",
+    "stationCode": "2633",
+    "externalCode": "632"
+  },
+  {
+    "id": "2639",
+    "name": "보문",
+    "line": "06호선",
+    "stationCode": "2639",
+    "externalCode": "638"
+  },
+  {
+    "id": "2648",
+    "name": "봉화산",
+    "line": "06호선",
+    "stationCode": "2648",
+    "externalCode": "647"
+  },
+  {
+    "id": "2613",
+    "name": "불광",
+    "line": "06호선",
+    "stationCode": "2613",
+    "externalCode": "612"
+  },
+  {
+    "id": "2629",
+    "name": "삼각지",
+    "line": "06호선",
+    "stationCode": "2629",
+    "externalCode": "628"
+  },
+  {
+    "id": "2624",
+    "name": "상수",
+    "line": "06호선",
+    "stationCode": "2624",
+    "externalCode": "623"
+  },
+  {
+    "id": "2643",
+    "name": "상월곡",
+    "line": "06호선",
+    "stationCode": "2643",
+    "externalCode": "642"
+  },
+  {
+    "id": "2617",
+    "name": "새절",
+    "line": "06호선",
+    "stationCode": "2617",
+    "externalCode": "616"
+  },
+  {
+    "id": "2645",
+    "name": "석계",
+    "line": "06호선",
+    "stationCode": "2645",
+    "externalCode": "644"
+  },
+  {
+    "id": "2649",
+    "name": "신내",
+    "line": "06호선",
+    "stationCode": "2649",
+    "externalCode": "648"
+  },
+  {
+    "id": "2636",
+    "name": "신당",
+    "line": "06호선",
+    "stationCode": "2636",
+    "externalCode": "635"
+  },
+  {
+    "id": "2640",
+    "name": "안암",
+    "line": "06호선",
+    "stationCode": "2640",
+    "externalCode": "639"
+  },
+  {
+    "id": "2634",
+    "name": "약수",
+    "line": "06호선",
+    "stationCode": "2634",
+    "externalCode": "633"
+  },
+  {
+    "id": "2612",
+    "name": "역촌",
+    "line": "06호선",
+    "stationCode": "2612",
+    "externalCode": "611"
+  },
+  {
+    "id": "2615",
+    "name": "연신내",
+    "line": "06호선",
+    "stationCode": "2615",
+    "externalCode": "614"
+  },
+  {
+    "id": "2642",
+    "name": "월곡",
+    "line": "06호선",
+    "stationCode": "2642",
+    "externalCode": "641"
+  },
+  {
+    "id": "2620",
+    "name": "월드컵경기장",
+    "line": "06호선",
+    "stationCode": "2620",
+    "externalCode": "619"
+  },
+  {
+    "id": "2611",
+    "name": "응암",
+    "line": "06호선",
+    "stationCode": "2611",
+    "externalCode": "610"
+  },
+  {
+    "id": "2631",
+    "name": "이태원",
+    "line": "06호선",
+    "stationCode": "2631",
+    "externalCode": "630"
+  },
+  {
+    "id": "2618",
+    "name": "증산",
+    "line": "06호선",
+    "stationCode": "2618",
+    "externalCode": "617"
+  },
+  {
+    "id": "2638",
+    "name": "창신",
+    "line": "06호선",
+    "stationCode": "2638",
+    "externalCode": "637"
+  },
+  {
+    "id": "2635",
+    "name": "청구",
+    "line": "06호선",
+    "stationCode": "2635",
+    "externalCode": "634"
+  },
+  {
+    "id": "2646",
+    "name": "태릉입구",
+    "line": "06호선",
+    "stationCode": "2646",
+    "externalCode": "645"
+  },
+  {
+    "id": "2632",
+    "name": "한강진",
+    "line": "06호선",
+    "stationCode": "2632",
+    "externalCode": "631"
+  },
+  {
+    "id": "2623",
+    "name": "합정",
+    "line": "06호선",
+    "stationCode": "2623",
+    "externalCode": "622"
+  },
+  {
+    "id": "2647",
+    "name": "화랑대",
+    "line": "06호선",
+    "stationCode": "2647",
+    "externalCode": "646"
+  },
+  {
+    "id": "2628",
+    "name": "효창공원앞",
+    "line": "06호선",
+    "stationCode": "2628",
+    "externalCode": "627"
+  },
+  {
+    "id": "2748",
+    "name": "가산디지털단지",
+    "line": "07호선",
+    "stationCode": "2748",
+    "externalCode": "746"
+  },
+  {
+    "id": "2732",
+    "name": "강남구청",
+    "line": "07호선",
+    "stationCode": "2732",
+    "externalCode": "730"
+  },
+  {
+    "id": "2729",
+    "name": "건대입구",
+    "line": "07호선",
+    "stationCode": "2729",
+    "externalCode": "727"
+  },
+  {
+    "id": "2736",
+    "name": "고속터미널",
+    "line": "07호선",
+    "stationCode": "2736",
+    "externalCode": "734"
+  },
+  {
+    "id": "2718",
+    "name": "공릉",
+    "line": "07호선",
+    "stationCode": "2718",
+    "externalCode": "716"
+  },
+  {
+    "id": "2750",
+    "name": "광명사거리",
+    "line": "07호선",
+    "stationCode": "2750",
+    "externalCode": "748"
+  },
+  {
+    "id": "2727",
+    "name": "군자",
+    "line": "07호선",
+    "stationCode": "2727",
+    "externalCode": "725"
+  },
+  {
+    "id": "3760",
+    "name": "굴포천",
+    "line": "07호선",
+    "stationCode": "3760",
+    "externalCode": "758"
+  },
+  {
+    "id": "3753",
+    "name": "까치울",
+    "line": "07호선",
+    "stationCode": "3753",
+    "externalCode": "751"
+  },
+  {
+    "id": "2747",
+    "name": "남구로",
+    "line": "07호선",
+    "stationCode": "2747",
+    "externalCode": "745"
+  },
+  {
+    "id": "2739",
+    "name": "남성",
+    "line": "07호선",
+    "stationCode": "2739",
+    "externalCode": "737"
+  },
+  {
+    "id": "2737",
+    "name": "내방",
+    "line": "07호선",
+    "stationCode": "2737",
+    "externalCode": "735"
+  },
+  {
+    "id": "2715",
+    "name": "노원",
+    "line": "07호선",
+    "stationCode": "2715",
+    "externalCode": "713"
+  },
+  {
+    "id": "2734",
+    "name": "논현",
+    "line": "07호선",
+    "stationCode": "2734",
+    "externalCode": "732"
+  },
+  {
+    "id": "2746",
+    "name": "대림",
+    "line": "07호선",
+    "stationCode": "2746",
+    "externalCode": "744"
+  },
+  {
+    "id": "2712",
+    "name": "도봉산",
+    "line": "07호선",
+    "stationCode": "2712",
+    "externalCode": "710"
+  },
+  {
+    "id": "2714",
+    "name": "마들",
+    "line": "07호선",
+    "stationCode": "2714",
+    "externalCode": "712"
+  },
+  {
+    "id": "2720",
+    "name": "먹골",
+    "line": "07호선",
+    "stationCode": "2720",
+    "externalCode": "718"
+  },
+  {
+    "id": "2723",
+    "name": "면목",
+    "line": "07호선",
+    "stationCode": "2723",
+    "externalCode": "721"
+  },
+  {
+    "id": "2735",
+    "name": "반포",
+    "line": "07호선",
+    "stationCode": "2735",
+    "externalCode": "733"
+  },
+  {
+    "id": "2744",
+    "name": "보라매",
+    "line": "07호선",
+    "stationCode": "2744",
+    "externalCode": "742"
+  },
+  {
+    "id": "3757",
+    "name": "부천시청",
+    "line": "07호선",
+    "stationCode": "3757",
+    "externalCode": "755"
+  },
+  {
+    "id": "3754",
+    "name": "부천종합운동장",
+    "line": "07호선",
+    "stationCode": "3754",
+    "externalCode": "752"
+  },
+  {
+    "id": "3761",
+    "name": "부평구청",
+    "line": "07호선",
+    "stationCode": "3761",
+    "externalCode": "759"
+  },
+  {
+    "id": "2724",
+    "name": "사가정",
+    "line": "07호선",
+    "stationCode": "2724",
+    "externalCode": "722"
+  },
+  {
+    "id": "3762",
+    "name": "산곡",
+    "line": "07호선",
+    "stationCode": "3762",
+    "externalCode": "760"
+  },
+  {
+    "id": "3759",
+    "name": "삼산체육관",
+    "line": "07호선",
+    "stationCode": "3759",
+    "externalCode": "757"
+  },
+  {
+    "id": "2741",
+    "name": "상도",
+    "line": "07호선",
+    "stationCode": "2741",
+    "externalCode": "739"
+  },
+  {
+    "id": "3758",
+    "name": "상동",
+    "line": "07호선",
+    "stationCode": "3758",
+    "externalCode": "756"
+  },
+  {
+    "id": "2722",
+    "name": "상봉",
+    "line": "07호선",
+    "stationCode": "2722",
+    "externalCode": "720"
+  },
+  {
+    "id": "3763",
+    "name": "석남",
+    "line": "07호선",
+    "stationCode": "3763",
+    "externalCode": "761"
+  },
+  {
+    "id": "2713",
+    "name": "수락산",
+    "line": "07호선",
+    "stationCode": "2713",
+    "externalCode": "711"
+  },
+  {
+    "id": "2740",
+    "name": "숭실대입구",
+    "line": "07호선",
+    "stationCode": "2740",
+    "externalCode": "738"
+  },
+  {
+    "id": "2743",
+    "name": "신대방삼거리",
+    "line": "07호선",
+    "stationCode": "2743",
+    "externalCode": "741"
+  },
+  {
+    "id": "3756",
+    "name": "신중동",
+    "line": "07호선",
+    "stationCode": "3756",
+    "externalCode": "754"
+  },
+  {
+    "id": "2745",
+    "name": "신풍",
+    "line": "07호선",
+    "stationCode": "2745",
+    "externalCode": "743"
+  },
+  {
+    "id": "2728",
+    "name": "어린이대공원",
+    "line": "07호선",
+    "stationCode": "2728",
+    "externalCode": "726"
+  },
+  {
+    "id": "2752",
+    "name": "온수",
+    "line": "07호선",
+    "stationCode": "2752",
+    "externalCode": "750"
+  },
+  {
+    "id": "2725",
+    "name": "용마산",
+    "line": "07호선",
+    "stationCode": "2725",
+    "externalCode": "723"
+  },
+  {
+    "id": "2738",
+    "name": "이수",
+    "line": "07호선",
+    "stationCode": "2738",
+    "externalCode": "736"
+  },
+  {
+    "id": "2730",
+    "name": "자양",
+    "line": "07호선",
+    "stationCode": "2730",
+    "externalCode": "728"
+  },
+  {
+    "id": "2742",
+    "name": "장승배기",
+    "line": "07호선",
+    "stationCode": "2742",
+    "externalCode": "740"
+  },
+  {
+    "id": "2711",
+    "name": "장암",
+    "line": "07호선",
+    "stationCode": "2711",
+    "externalCode": "709"
+  },
+  {
+    "id": "2716",
+    "name": "중계",
+    "line": "07호선",
+    "stationCode": "2716",
+    "externalCode": "714"
+  },
+  {
+    "id": "2726",
+    "name": "중곡",
+    "line": "07호선",
+    "stationCode": "2726",
+    "externalCode": "724"
+  },
+  {
+    "id": "2721",
+    "name": "중화",
+    "line": "07호선",
+    "stationCode": "2721",
+    "externalCode": "719"
+  },
+  {
+    "id": "2751",
+    "name": "천왕",
+    "line": "07호선",
+    "stationCode": "2751",
+    "externalCode": "749"
+  },
+  {
+    "id": "2749",
+    "name": "철산",
+    "line": "07호선",
+    "stationCode": "2749",
+    "externalCode": "747"
+  },
+  {
+    "id": "2731",
+    "name": "청담",
+    "line": "07호선",
+    "stationCode": "2731",
+    "externalCode": "729"
+  },
+  {
+    "id": "3755",
+    "name": "춘의",
+    "line": "07호선",
+    "stationCode": "3755",
+    "externalCode": "753"
+  },
+  {
+    "id": "2719",
+    "name": "태릉입구",
+    "line": "07호선",
+    "stationCode": "2719",
+    "externalCode": "717"
+  },
+  {
+    "id": "2717",
+    "name": "하계",
+    "line": "07호선",
+    "stationCode": "2717",
+    "externalCode": "715"
+  },
+  {
+    "id": "2733",
+    "name": "학동",
+    "line": "07호선",
+    "stationCode": "2733",
+    "externalCode": "731"
+  },
+  {
+    "id": "2818",
+    "name": "가락시장",
+    "line": "08호선",
+    "stationCode": "2818",
+    "externalCode": "817"
+  },
+  {
+    "id": "2813",
+    "name": "강동구청",
+    "line": "08호선",
+    "stationCode": "2813",
+    "externalCode": "812"
+  },
+  {
+    "id": "2808",
+    "name": "구리",
+    "line": "08호선",
+    "stationCode": "2808",
+    "externalCode": "807"
+  },
+  {
+    "id": "2828",
+    "name": "남위례",
+    "line": "08호선",
+    "stationCode": "2828",
+    "externalCode": "821"
+  },
+  {
+    "id": "2823",
+    "name": "남한산성입구",
+    "line": "08호선",
+    "stationCode": "2823",
+    "externalCode": "823"
+  },
+  {
+    "id": "2806",
+    "name": "다산",
+    "line": "08호선",
+    "stationCode": "2806",
+    "externalCode": "805"
+  },
+  {
+    "id": "2824",
+    "name": "단대오거리",
+    "line": "08호선",
+    "stationCode": "2824",
+    "externalCode": "824"
+  },
+  {
+    "id": "2807",
+    "name": "동구릉",
+    "line": "08호선",
+    "stationCode": "2807",
+    "externalCode": "806"
+  },
+  {
+    "id": "2827",
+    "name": "모란",
+    "line": "08호선",
+    "stationCode": "2827",
+    "externalCode": "827"
+  },
+  {
+    "id": "2814",
+    "name": "몽촌토성",
+    "line": "08호선",
+    "stationCode": "2814",
+    "externalCode": "813"
+  },
+  {
+    "id": "2819",
+    "name": "문정",
+    "line": "08호선",
+    "stationCode": "2819",
+    "externalCode": "818"
+  },
+  {
+    "id": "2805",
+    "name": "별내",
+    "line": "08호선",
+    "stationCode": "2805",
+    "externalCode": "804"
+  },
+  {
+    "id": "2821",
+    "name": "복정",
+    "line": "08호선",
+    "stationCode": "2821",
+    "externalCode": "820"
+  },
+  {
+    "id": "2822",
+    "name": "산성",
+    "line": "08호선",
+    "stationCode": "2822",
+    "externalCode": "822"
+  },
+  {
+    "id": "2816",
+    "name": "석촌",
+    "line": "08호선",
+    "stationCode": "2816",
+    "externalCode": "815"
+  },
+  {
+    "id": "2817",
+    "name": "송파",
+    "line": "08호선",
+    "stationCode": "2817",
+    "externalCode": "816"
+  },
+  {
+    "id": "2826",
+    "name": "수진",
+    "line": "08호선",
+    "stationCode": "2826",
+    "externalCode": "826"
+  },
+  {
+    "id": "2825",
+    "name": "신흥",
+    "line": "08호선",
+    "stationCode": "2825",
+    "externalCode": "825"
+  },
+  {
+    "id": "2811",
+    "name": "암사",
+    "line": "08호선",
+    "stationCode": "2811",
+    "externalCode": "810"
+  },
+  {
+    "id": "2810",
+    "name": "암사역사공원",
+    "line": "08호선",
+    "stationCode": "2810",
+    "externalCode": "809"
+  },
+  {
+    "id": "2815",
+    "name": "잠실",
+    "line": "08호선",
+    "stationCode": "2815",
+    "externalCode": "814"
+  },
+  {
+    "id": "2809",
+    "name": "장자호수공원",
+    "line": "08호선",
+    "stationCode": "2809",
+    "externalCode": "808"
+  },
+  {
+    "id": "2820",
+    "name": "장지",
+    "line": "08호선",
+    "stationCode": "2820",
+    "externalCode": "819"
+  },
+  {
+    "id": "2812",
+    "name": "천호",
+    "line": "08호선",
+    "stationCode": "2812",
+    "externalCode": "811"
+  },
+  {
+    "id": "4107",
+    "name": "가양",
+    "line": "09호선",
+    "stationCode": "4107",
+    "externalCode": "907"
+  },
+  {
+    "id": "4101",
+    "name": "개화",
+    "line": "09호선",
+    "stationCode": "4101",
+    "externalCode": "901"
+  },
+  {
+    "id": "4123",
+    "name": "고속터미널",
+    "line": "09호선",
+    "stationCode": "4123",
+    "externalCode": "923"
+  },
+  {
+    "id": "4103",
+    "name": "공항시장",
+    "line": "09호선",
+    "stationCode": "4103",
+    "externalCode": "903"
+  },
+  {
+    "id": "4121",
+    "name": "구반포",
+    "line": "09호선",
+    "stationCode": "4121",
+    "externalCode": "921"
+  },
+  {
+    "id": "4114",
+    "name": "국회의사당",
+    "line": "09호선",
+    "stationCode": "4114",
+    "externalCode": "914"
+  },
+  {
+    "id": "4102",
+    "name": "김포공항",
+    "line": "09호선",
+    "stationCode": "4102",
+    "externalCode": "902"
+  },
+  {
+    "id": "4118",
+    "name": "노들",
+    "line": "09호선",
+    "stationCode": "4118",
+    "externalCode": "918"
+  },
+  {
+    "id": "4117",
+    "name": "노량진",
+    "line": "09호선",
+    "stationCode": "4117",
+    "externalCode": "917"
+  },
+  {
+    "id": "4113",
+    "name": "당산",
+    "line": "09호선",
+    "stationCode": "4113",
+    "externalCode": "913"
+  },
+  {
+    "id": "4120",
+    "name": "동작",
+    "line": "09호선",
+    "stationCode": "4120",
+    "externalCode": "920"
+  },
+  {
+    "id": "4137",
+    "name": "둔촌오륜",
+    "line": "09호선",
+    "stationCode": "4137",
+    "externalCode": "937"
+  },
+  {
+    "id": "4109",
+    "name": "등촌",
+    "line": "09호선",
+    "stationCode": "4109",
+    "externalCode": "909"
+  },
+  {
+    "id": "4105",
+    "name": "마곡나루",
+    "line": "09호선",
+    "stationCode": "4105",
+    "externalCode": "905"
+  },
+  {
+    "id": "4129",
+    "name": "봉은사",
+    "line": "09호선",
+    "stationCode": "4129",
+    "externalCode": "929"
+  },
+  {
+    "id": "4124",
+    "name": "사평",
+    "line": "09호선",
+    "stationCode": "4124",
+    "externalCode": "924"
+  },
+  {
+    "id": "4128",
+    "name": "삼성중앙",
+    "line": "09호선",
+    "stationCode": "4128",
+    "externalCode": "928"
+  },
+  {
+    "id": "4131",
+    "name": "삼전",
+    "line": "09호선",
+    "stationCode": "4131",
+    "externalCode": "931"
+  },
+  {
+    "id": "4116",
+    "name": "샛강",
+    "line": "09호선",
+    "stationCode": "4116",
+    "externalCode": "916"
+  },
+  {
+    "id": "4133",
+    "name": "석촌",
+    "line": "09호선",
+    "stationCode": "4133",
+    "externalCode": "933"
+  },
+  {
+    "id": "4132",
+    "name": "석촌고분",
+    "line": "09호선",
+    "stationCode": "4132",
+    "externalCode": "932"
+  },
+  {
+    "id": "4112",
+    "name": "선유도",
+    "line": "09호선",
+    "stationCode": "4112",
+    "externalCode": "912"
+  },
+  {
+    "id": "4127",
+    "name": "선정릉",
+    "line": "09호선",
+    "stationCode": "4127",
+    "externalCode": "927"
+  },
+  {
+    "id": "4134",
+    "name": "송파나루",
+    "line": "09호선",
+    "stationCode": "4134",
+    "externalCode": "934"
+  },
+  {
+    "id": "4125",
+    "name": "신논현",
+    "line": "09호선",
+    "stationCode": "4125",
+    "externalCode": "925"
+  },
+  {
+    "id": "4111",
+    "name": "신목동",
+    "line": "09호선",
+    "stationCode": "4111",
+    "externalCode": "911"
+  },
+  {
+    "id": "4122",
+    "name": "신반포",
+    "line": "09호선",
+    "stationCode": "4122",
+    "externalCode": "922"
+  },
+  {
+    "id": "4104",
+    "name": "신방화",
+    "line": "09호선",
+    "stationCode": "4104",
+    "externalCode": "904"
+  },
+  {
+    "id": "4106",
+    "name": "양천향교",
+    "line": "09호선",
+    "stationCode": "4106",
+    "externalCode": "906"
+  },
+  {
+    "id": "4126",
+    "name": "언주",
+    "line": "09호선",
+    "stationCode": "4126",
+    "externalCode": "926"
+  },
+  {
+    "id": "4115",
+    "name": "여의도",
+    "line": "09호선",
+    "stationCode": "4115",
+    "externalCode": "915"
+  },
+  {
+    "id": "4110",
+    "name": "염창",
+    "line": "09호선",
+    "stationCode": "4110",
+    "externalCode": "910"
+  },
+  {
+    "id": "4136",
+    "name": "올림픽공원",
+    "line": "09호선",
+    "stationCode": "4136",
+    "externalCode": "936"
+  },
+  {
+    "id": "4130",
+    "name": "종합운동장",
+    "line": "09호선",
+    "stationCode": "4130",
+    "externalCode": "930"
+  },
+  {
+    "id": "4138",
+    "name": "중앙보훈병원",
+    "line": "09호선",
+    "stationCode": "4138",
+    "externalCode": "938"
+  },
+  {
+    "id": "4108",
+    "name": "증미",
+    "line": "09호선",
+    "stationCode": "4108",
+    "externalCode": "908"
+  },
+  {
+    "id": "4135",
+    "name": "한성백제",
+    "line": "09호선",
+    "stationCode": "4135",
+    "externalCode": "935"
+  },
+  {
+    "id": "4119",
+    "name": "흑석",
+    "line": "09호선",
+    "stationCode": "4119",
+    "externalCode": "919"
+  },
+  {
+    "id": "3216",
+    "name": "가재울",
+    "line": "2호선",
+    "stationCode": "3216",
+    "externalCode": "I216"
+  },
+  {
+    "id": "3211",
+    "name": "가정",
+    "line": "2호선",
+    "stationCode": "3211",
+    "externalCode": "I211"
+  },
+  {
+    "id": "3212",
+    "name": "가정중앙시장",
+    "line": "2호선",
+    "stationCode": "3212",
+    "externalCode": "I212"
+  },
+  {
+    "id": "3203",
+    "name": "검단사거리",
+    "line": "2호선",
+    "stationCode": "3203",
+    "externalCode": "I203"
+  },
+  {
+    "id": "3201",
+    "name": "검단오류",
+    "line": "2호선",
+    "stationCode": "3201",
+    "externalCode": "I201"
+  },
+  {
+    "id": "3208",
+    "name": "검바위",
+    "line": "2호선",
+    "stationCode": "3208",
+    "externalCode": "I208"
+  },
+  {
+    "id": "3207",
+    "name": "검암",
+    "line": "2호선",
+    "stationCode": "3207",
+    "externalCode": "I207"
+  },
+  {
+    "id": "3225",
+    "name": "남동구청",
+    "line": "2호선",
+    "stationCode": "3225",
+    "externalCode": "I225"
+  },
+  {
+    "id": "3206",
+    "name": "독정",
+    "line": "2호선",
+    "stationCode": "3206",
+    "externalCode": "I206"
+  },
+  {
+    "id": "3204",
+    "name": "마전",
+    "line": "2호선",
+    "stationCode": "3204",
+    "externalCode": "I204"
+  },
+  {
+    "id": "3224",
+    "name": "만수",
+    "line": "2호선",
+    "stationCode": "3224",
+    "externalCode": "I224"
+  },
+  {
+    "id": "3223",
+    "name": "모래내시장",
+    "line": "2호선",
+    "stationCode": "3223",
+    "externalCode": "I223"
+  },
+  {
+    "id": "3210",
+    "name": "서구청",
+    "line": "2호선",
+    "stationCode": "3210",
+    "externalCode": "I210"
+  },
+  {
+    "id": "3214",
+    "name": "서부여성회관",
+    "line": "2호선",
+    "stationCode": "3214",
+    "externalCode": "I214"
+  },
+  {
+    "id": "3213",
+    "name": "석남",
+    "line": "2호선",
+    "stationCode": "3213",
+    "externalCode": "I213"
+  },
+  {
+    "id": "3220",
+    "name": "석바위시장",
+    "line": "2호선",
+    "stationCode": "3220",
+    "externalCode": "I220"
+  },
+  {
+    "id": "3222",
+    "name": "석천사거리",
+    "line": "2호선",
+    "stationCode": "3222",
+    "externalCode": "I222"
+  },
+  {
+    "id": "3219",
+    "name": "시민공원",
+    "line": "2호선",
+    "stationCode": "3219",
+    "externalCode": "I219"
+  },
+  {
+    "id": "3209",
+    "name": "아시아드경기장",
+    "line": "2호선",
+    "stationCode": "3209",
+    "externalCode": "I209"
+  },
+  {
+    "id": "3205",
+    "name": "완정",
+    "line": "2호선",
+    "stationCode": "3205",
+    "externalCode": "I205"
+  },
+  {
+    "id": "3202",
+    "name": "왕길",
+    "line": "2호선",
+    "stationCode": "3202",
+    "externalCode": "I202"
+  },
+  {
+    "id": "3227",
+    "name": "운연",
+    "line": "2호선",
+    "stationCode": "3227",
+    "externalCode": "I227"
+  },
+  {
+    "id": "3215",
+    "name": "인천가좌",
+    "line": "2호선",
+    "stationCode": "3215",
+    "externalCode": "I215"
+  },
+  {
+    "id": "3226",
+    "name": "인천대공원",
+    "line": "2호선",
+    "stationCode": "3226",
+    "externalCode": "I226"
+  },
+  {
+    "id": "3221",
+    "name": "인천시청",
+    "line": "2호선",
+    "stationCode": "3221",
+    "externalCode": "I221"
+  },
+  {
+    "id": "3218",
+    "name": "주안",
+    "line": "2호선",
+    "stationCode": "3218",
+    "externalCode": "I218"
+  },
+  {
+    "id": "3217",
+    "name": "주안국가산단",
+    "line": "2호선",
+    "stationCode": "3217",
+    "externalCode": "I217"
+  },
+  {
+    "id": "1504",
+    "name": "경기광주",
+    "line": "경강선",
+    "stationCode": "1504",
+    "externalCode": "K413"
+  },
+  {
+    "id": "1506",
+    "name": "곤지암",
+    "line": "경강선",
+    "stationCode": "1506",
+    "externalCode": "K415"
+  },
+  {
+    "id": "1509",
+    "name": "부발",
+    "line": "경강선",
+    "stationCode": "1509",
+    "externalCode": "K418"
+  },
+  {
+    "id": "1503",
+    "name": "삼동",
+    "line": "경강선",
+    "stationCode": "1503",
+    "externalCode": "K412"
+  },
+  {
+    "id": "1512",
+    "name": "성남",
+    "line": "경강선",
+    "stationCode": "1512",
+    "externalCode": "K410"
+  },
+  {
+    "id": "1510",
+    "name": "세종대왕릉",
+    "line": "경강선",
+    "stationCode": "1510",
+    "externalCode": "K419"
+  },
+  {
+    "id": "1507",
+    "name": "신둔도예촌",
+    "line": "경강선",
+    "stationCode": "1507",
+    "externalCode": "K416"
+  },
+  {
+    "id": "1511",
+    "name": "여주",
+    "line": "경강선",
+    "stationCode": "1511",
+    "externalCode": "K420"
+  },
+  {
+    "id": "1502",
+    "name": "이매",
+    "line": "경강선",
+    "stationCode": "1502",
+    "externalCode": "K411"
+  },
+  {
+    "id": "1508",
+    "name": "이천",
+    "line": "경강선",
+    "stationCode": "1508",
+    "externalCode": "K417"
+  },
+  {
+    "id": "1505",
+    "name": "초월",
+    "line": "경강선",
+    "stationCode": "1505",
+    "externalCode": "K414"
+  },
+  {
+    "id": "1501",
+    "name": "판교",
+    "line": "경강선",
+    "stationCode": "1501",
+    "externalCode": "K409"
+  },
+  {
+    "id": "1265",
+    "name": "가좌",
+    "line": "경의선",
+    "stationCode": "1265",
+    "externalCode": "K315"
+  },
+  {
+    "id": "1269",
+    "name": "강매",
+    "line": "경의선",
+    "stationCode": "1269",
+    "externalCode": "K319"
+  },
+  {
+    "id": "1272",
+    "name": "곡산",
+    "line": "경의선",
+    "stationCode": "1272",
+    "externalCode": "K323"
+  },
+  {
+    "id": "1262",
+    "name": "공덕",
+    "line": "경의선",
+    "stationCode": "1262",
+    "externalCode": "K312"
+  },
+  {
+    "id": "1205",
+    "name": "구리",
+    "line": "경의선",
+    "stationCode": "1205",
+    "externalCode": "K123"
+  },
+  {
+    "id": "1214",
+    "name": "국수",
+    "line": "경의선",
+    "stationCode": "1214",
+    "externalCode": "K132"
+  },
+  {
+    "id": "1279",
+    "name": "금릉",
+    "line": "경의선",
+    "stationCode": "1279",
+    "externalCode": "K330"
+  },
+  {
+    "id": "1280",
+    "name": "금촌",
+    "line": "경의선",
+    "stationCode": "1280",
+    "externalCode": "K331"
+  },
+  {
+    "id": "1271",
+    "name": "능곡",
+    "line": "경의선",
+    "stationCode": "1271",
+    "externalCode": "K321"
+  },
+  {
+    "id": "0300",
+    "name": "대곡",
+    "line": "경의선",
+    "stationCode": "0300",
+    "externalCode": "K322"
+  },
+  {
+    "id": "1208",
+    "name": "덕소",
+    "line": "경의선",
+    "stationCode": "1208",
+    "externalCode": "K126"
+  },
+  {
+    "id": "1206",
+    "name": "도농",
+    "line": "경의선",
+    "stationCode": "1206",
+    "externalCode": "K124"
+  },
+  {
+    "id": "1209",
+    "name": "도심",
+    "line": "경의선",
+    "stationCode": "1209",
+    "externalCode": "K127"
+  },
+  {
+    "id": "1266",
+    "name": "디지털미디어시티",
+    "line": "경의선",
+    "stationCode": "1266",
+    "externalCode": "K316"
+  },
+  {
+    "id": "1203",
+    "name": "망우",
+    "line": "경의선",
+    "stationCode": "1203",
+    "externalCode": "K121"
+  },
+  {
+    "id": "1284",
+    "name": "문산",
+    "line": "경의선",
+    "stationCode": "1284",
+    "externalCode": "K335"
+  },
+  {
+    "id": "1273",
+    "name": "백마",
+    "line": "경의선",
+    "stationCode": "1273",
+    "externalCode": "K324"
+  },
+  {
+    "id": "1202",
+    "name": "상봉",
+    "line": "경의선",
+    "stationCode": "1202",
+    "externalCode": "K120"
+  },
+  {
+    "id": "1263",
+    "name": "서강대",
+    "line": "경의선",
+    "stationCode": "1263",
+    "externalCode": "K313"
+  },
+  {
+    "id": "1009",
+    "name": "서빙고",
+    "line": "경의선",
+    "stationCode": "1009",
+    "externalCode": "K112"
+  },
+  {
+    "id": "1251",
+    "name": "서울역",
+    "line": "경의선",
+    "stationCode": "1251",
+    "externalCode": "P313"
+  },
+  {
+    "id": "1267",
+    "name": "수색",
+    "line": "경의선",
+    "stationCode": "1267",
+    "externalCode": "K317"
+  },
+  {
+    "id": "1213",
+    "name": "신원",
+    "line": "경의선",
+    "stationCode": "1213",
+    "externalCode": "K131"
+  },
+  {
+    "id": "1252",
+    "name": "신촌",
+    "line": "경의선",
+    "stationCode": "1252",
+    "externalCode": "P312"
+  },
+  {
+    "id": "1215",
+    "name": "아신",
+    "line": "경의선",
+    "stationCode": "1215",
+    "externalCode": "K133"
+  },
+  {
+    "id": "1277",
+    "name": "야당",
+    "line": "경의선",
+    "stationCode": "1277",
+    "externalCode": "K328"
+  },
+  {
+    "id": "1212",
+    "name": "양수",
+    "line": "경의선",
+    "stationCode": "1212",
+    "externalCode": "K130"
+  },
+  {
+    "id": "1204",
+    "name": "양원",
+    "line": "경의선",
+    "stationCode": "1204",
+    "externalCode": "K122"
+  },
+  {
+    "id": "1207",
+    "name": "양정",
+    "line": "경의선",
+    "stationCode": "1207",
+    "externalCode": "K125"
+  },
+  {
+    "id": "1217",
+    "name": "양평",
+    "line": "경의선",
+    "stationCode": "1217",
+    "externalCode": "K135"
+  },
+  {
+    "id": "1216",
+    "name": "오빈",
+    "line": "경의선",
+    "stationCode": "1216",
+    "externalCode": "K134"
+  },
+  {
+    "id": "1011",
+    "name": "옥수",
+    "line": "경의선",
+    "stationCode": "1011",
+    "externalCode": "K114"
+  },
+  {
+    "id": "1013",
+    "name": "왕십리",
+    "line": "경의선",
+    "stationCode": "1013",
+    "externalCode": "K116"
+  },
+  {
+    "id": "1219",
+    "name": "용문",
+    "line": "경의선",
+    "stationCode": "1219",
+    "externalCode": "K137"
+  },
+  {
+    "id": "100C",
+    "name": "용산",
+    "line": "경의선",
+    "stationCode": "100C",
+    "externalCode": "K110"
+  },
+  {
+    "id": "1211",
+    "name": "운길산",
+    "line": "경의선",
+    "stationCode": "1211",
+    "externalCode": "K129"
+  },
+  {
+    "id": "1278",
+    "name": "운정",
+    "line": "경의선",
+    "stationCode": "1278",
+    "externalCode": "K329"
+  },
+  {
+    "id": "1286",
+    "name": "운천",
+    "line": "경의선",
+    "stationCode": "1286",
+    "externalCode": "K336"
+  },
+  {
+    "id": "1218",
+    "name": "원덕",
+    "line": "경의선",
+    "stationCode": "1218",
+    "externalCode": "K136"
+  },
+  {
+    "id": "1282",
+    "name": "월롱",
+    "line": "경의선",
+    "stationCode": "1282",
+    "externalCode": "K333"
+  },
+  {
+    "id": "1012",
+    "name": "응봉",
+    "line": "경의선",
+    "stationCode": "1012",
+    "externalCode": "K115"
+  },
+  {
+    "id": "1008",
+    "name": "이촌",
+    "line": "경의선",
+    "stationCode": "1008",
+    "externalCode": "K111"
+  },
+  {
+    "id": "1275",
+    "name": "일산",
+    "line": "경의선",
+    "stationCode": "1275",
+    "externalCode": "K326"
+  },
+  {
+    "id": "1285",
+    "name": "임진강",
+    "line": "경의선",
+    "stationCode": "1285",
+    "externalCode": "K337"
+  },
+  {
+    "id": "1201",
+    "name": "중랑",
+    "line": "경의선",
+    "stationCode": "1201",
+    "externalCode": "K119"
+  },
+  {
+    "id": "1220",
+    "name": "지평",
+    "line": "경의선",
+    "stationCode": "1220",
+    "externalCode": "K138"
+  },
+  {
+    "id": "1014",
+    "name": "청량리",
+    "line": "경의선",
+    "stationCode": "1014",
+    "externalCode": "K117"
+  },
+  {
+    "id": "1276",
+    "name": "탄현",
+    "line": "경의선",
+    "stationCode": "1276",
+    "externalCode": "K327"
+  },
+  {
+    "id": "1283",
+    "name": "파주",
+    "line": "경의선",
+    "stationCode": "1283",
+    "externalCode": "K334"
+  },
+  {
+    "id": "1210",
+    "name": "팔당",
+    "line": "경의선",
+    "stationCode": "1210",
+    "externalCode": "K128"
+  },
+  {
+    "id": "1274",
+    "name": "풍산",
+    "line": "경의선",
+    "stationCode": "1274",
+    "externalCode": "K325"
+  },
+  {
+    "id": "1268",
+    "name": "한국항공대",
+    "line": "경의선",
+    "stationCode": "1268",
+    "externalCode": "K318"
+  },
+  {
+    "id": "1010",
+    "name": "한남",
+    "line": "경의선",
+    "stationCode": "1010",
+    "externalCode": "K113"
+  },
+  {
+    "id": "1270",
+    "name": "행신",
+    "line": "경의선",
+    "stationCode": "1270",
+    "externalCode": "K320"
+  },
+  {
+    "id": "1264",
+    "name": "홍대입구",
+    "line": "경의선",
+    "stationCode": "1264",
+    "externalCode": "K314"
+  },
+  {
+    "id": "101C",
+    "name": "회기",
+    "line": "경의선",
+    "stationCode": "101C",
+    "externalCode": "K118"
+  },
+  {
+    "id": "1261",
+    "name": "효창공원앞",
+    "line": "경의선",
+    "stationCode": "1261",
+    "externalCode": "K826"
+  },
+  {
+    "id": "1323",
+    "name": "가평",
+    "line": "경춘선",
+    "stationCode": "1323",
+    "externalCode": "P134"
+  },
+  {
+    "id": "1312",
+    "name": "갈매",
+    "line": "경춘선",
+    "stationCode": "1312",
+    "externalCode": "P123"
+  },
+  {
+    "id": "1326",
+    "name": "강촌",
+    "line": "경춘선",
+    "stationCode": "1326",
+    "externalCode": "P137"
+  },
+  {
+    "id": "1305",
+    "name": "광운대",
+    "line": "경춘선",
+    "stationCode": "1305",
+    "externalCode": "P116"
+  },
+  {
+    "id": "1324",
+    "name": "굴봉산",
+    "line": "경춘선",
+    "stationCode": "1324",
+    "externalCode": "P135"
+  },
+  {
+    "id": "1316",
+    "name": "금곡",
+    "line": "경춘선",
+    "stationCode": "1316",
+    "externalCode": "P127"
+  },
+  {
+    "id": "1327",
+    "name": "김유정",
+    "line": "경춘선",
+    "stationCode": "1327",
+    "externalCode": "P138"
+  },
+  {
+    "id": "1328",
+    "name": "남춘천",
+    "line": "경춘선",
+    "stationCode": "1328",
+    "externalCode": "P139"
+  },
+  {
+    "id": "1320",
+    "name": "대성리",
+    "line": "경춘선",
+    "stationCode": "1320",
+    "externalCode": "P131"
+  },
+  {
+    "id": "1319",
+    "name": "마석",
+    "line": "경춘선",
+    "stationCode": "1319",
+    "externalCode": "P130"
+  },
+  {
+    "id": "1310",
+    "name": "망우",
+    "line": "경춘선",
+    "stationCode": "1310",
+    "externalCode": "P121"
+  },
+  {
+    "id": "1325",
+    "name": "백양리",
+    "line": "경춘선",
+    "stationCode": "1325",
+    "externalCode": "P136"
+  },
+  {
+    "id": "1313",
+    "name": "별내",
+    "line": "경춘선",
+    "stationCode": "1313",
+    "externalCode": "P124"
+  },
+  {
+    "id": "1315",
+    "name": "사릉",
+    "line": "경춘선",
+    "stationCode": "1315",
+    "externalCode": "P126"
+  },
+  {
+    "id": "1309",
+    "name": "상봉",
+    "line": "경춘선",
+    "stationCode": "1309",
+    "externalCode": "P120"
+  },
+  {
+    "id": "1322",
+    "name": "상천",
+    "line": "경춘선",
+    "stationCode": "1322",
+    "externalCode": "P133"
+  },
+  {
+    "id": "1311",
+    "name": "신내",
+    "line": "경춘선",
+    "stationCode": "1311",
+    "externalCode": "P122"
+  },
+  {
+    "id": "1308",
+    "name": "중랑",
+    "line": "경춘선",
+    "stationCode": "1308",
+    "externalCode": "P119"
+  },
+  {
+    "id": "1318",
+    "name": "천마산",
+    "line": "경춘선",
+    "stationCode": "1318",
+    "externalCode": "P129"
+  },
+  {
+    "id": "1306",
+    "name": "청량리",
+    "line": "경춘선",
+    "stationCode": "1306",
+    "externalCode": "P117"
+  },
+  {
+    "id": "1321",
+    "name": "청평",
+    "line": "경춘선",
+    "stationCode": "1321",
+    "externalCode": "P132"
+  },
+  {
+    "id": "1329",
+    "name": "춘천",
+    "line": "경춘선",
+    "stationCode": "1329",
+    "externalCode": "P140"
+  },
+  {
+    "id": "1314",
+    "name": "퇴계원",
+    "line": "경춘선",
+    "stationCode": "1314",
+    "externalCode": "P125"
+  },
+  {
+    "id": "1317",
+    "name": "평내호평",
+    "line": "경춘선",
+    "stationCode": "1317",
+    "externalCode": "P128"
+  },
+  {
+    "id": "1307",
+    "name": "회기",
+    "line": "경춘선",
+    "stationCode": "1307",
+    "externalCode": "P118"
+  },
+  {
+    "id": "4209",
+    "name": "검암",
+    "line": "공항철도",
+    "stationCode": "4209",
+    "externalCode": "A07"
+  },
+  {
+    "id": "4208",
+    "name": "계양",
+    "line": "공항철도",
+    "stationCode": "4208",
+    "externalCode": "A06"
+  },
+  {
+    "id": "4202",
+    "name": "공덕",
+    "line": "공항철도",
+    "stationCode": "4202",
+    "externalCode": "A02"
+  },
+  {
+    "id": "4212",
+    "name": "공항화물청사",
+    "line": "공항철도",
+    "stationCode": "4212",
+    "externalCode": "A09"
+  },
+  {
+    "id": "4207",
+    "name": "김포공항",
+    "line": "공항철도",
+    "stationCode": "4207",
+    "externalCode": "A05"
+  },
+  {
+    "id": "4204",
+    "name": "디지털미디어시티",
+    "line": "공항철도",
+    "stationCode": "4204",
+    "externalCode": "A04"
+  },
+  {
+    "id": "4206",
+    "name": "마곡나루",
+    "line": "공항철도",
+    "stationCode": "4206",
+    "externalCode": "A042"
+  },
+  {
+    "id": "4201",
+    "name": "서울역",
+    "line": "공항철도",
+    "stationCode": "4201",
+    "externalCode": "A01"
+  },
+  {
+    "id": "4217",
+    "name": "영종",
+    "line": "공항철도",
+    "stationCode": "4217",
+    "externalCode": "A072"
+  },
+  {
+    "id": "4211",
+    "name": "운서",
+    "line": "공항철도",
+    "stationCode": "4211",
+    "externalCode": "A08"
+  },
+  {
+    "id": "4213",
+    "name": "인천공항1터미널",
+    "line": "공항철도",
+    "stationCode": "4213",
+    "externalCode": "A10"
+  },
+  {
+    "id": "4215",
+    "name": "인천공항2터미널",
+    "line": "공항철도",
+    "stationCode": "4215",
+    "externalCode": "A11"
+  },
+  {
+    "id": "4210",
+    "name": "청라국제도시",
+    "line": "공항철도",
+    "stationCode": "4210",
+    "externalCode": "A071"
+  },
+  {
+    "id": "4203",
+    "name": "홍대입구",
+    "line": "공항철도",
+    "stationCode": "4203",
+    "externalCode": "A03"
+  },
+  {
+    "id": "4925",
+    "name": "걸포북변",
+    "line": "김포도시철도",
+    "stationCode": "4925",
+    "externalCode": "695"
+  },
+  {
+    "id": "4928",
+    "name": "고촌",
+    "line": "김포도시철도",
+    "stationCode": "4928",
+    "externalCode": "698"
+  },
+  {
+    "id": "4921",
+    "name": "구래",
+    "line": "김포도시철도",
+    "stationCode": "4921",
+    "externalCode": "691"
+  },
+  {
+    "id": "4929",
+    "name": "김포공항",
+    "line": "김포도시철도",
+    "stationCode": "4929",
+    "externalCode": "699"
+  },
+  {
+    "id": "4922",
+    "name": "마산",
+    "line": "김포도시철도",
+    "stationCode": "4922",
+    "externalCode": "692"
+  },
+  {
+    "id": "4926",
+    "name": "사우",
+    "line": "김포도시철도",
+    "stationCode": "4926",
+    "externalCode": "696"
+  },
+  {
+    "id": "4920",
+    "name": "양촌",
+    "line": "김포도시철도",
+    "stationCode": "4920",
+    "externalCode": "690"
+  },
+  {
+    "id": "4924",
+    "name": "운양",
+    "line": "김포도시철도",
+    "stationCode": "4924",
+    "externalCode": "694"
+  },
+  {
+    "id": "4923",
+    "name": "장기",
+    "line": "김포도시철도",
+    "stationCode": "4923",
+    "externalCode": "693"
+  },
+  {
+    "id": "4927",
+    "name": "풍무",
+    "line": "김포도시철도",
+    "stationCode": "4927",
+    "externalCode": "697"
+  },
+  {
+    "id": "105C",
+    "name": "곡산",
+    "line": "서해선",
+    "stationCode": "105C",
+    "externalCode": "S10"
+  },
+  {
+    "id": "1980",
+    "name": "김포공항",
+    "line": "서해선",
+    "stationCode": "1980",
+    "externalCode": "S13"
+  },
+  {
+    "id": "104C",
+    "name": "능곡",
+    "line": "서해선",
+    "stationCode": "104C",
+    "externalCode": "S12"
+  },
+  {
+    "id": "4811",
+    "name": "달미",
+    "line": "서해선",
+    "stationCode": "4811",
+    "externalCode": "S24"
+  },
+  {
+    "id": "103C",
+    "name": "대곡",
+    "line": "서해선",
+    "stationCode": "103C",
+    "externalCode": "S11"
+  },
+  {
+    "id": "106C",
+    "name": "백마",
+    "line": "서해선",
+    "stationCode": "106C",
+    "externalCode": "S09"
+  },
+  {
+    "id": "1982",
+    "name": "부천종합운동장",
+    "line": "서해선",
+    "stationCode": "1982",
+    "externalCode": "S15"
+  },
+  {
+    "id": "4812",
+    "name": "선부",
+    "line": "서해선",
+    "stationCode": "4812",
+    "externalCode": "S25"
+  },
+  {
+    "id": "4804",
+    "name": "소사",
+    "line": "서해선",
+    "stationCode": "4804",
+    "externalCode": "S16"
+  },
+  {
+    "id": "4805",
+    "name": "소새울",
+    "line": "서해선",
+    "stationCode": "4805",
+    "externalCode": "S17"
+  },
+  {
+    "id": "4814",
+    "name": "시우",
+    "line": "서해선",
+    "stationCode": "4814",
+    "externalCode": "S27"
+  },
+  {
+    "id": "4810",
+    "name": "시흥능곡",
+    "line": "서해선",
+    "stationCode": "4810",
+    "externalCode": "S23"
+  },
+  {
+    "id": "4806",
+    "name": "시흥대야",
+    "line": "서해선",
+    "stationCode": "4806",
+    "externalCode": "S18"
+  },
+  {
+    "id": "4809",
+    "name": "시흥시청",
+    "line": "서해선",
+    "stationCode": "4809",
+    "externalCode": "S22"
+  },
+  {
+    "id": "4807",
+    "name": "신천",
+    "line": "서해선",
+    "stationCode": "4807",
+    "externalCode": "S19"
+  },
+  {
+    "id": "4808",
+    "name": "신현",
+    "line": "서해선",
+    "stationCode": "4808",
+    "externalCode": "S20"
+  },
+  {
+    "id": "4815",
+    "name": "원시",
+    "line": "서해선",
+    "stationCode": "4815",
+    "externalCode": "S28"
+  },
+  {
+    "id": "1981",
+    "name": "원종",
+    "line": "서해선",
+    "stationCode": "1981",
+    "externalCode": "S14"
+  },
+  {
+    "id": "108C",
+    "name": "일산",
+    "line": "서해선",
+    "stationCode": "108C",
+    "externalCode": "S07"
+  },
+  {
+    "id": "4813",
+    "name": "초지",
+    "line": "서해선",
+    "stationCode": "4813",
+    "externalCode": "S26"
+  },
+  {
+    "id": "107C",
+    "name": "풍산",
+    "line": "서해선",
+    "stationCode": "107C",
+    "externalCode": "S08"
+  },
+  {
+    "id": "1851",
+    "name": "가천대",
+    "line": "수인분당선",
+    "stationCode": "1851",
+    "externalCode": "K223"
+  },
+  {
+    "id": "1849",
+    "name": "강남구청",
+    "line": "수인분당선",
+    "stationCode": "1849",
+    "externalCode": "K213"
+  },
+  {
+    "id": "1027",
+    "name": "개포동",
+    "line": "수인분당선",
+    "stationCode": "1027",
+    "externalCode": "K219"
+  },
+  {
+    "id": "1873",
+    "name": "고색",
+    "line": "수인분당선",
+    "stationCode": "1873",
+    "externalCode": "K246"
+  },
+  {
+    "id": "1832",
+    "name": "고잔",
+    "line": "수인분당선",
+    "stationCode": "1832",
+    "externalCode": "K253"
+  },
+  {
+    "id": "1026",
+    "name": "구룡",
+    "line": "수인분당선",
+    "stationCode": "1026",
+    "externalCode": "K218"
+  },
+  {
+    "id": "1863",
+    "name": "구성",
+    "line": "수인분당선",
+    "stationCode": "1863",
+    "externalCode": "K235"
+  },
+  {
+    "id": "1865",
+    "name": "기흥",
+    "line": "수인분당선",
+    "stationCode": "1865",
+    "externalCode": "K237"
+  },
+  {
+    "id": "1883",
+    "name": "남동인더스파크",
+    "line": "수인분당선",
+    "stationCode": "1883",
+    "externalCode": "K264"
+  },
+  {
+    "id": "1878",
+    "name": "달월",
+    "line": "수인분당선",
+    "stationCode": "1878",
+    "externalCode": "K259"
+  },
+  {
+    "id": "1028",
+    "name": "대모산입구",
+    "line": "수인분당선",
+    "stationCode": "1028",
+    "externalCode": "K220"
+  },
+  {
+    "id": "1025",
+    "name": "도곡",
+    "line": "수인분당선",
+    "stationCode": "1025",
+    "externalCode": "K217"
+  },
+  {
+    "id": "1869",
+    "name": "망포",
+    "line": "수인분당선",
+    "stationCode": "1869",
+    "externalCode": "K241"
+  },
+  {
+    "id": "1872",
+    "name": "매교",
+    "line": "수인분당선",
+    "stationCode": "1872",
+    "externalCode": "K244"
+  },
+  {
+    "id": "1870",
+    "name": "매탄권선",
+    "line": "수인분당선",
+    "stationCode": "1870",
+    "externalCode": "K242"
+  },
+  {
+    "id": "1853",
+    "name": "모란",
+    "line": "수인분당선",
+    "stationCode": "1853",
+    "externalCode": "K225"
+  },
+  {
+    "id": "1858",
+    "name": "미금",
+    "line": "수인분당선",
+    "stationCode": "1858",
+    "externalCode": "K231"
+  },
+  {
+    "id": "1861",
+    "name": "보정",
+    "line": "수인분당선",
+    "stationCode": "1861",
+    "externalCode": "K234"
+  },
+  {
+    "id": "1031",
+    "name": "복정",
+    "line": "수인분당선",
+    "stationCode": "1031",
+    "externalCode": "K222"
+  },
+  {
+    "id": "1877",
+    "name": "사리",
+    "line": "수인분당선",
+    "stationCode": "1877",
+    "externalCode": "K250"
+  },
+  {
+    "id": "1866",
+    "name": "상갈",
+    "line": "수인분당선",
+    "stationCode": "1866",
+    "externalCode": "K238"
+  },
+  {
+    "id": "1847",
+    "name": "서울숲",
+    "line": "수인분당선",
+    "stationCode": "1847",
+    "externalCode": "K211"
+  },
+  {
+    "id": "1855",
+    "name": "서현",
+    "line": "수인분당선",
+    "stationCode": "1855",
+    "externalCode": "K228"
+  },
+  {
+    "id": "1023",
+    "name": "선릉",
+    "line": "수인분당선",
+    "stationCode": "1023",
+    "externalCode": "K215"
+  },
+  {
+    "id": "1850",
+    "name": "선정릉",
+    "line": "수인분당선",
+    "stationCode": "1850",
+    "externalCode": "K214"
+  },
+  {
+    "id": "1880",
+    "name": "소래포구",
+    "line": "수인분당선",
+    "stationCode": "1880",
+    "externalCode": "K261"
+  },
+  {
+    "id": "1886",
+    "name": "송도",
+    "line": "수인분당선",
+    "stationCode": "1886",
+    "externalCode": "K267"
+  },
+  {
+    "id": "1856",
+    "name": "수내",
+    "line": "수인분당선",
+    "stationCode": "1856",
+    "externalCode": "K229"
+  },
+  {
+    "id": "1030",
+    "name": "수서",
+    "line": "수인분당선",
+    "stationCode": "1030",
+    "externalCode": "K221"
+  },
+  {
+    "id": "1846",
+    "name": "수원",
+    "line": "수인분당선",
+    "stationCode": "1846",
+    "externalCode": "K245"
+  },
+  {
+    "id": "1871",
+    "name": "수원시청",
+    "line": "수인분당선",
+    "stationCode": "1871",
+    "externalCode": "K243"
+  },
+  {
+    "id": "1889",
+    "name": "숭의",
+    "line": "수인분당선",
+    "stationCode": "1889",
+    "externalCode": "K270"
+  },
+  {
+    "id": "1864",
+    "name": "신갈",
+    "line": "수인분당선",
+    "stationCode": "1864",
+    "externalCode": "K236"
+  },
+  {
+    "id": "1835",
+    "name": "신길온천",
+    "line": "수인분당선",
+    "stationCode": "1835",
+    "externalCode": "K256"
+  },
+  {
+    "id": "1890",
+    "name": "신포",
+    "line": "수인분당선",
+    "stationCode": "1890",
+    "externalCode": "K271"
+  },
+  {
+    "id": "1834",
+    "name": "안산",
+    "line": "수인분당선",
+    "stationCode": "1834",
+    "externalCode": "K255"
+  },
+  {
+    "id": "1848",
+    "name": "압구정로데오",
+    "line": "수인분당선",
+    "stationCode": "1848",
+    "externalCode": "K212"
+  },
+  {
+    "id": "1876",
+    "name": "야목",
+    "line": "수인분당선",
+    "stationCode": "1876",
+    "externalCode": "K249"
+  },
+  {
+    "id": "1854",
+    "name": "야탑",
+    "line": "수인분당선",
+    "stationCode": "1854",
+    "externalCode": "K226"
+  },
+  {
+    "id": "1875",
+    "name": "어천",
+    "line": "수인분당선",
+    "stationCode": "1875",
+    "externalCode": "K248"
+  },
+  {
+    "id": "1885",
+    "name": "연수",
+    "line": "수인분당선",
+    "stationCode": "1885",
+    "externalCode": "K266"
+  },
+  {
+    "id": "1868",
+    "name": "영통",
+    "line": "수인분당선",
+    "stationCode": "1868",
+    "externalCode": "K240"
+  },
+  {
+    "id": "1859",
+    "name": "오리",
+    "line": "수인분당선",
+    "stationCode": "1859",
+    "externalCode": "K232"
+  },
+  {
+    "id": "1874",
+    "name": "오목천",
+    "line": "수인분당선",
+    "stationCode": "1874",
+    "externalCode": "K247"
+  },
+  {
+    "id": "1800",
+    "name": "오이도",
+    "line": "수인분당선",
+    "stationCode": "1800",
+    "externalCode": "K258"
+  },
+  {
+    "id": "102C",
+    "name": "왕십리",
+    "line": "수인분당선",
+    "stationCode": "102C",
+    "externalCode": "K210"
+  },
+  {
+    "id": "1884",
+    "name": "원인재",
+    "line": "수인분당선",
+    "stationCode": "1884",
+    "externalCode": "K265"
+  },
+  {
+    "id": "1879",
+    "name": "월곶",
+    "line": "수인분당선",
+    "stationCode": "1879",
+    "externalCode": "K260"
+  },
+  {
+    "id": "1860",
+    "name": "이매",
+    "line": "수인분당선",
+    "stationCode": "1860",
+    "externalCode": "K227"
+  },
+  {
+    "id": "1891",
+    "name": "인천",
+    "line": "수인분당선",
+    "stationCode": "1891",
+    "externalCode": "K272"
+  },
+  {
+    "id": "1881",
+    "name": "인천논현",
+    "line": "수인분당선",
+    "stationCode": "1881",
+    "externalCode": "K262"
+  },
+  {
+    "id": "1888",
+    "name": "인하대",
+    "line": "수인분당선",
+    "stationCode": "1888",
+    "externalCode": "K269"
+  },
+  {
+    "id": "1836",
+    "name": "정왕",
+    "line": "수인분당선",
+    "stationCode": "1836",
+    "externalCode": "K257"
+  },
+  {
+    "id": "1857",
+    "name": "정자",
+    "line": "수인분당선",
+    "stationCode": "1857",
+    "externalCode": "K230"
+  },
+  {
+    "id": "1862",
+    "name": "죽전",
+    "line": "수인분당선",
+    "stationCode": "1862",
+    "externalCode": "K233"
+  },
+  {
+    "id": "1831",
+    "name": "중앙",
+    "line": "수인분당선",
+    "stationCode": "1831",
+    "externalCode": "K252"
+  },
+  {
+    "id": "1845",
+    "name": "청량리",
+    "line": "수인분당선",
+    "stationCode": "1845",
+    "externalCode": "K209"
+  },
+  {
+    "id": "1867",
+    "name": "청명",
+    "line": "수인분당선",
+    "stationCode": "1867",
+    "externalCode": "K239"
+  },
+  {
+    "id": "1833",
+    "name": "초지",
+    "line": "수인분당선",
+    "stationCode": "1833",
+    "externalCode": "K254"
+  },
+  {
+    "id": "1852",
+    "name": "태평",
+    "line": "수인분당선",
+    "stationCode": "1852",
+    "externalCode": "K224"
+  },
+  {
+    "id": "1830",
+    "name": "한대앞",
+    "line": "수인분당선",
+    "stationCode": "1830",
+    "externalCode": "K251"
+  },
+  {
+    "id": "1024",
+    "name": "한티",
+    "line": "수인분당선",
+    "stationCode": "1024",
+    "externalCode": "K216"
+  },
+  {
+    "id": "1882",
+    "name": "호구포",
+    "line": "수인분당선",
+    "stationCode": "1882",
+    "externalCode": "K263"
+  },
+  {
+    "id": "4411",
+    "name": "관악산",
+    "line": "신림선",
+    "stationCode": "4411",
+    "externalCode": "S411"
+  },
+  {
+    "id": "4407",
+    "name": "당곡",
+    "line": "신림선",
+    "stationCode": "4407",
+    "externalCode": "S407"
+  },
+  {
+    "id": "4402",
+    "name": "대방",
+    "line": "신림선",
+    "stationCode": "4402",
+    "externalCode": "S402"
+  },
+  {
+    "id": "4404",
+    "name": "보라매",
+    "line": "신림선",
+    "stationCode": "4404",
+    "externalCode": "S404"
+  },
+  {
+    "id": "4405",
+    "name": "보라매공원",
+    "line": "신림선",
+    "stationCode": "4405",
+    "externalCode": "S405"
+  },
+  {
+    "id": "4406",
+    "name": "보라매병원",
+    "line": "신림선",
+    "stationCode": "4406",
+    "externalCode": "S406"
+  },
+  {
+    "id": "4401",
+    "name": "샛강",
+    "line": "신림선",
+    "stationCode": "4401",
+    "externalCode": "S401"
+  },
+  {
+    "id": "4410",
+    "name": "서울대벤처타운",
+    "line": "신림선",
+    "stationCode": "4410",
+    "externalCode": "S410"
+  },
+  {
+    "id": "4403",
+    "name": "서울지방병무청",
+    "line": "신림선",
+    "stationCode": "4403",
+    "externalCode": "S403"
+  },
+  {
+    "id": "4409",
+    "name": "서원",
+    "line": "신림선",
+    "stationCode": "4409",
+    "externalCode": "S409"
+  },
+  {
+    "id": "4408",
+    "name": "신림",
+    "line": "신림선",
+    "stationCode": "4408",
+    "externalCode": "S408"
+  },
+  {
+    "id": "4307",
+    "name": "강남",
+    "line": "신분당선",
+    "stationCode": "4307",
+    "externalCode": "D7"
+  },
+  {
+    "id": "4319",
+    "name": "광교",
+    "line": "신분당선",
+    "stationCode": "4319",
+    "externalCode": "D19"
+  },
+  {
+    "id": "4318",
+    "name": "광교중앙",
+    "line": "신분당선",
+    "stationCode": "4318",
+    "externalCode": "D18"
+  },
+  {
+    "id": "4305",
+    "name": "논현",
+    "line": "신분당선",
+    "stationCode": "4305",
+    "externalCode": "D5"
+  },
+  {
+    "id": "4314",
+    "name": "동천",
+    "line": "신분당선",
+    "stationCode": "4314",
+    "externalCode": "D14"
+  },
+  {
+    "id": "4313",
+    "name": "미금",
+    "line": "신분당선",
+    "stationCode": "4313",
+    "externalCode": "D13"
+  },
+  {
+    "id": "4317",
+    "name": "상현",
+    "line": "신분당선",
+    "stationCode": "4317",
+    "externalCode": "D17"
+  },
+  {
+    "id": "4316",
+    "name": "성복",
+    "line": "신분당선",
+    "stationCode": "4316",
+    "externalCode": "D16"
+  },
+  {
+    "id": "4315",
+    "name": "수지구청",
+    "line": "신분당선",
+    "stationCode": "4315",
+    "externalCode": "D15"
+  },
+  {
+    "id": "4306",
+    "name": "신논현",
+    "line": "신분당선",
+    "stationCode": "4306",
+    "externalCode": "D6"
+  },
+  {
+    "id": "4304",
+    "name": "신사",
+    "line": "신분당선",
+    "stationCode": "4304",
+    "externalCode": "D4"
+  },
+  {
+    "id": "4308",
+    "name": "양재",
+    "line": "신분당선",
+    "stationCode": "4308",
+    "externalCode": "D8"
+  },
+  {
+    "id": "4309",
+    "name": "양재시민의숲",
+    "line": "신분당선",
+    "stationCode": "4309",
+    "externalCode": "D9"
+  },
+  {
+    "id": "4312",
+    "name": "정자",
+    "line": "신분당선",
+    "stationCode": "4312",
+    "externalCode": "D12"
+  },
+  {
+    "id": "4310",
+    "name": "청계산입구",
+    "line": "신분당선",
+    "stationCode": "4310",
+    "externalCode": "D10"
+  },
+  {
+    "id": "4311",
+    "name": "판교",
+    "line": "신분당선",
+    "stationCode": "4311",
+    "externalCode": "D11"
+  },
+  {
+    "id": "4502",
+    "name": "강남대",
+    "line": "용인경전철",
+    "stationCode": "4502",
+    "externalCode": "Y111"
+  },
+  {
+    "id": "4513",
+    "name": "고진",
+    "line": "용인경전철",
+    "stationCode": "4513",
+    "externalCode": "Y121"
+  },
+  {
+    "id": "4501",
+    "name": "기흥",
+    "line": "용인경전철",
+    "stationCode": "4501",
+    "externalCode": "Y110"
+  },
+  {
+    "id": "4511",
+    "name": "김량장",
+    "line": "용인경전철",
+    "stationCode": "4511",
+    "externalCode": "Y119"
+  },
+  {
+    "id": "4505",
+    "name": "동백",
+    "line": "용인경전철",
+    "stationCode": "4505",
+    "externalCode": "Y114"
+  },
+  {
+    "id": "4515",
+    "name": "둔전",
+    "line": "용인경전철",
+    "stationCode": "4515",
+    "externalCode": "Y125"
+  },
+  {
+    "id": "4510",
+    "name": "명지대",
+    "line": "용인경전철",
+    "stationCode": "4510",
+    "externalCode": "Y118"
+  },
+  {
+    "id": "4514",
+    "name": "보평",
+    "line": "용인경전철",
+    "stationCode": "4514",
+    "externalCode": "Y123"
+  },
+  {
+    "id": "4508",
+    "name": "삼가",
+    "line": "용인경전철",
+    "stationCode": "4508",
+    "externalCode": "Y116"
+  },
+  {
+    "id": "4509",
+    "name": "시청.용인대",
+    "line": "용인경전철",
+    "stationCode": "4509",
+    "externalCode": "Y117"
+  },
+  {
+    "id": "4504",
+    "name": "어정",
+    "line": "용인경전철",
+    "stationCode": "4504",
+    "externalCode": "Y113"
+  },
+  {
+    "id": "4512",
+    "name": "용인중앙시장",
+    "line": "용인경전철",
+    "stationCode": "4512",
+    "externalCode": "Y120"
+  },
+  {
+    "id": "4517",
+    "name": "전대.에버랜드",
+    "line": "용인경전철",
+    "stationCode": "4517",
+    "externalCode": "Y126"
+  },
+  {
+    "id": "4503",
+    "name": "지석",
+    "line": "용인경전철",
+    "stationCode": "4503",
+    "externalCode": "Y112"
+  },
+  {
+    "id": "4506",
+    "name": "초당",
+    "line": "용인경전철",
+    "stationCode": "4506",
+    "externalCode": "Y115"
+  },
+  {
+    "id": "4703",
+    "name": "4·19민주묘지",
+    "line": "우이신설경전철",
+    "stationCode": "4703",
+    "externalCode": "943"
+  },
+  {
+    "id": "4704",
+    "name": "가오리",
+    "line": "우이신설경전철",
+    "stationCode": "4704",
+    "externalCode": "944"
+  },
+  {
+    "id": "4712",
+    "name": "보문",
+    "line": "우이신설경전철",
+    "stationCode": "4712",
+    "externalCode": "952"
+  },
+  {
+    "id": "4709",
+    "name": "북한산보국문",
+    "line": "우이신설경전철",
+    "stationCode": "4709",
+    "externalCode": "949"
+  },
+  {
+    "id": "4701",
+    "name": "북한산우이",
+    "line": "우이신설경전철",
+    "stationCode": "4701",
+    "externalCode": "941"
+  },
+  {
+    "id": "4706",
+    "name": "삼양",
+    "line": "우이신설경전철",
+    "stationCode": "4706",
+    "externalCode": "946"
+  },
+  {
+    "id": "4707",
+    "name": "삼양사거리",
+    "line": "우이신설경전철",
+    "stationCode": "4707",
+    "externalCode": "947"
+  },
+  {
+    "id": "4711",
+    "name": "성신여대입구",
+    "line": "우이신설경전철",
+    "stationCode": "4711",
+    "externalCode": "951"
+  },
+  {
+    "id": "4702",
+    "name": "솔밭공원",
+    "line": "우이신설경전철",
+    "stationCode": "4702",
+    "externalCode": "942"
+  },
+  {
+    "id": "4708",
+    "name": "솔샘",
+    "line": "우이신설경전철",
+    "stationCode": "4708",
+    "externalCode": "948"
+  },
+  {
+    "id": "4713",
+    "name": "신설동",
+    "line": "우이신설경전철",
+    "stationCode": "4713",
+    "externalCode": "953"
+  },
+  {
+    "id": "4710",
+    "name": "정릉",
+    "line": "우이신설경전철",
+    "stationCode": "4710",
+    "externalCode": "950"
+  },
+  {
+    "id": "4705",
+    "name": "화계",
+    "line": "우이신설경전철",
+    "stationCode": "4705",
+    "externalCode": "945"
+  },
+  {
+    "id": "4610",
+    "name": "경기도청북부청사",
+    "line": "의정부경전철",
+    "stationCode": "4610",
+    "externalCode": "U120"
+  },
+  {
+    "id": "4604",
+    "name": "경전철의정부",
+    "line": "의정부경전철",
+    "stationCode": "4604",
+    "externalCode": "U113"
+  },
+  {
+    "id": "4612",
+    "name": "곤제",
+    "line": "의정부경전철",
+    "stationCode": "4612",
+    "externalCode": "U122"
+  },
+  {
+    "id": "4608",
+    "name": "동오",
+    "line": "의정부경전철",
+    "stationCode": "4608",
+    "externalCode": "U118"
+  },
+  {
+    "id": "4601",
+    "name": "발곡",
+    "line": "의정부경전철",
+    "stationCode": "4601",
+    "externalCode": "U110"
+  },
+  {
+    "id": "4603",
+    "name": "범골",
+    "line": "의정부경전철",
+    "stationCode": "4603",
+    "externalCode": "U112"
+  },
+  {
+    "id": "4609",
+    "name": "새말",
+    "line": "의정부경전철",
+    "stationCode": "4609",
+    "externalCode": "U119"
+  },
+  {
+    "id": "4614",
+    "name": "송산",
+    "line": "의정부경전철",
+    "stationCode": "4614",
+    "externalCode": "U124"
+  },
+  {
+    "id": "4613",
+    "name": "어룡",
+    "line": "의정부경전철",
+    "stationCode": "4613",
+    "externalCode": "U123"
+  },
+  {
+    "id": "4605",
+    "name": "의정부시청",
+    "line": "의정부경전철",
+    "stationCode": "4605",
+    "externalCode": "U114"
+  },
+  {
+    "id": "4607",
+    "name": "의정부중앙",
+    "line": "의정부경전철",
+    "stationCode": "4607",
+    "externalCode": "U117"
+  },
+  {
+    "id": "4615",
+    "name": "탑석",
+    "line": "의정부경전철",
+    "stationCode": "4615",
+    "externalCode": "U125"
+  },
+  {
+    "id": "4602",
+    "name": "회룡",
+    "line": "의정부경전철",
+    "stationCode": "4602",
+    "externalCode": "U111"
+  },
+  {
+    "id": "4611",
+    "name": "효자",
+    "line": "의정부경전철",
+    "stationCode": "4611",
+    "externalCode": "U121"
+  },
+  {
+    "id": "4606",
+    "name": "흥선",
+    "line": "의정부경전철",
+    "stationCode": "4606",
+    "externalCode": "U115"
+  },
+  {
+    "id": "3123",
+    "name": "간석오거리",
+    "line": "인천선",
+    "stationCode": "3123",
+    "externalCode": "I123"
+  },
+  {
+    "id": "3117",
+    "name": "갈산",
+    "line": "인천선",
+    "stationCode": "3117",
+    "externalCode": "I117"
+  },
+  {
+    "id": "3107",
+    "name": "검단호수공원",
+    "line": "인천선",
+    "stationCode": "3107",
+    "externalCode": "I107"
+  },
+  {
+    "id": "3115",
+    "name": "경인교대입구",
+    "line": "인천선",
+    "stationCode": "3115",
+    "externalCode": "I115"
+  },
+  {
+    "id": "3114",
+    "name": "계산",
+    "line": "인천선",
+    "stationCode": "3114",
+    "externalCode": "I114"
+  },
+  {
+    "id": "3110",
+    "name": "계양",
+    "line": "인천선",
+    "stationCode": "3110",
+    "externalCode": "I110"
+  },
+  {
+    "id": "3138",
+    "name": "국제업무지구",
+    "line": "인천선",
+    "stationCode": "3138",
+    "externalCode": "I138"
+  },
+  {
+    "id": "3111",
+    "name": "귤현",
+    "line": "인천선",
+    "stationCode": "3111",
+    "externalCode": "I111"
+  },
+  {
+    "id": "3132",
+    "name": "동막",
+    "line": "인천선",
+    "stationCode": "3132",
+    "externalCode": "I132"
+  },
+  {
+    "id": "3121",
+    "name": "동수",
+    "line": "인천선",
+    "stationCode": "3121",
+    "externalCode": "I121"
+  },
+  {
+    "id": "3131",
+    "name": "동춘",
+    "line": "인천선",
+    "stationCode": "3131",
+    "externalCode": "I131"
+  },
+  {
+    "id": "3127",
+    "name": "문학경기장",
+    "line": "인천선",
+    "stationCode": "3127",
+    "externalCode": "I127"
+  },
+  {
+    "id": "3112",
+    "name": "박촌",
+    "line": "인천선",
+    "stationCode": "3112",
+    "externalCode": "I112"
+  },
+  {
+    "id": "3120",
+    "name": "부평",
+    "line": "인천선",
+    "stationCode": "3120",
+    "externalCode": "I120"
+  },
+  {
+    "id": "3118",
+    "name": "부평구청",
+    "line": "인천선",
+    "stationCode": "3118",
+    "externalCode": "I118"
+  },
+  {
+    "id": "3122",
+    "name": "부평삼거리",
+    "line": "인천선",
+    "stationCode": "3122",
+    "externalCode": "I122"
+  },
+  {
+    "id": "3119",
+    "name": "부평시장",
+    "line": "인천선",
+    "stationCode": "3119",
+    "externalCode": "I119"
+  },
+  {
+    "id": "3128",
+    "name": "선학",
+    "line": "인천선",
+    "stationCode": "3128",
+    "externalCode": "I128"
+  },
+  {
+    "id": "3137",
+    "name": "센트럴파크",
+    "line": "인천선",
+    "stationCode": "3137",
+    "externalCode": "I137"
+  },
+  {
+    "id": "3139",
+    "name": "송도달빛축제공원",
+    "line": "인천선",
+    "stationCode": "3139",
+    "externalCode": "I139"
+  },
+  {
+    "id": "3108",
+    "name": "신검단중앙",
+    "line": "인천선",
+    "stationCode": "3108",
+    "externalCode": "I108"
+  },
+  {
+    "id": "3129",
+    "name": "신연수",
+    "line": "인천선",
+    "stationCode": "3129",
+    "externalCode": "I129"
+  },
+  {
+    "id": "3109",
+    "name": "아라",
+    "line": "인천선",
+    "stationCode": "3109",
+    "externalCode": "I109"
+  },
+  {
+    "id": "3125",
+    "name": "예술회관",
+    "line": "인천선",
+    "stationCode": "3125",
+    "externalCode": "I125"
+  },
+  {
+    "id": "3130",
+    "name": "원인재",
+    "line": "인천선",
+    "stationCode": "3130",
+    "externalCode": "I130"
+  },
+  {
+    "id": "3136",
+    "name": "인천대입구",
+    "line": "인천선",
+    "stationCode": "3136",
+    "externalCode": "I136"
+  },
+  {
+    "id": "3124",
+    "name": "인천시청",
+    "line": "인천선",
+    "stationCode": "3124",
+    "externalCode": "I124"
+  },
+  {
+    "id": "3126",
+    "name": "인천터미널",
+    "line": "인천선",
+    "stationCode": "3126",
+    "externalCode": "I126"
+  },
+  {
+    "id": "3113",
+    "name": "임학",
+    "line": "인천선",
+    "stationCode": "3113",
+    "externalCode": "I113"
+  },
+  {
+    "id": "3116",
+    "name": "작전",
+    "line": "인천선",
+    "stationCode": "3116",
+    "externalCode": "I116"
+  },
+  {
+    "id": "3135",
+    "name": "지식정보단지",
+    "line": "인천선",
+    "stationCode": "3135",
+    "externalCode": "I135"
+  },
+  {
+    "id": "3133",
+    "name": "캠퍼스타운",
+    "line": "인천선",
+    "stationCode": "3133",
+    "externalCode": "I133"
+  },
+  {
+    "id": "3134",
+    "name": "테크노파크",
+    "line": "인천선",
+    "stationCode": "3134",
+    "externalCode": "I134"
+  },
+  {
+    "id": "0010",
+    "name": "구성",
+    "line": "GTX-A",
+    "stationCode": "0010",
+    "externalCode": "X110"
+  },
+  {
+    "id": "9002",
+    "name": "대곡",
+    "line": "GTX-A",
+    "stationCode": "9002",
+    "externalCode": "X103"
+  },
+  {
+    "id": "0011",
+    "name": "동탄",
+    "line": "GTX-A",
+    "stationCode": "0011",
+    "externalCode": "X111"
+  },
+  {
+    "id": "9005",
+    "name": "서울",
+    "line": "GTX-A",
+    "stationCode": "9005",
+    "externalCode": "X106"
+  },
+  {
+    "id": "0009",
+    "name": "성남",
+    "line": "GTX-A",
+    "stationCode": "0009",
+    "externalCode": "X109"
+  },
+  {
+    "id": "0008",
+    "name": "수서",
+    "line": "GTX-A",
+    "stationCode": "0008",
+    "externalCode": "X108"
+  },
+  {
+    "id": "9004",
+    "name": "연신내",
+    "line": "GTX-A",
+    "stationCode": "9004",
+    "externalCode": "X105"
+  },
+  {
+    "id": "9000",
+    "name": "운정중앙",
+    "line": "GTX-A",
+    "stationCode": "9000",
+    "externalCode": "X101"
+  },
+  {
+    "id": "9001",
+    "name": "킨텍스",
+    "line": "GTX-A",
+    "stationCode": "9001",
+    "externalCode": "X102"
+  }
+]
