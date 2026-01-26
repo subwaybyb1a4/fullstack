@@ -1,8 +1,99 @@
-# backend
-
-# 안끼길 - 지하철 내비게이션 앱
+# 🚀 안끼길 (ankkigil-fullstack) 개발 가이드 - 지하철 내비게이션 앱
 
 퇴근길에 5분 단축보다 '사람에 끼지 않고 편하게' 가는 경로를 추천하는 지하철 내비게이션
+
+이 프로젝트는 **AI 기반 지하철 혼잡도 회피 경로 안내 서비스**입니다. 로컬 환경에서 백엔드 서버와 모바일 앱(Expo)을 연결하여 개발 및 테스트를 진행하기 위한 가이드입니다.
+
+---
+
+## 🛠️ 사전 준비 (Prerequisites)
+
+1. **Backend**: Python 3.9 이상 설치
+2. **Frontend**: Node.js 및 npm 설치
+3. **Mobile**: 스마트폰에 **Expo Go** 앱 설치 (iOS/Android)
+
+---
+
+## 1. 백엔드(Backend) 실행 방법
+
+서버는 외부 기기(스마트폰)의 접속을 허용하기 위해 반드시 `0.0.0.0` 호스트로 실행해야 합니다.
+
+```bash
+# 1. backend 폴더로 이동
+cd backend
+
+# 2. 가상환경 활성화 (필요 시)
+# source venv/bin/activate (Mac) 또는 venv\Scripts\activate (Windows)
+
+# 3. 필요한 라이브러리 설치
+pip install -r requirements.txt
+
+# 4. 서버 실행 (반드시 아래 옵션으로 실행하세요)
+python3 -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+```
+
+---
+
+## 2. 프론트엔드(Frontend) 실행 방법
+
+```bash
+# 1. frontend 폴더로 이동
+cd frontend
+
+# 2. 의존성 패키지 설치
+npm install
+
+# 3. Expo 서버 실행
+npx expo start -c
+
+# 💡 와이파이 환경이 불안정하거나 보안망(학교/카페)인 경우:
+npx expo start --tunnel
+
+```
+
+---
+
+## 3. ⚠️ [필독] 모바일 API 연결 설정 (중요!)
+
+실제 스마트폰에서 API가 호출되려면, 소스코드 내의 주소를 **본인 컴퓨터의 로컬 IP**로 수정해야 합니다.
+
+### 📍 수정할 파일
+
+`frontend/src/app/route-results.tsx` (약 63번 라인)
+
+### 📍 수정 방법
+
+1. **본인 IPv4 주소 확인**
+* **Windows**: 터미널에 `ipconfig` 입력 후 `IPv4 주소` 확인
+* **Mac**: 터미널에 `ifconfig` 입력 후 `en0` 항목의 `inet` 주소 확인 (예: `192.168.0.15`)
+
+
+2. **코드 업데이트**
+
+```javascript
+// 기존 "http://본인 PC의 IP 주소/..." 부분을 아래와 같이 수정
+const response = await axios.post(
+  "http://[본인_IPv4_주소]:8000/api/routes/search",
+  { ... }
+);
+
+```
+
+---
+
+## ✅ 체크리스트 (연결이 안 될 때)
+
+* [ ] **동일한 네트워크**: 스마트폰과 PC가 **반드시 같은 Wi-Fi**에 연결되어 있나요?
+* [ ] **서버 호스트**: 백엔드 서버 실행 시 `--host 0.0.0.0` 옵션을 넣었나요?
+* [ ] **방화벽**: PC의 방화벽이 8000번 포트의 인바운드 요청을 허용하고 있나요?
+* [ ] **IP 확인**: 코드에 `localhost` 대신 실제 숫자 IP 주소를 적었나요?
+
+---
+
+---
+
+# backend
 
 ## 프로젝트 구조
 
