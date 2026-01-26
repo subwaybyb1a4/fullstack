@@ -112,34 +112,32 @@ export default function RouteDetailScreen() {
                   </View>
                 )}
 
-                {/* 마지막 노드가 아니면 다음 단계까지 이어지는 수직선을 그림 */}
-                {index < routeData.segments.length - 1 && (
-                  <View
-                    style={[
-                      styles.verticalLine,
-                      // 지하철 구간일 경우 노선 색상으로 선을 칠함
-                      seg.type === "subway" && {
-                        backgroundColor: getLineColor(seg.label),
-                      },
-                    ]}
-                  />
-                )}
+                {/* 항상 아래로 이어지는 선 그림 (마지막 목적지 노드와 연결하기 위해) */}
+                <View
+                  style={[
+                    styles.verticalLine,
+                    seg.type === "subway" && {
+                      backgroundColor: getLineColor(seg.label),
+                    },
+                  ]}
+                />
               </View>
 
-              {/* 오른쪽 영역: 텍스트 정보 (역 이름, 소요 시간, 꿀팁 등) */}
+              {/* 오른쪽 영역: 텍스트 정보 */}
               <View style={styles.nodeRight}>
                 <View style={styles.stationRow}>
                   <Text style={styles.mainStationName}>
                     {seg.start_station_name || seg.label}
                   </Text>
                   {seg.type === "subway" && (
-                    <Text style={styles.lineBadge}>{seg.label}</Text>
+                    <Text style={styles.lineBadge}>
+                      {/^\d+$/.test(seg.label) ? `${seg.label}호선` : seg.label}
+                    </Text>
                   )}
                 </View>
 
                 <Text style={styles.moveDetail}>{seg.minutes}분 이동</Text>
 
-                {/* 빠른 환승 정보(fast_transfer_door)가 있는 경우 강조 표시 */}
                 {seg.fast_transfer_door && (
                   <View style={styles.fastTransferBox}>
                     <Text style={styles.fastTransferText}>
@@ -148,8 +146,8 @@ export default function RouteDetailScreen() {
                   </View>
                 )}
 
-                {/* 하차 정보가 있는 경우 표시 */}
-                {seg.end_station_name && (
+                {/* 마지막 세그먼트가 아니고, 하차 정보(방면)가 있다면 표시 */}
+                {index < routeData.segments.length - 1 && seg.end_station_name && (
                   <Text style={styles.endStationText}>
                     {seg.end_station_name} 방면
                   </Text>
@@ -157,6 +155,20 @@ export default function RouteDetailScreen() {
               </View>
             </View>
           ))}
+
+          {/* 🏁 최종 도착지 노드 추가 */}
+          <View style={styles.node}>
+            <View style={styles.nodeLeft}>
+              <View style={[styles.circle, { backgroundColor: "#111827" }]}>
+                <Text style={{ fontSize: 14 }}>🚩</Text>
+              </View>
+            </View>
+            <View style={[styles.nodeRight, { paddingBottom: 0 }]}>
+              <Text style={[styles.mainStationName, { color: "#111827" }]}>
+                {params.to} 도착
+              </Text>
+            </View>
+          </View>
         </View>
 
         {/* 3. AI 요약 꿀팁: 백엔드에서 생성한 AI 분석 결과(summary)를 하단에 배치 */}

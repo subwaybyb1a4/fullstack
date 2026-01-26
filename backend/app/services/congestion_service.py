@@ -18,10 +18,10 @@ class CongestionService:
     def load_congestion_data(self):
         """혼잡도 데이터 로드"""
         try:
-            csv_path = Path(__file__).parent.parent.parent / "data" / "result.csv"
-            if not csv_path.exists():
-                print(f"⚠️ 혼잡도 데이터 파일이 없습니다: {csv_path}")
-                return None
+            csv_path = "C:/Users/UserK/Desktop/final/fullstack/backend/app/data/result.csv"
+            # if not csv_path.exists():
+            #     print(f"⚠️ 혼잡도 데이터 파일이 없습니다: {csv_path}")
+            #     return None
                 
             df = pd.read_csv(csv_path, encoding="utf-8")
 

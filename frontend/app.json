@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "easy-subway",
-    "slug": "easy-subway",
+    "name": "안끼길",
+    "slug": "ankkigil",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "easysubway",
+    "scheme": "ankkigil",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

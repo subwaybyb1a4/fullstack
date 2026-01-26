@@ -91,6 +91,48 @@ const rankAndGroupStations = (query: string): GroupedStation[] => {
   return grouped;
 };
 
+// ✅ 노선별 색상 매핑 함수
+const getLineColor = (line: string) => {
+  const map: Record<string, { bg: string; text: string }> = {
+    "1호선": { bg: "#0052A4", text: "white" },
+    "2호선": { bg: "#00A84D", text: "white" },
+    "3호선": { bg: "#EF7C1C", text: "white" },
+    "4호선": { bg: "#00A5DE", text: "white" },
+    "5호선": { bg: "#996CAC", text: "white" },
+    "6호선": { bg: "#CD7C2F", text: "white" },
+    "7호선": { bg: "#747F00", text: "white" },
+    "8호선": { bg: "#E6186C", text: "white" },
+    "9호선": { bg: "#BDB092", text: "white" },
+    "공항철도": { bg: "#0090D2", text: "white" },
+    "경의중앙": { bg: "#77C4A3", text: "white" },
+    "경춘선": { bg: "#0C8E72", text: "white" },
+    "수인분당": { bg: "#F5A200", text: "white" },
+    "신분당": { bg: "#D4003B", text: "white" },
+    "우이신설": { bg: "#B0CE18", text: "white" },
+    "서해선": { bg: "#81A914", text: "white" },
+    "김포골드": { bg: "#A17800", text: "white" },
+    "에버라인": { bg: "#566D29", text: "white" }, // 용인경전철
+    "의정부": { bg: "#FDA600", text: "white" }, // 의정부경전철
+    "GTX-A": { bg: "#9B3750", text: "white" },
+  };
+
+  // 노선명 정규화 (01호선 -> 1호선 등)
+  let cleanLine = line.replace(/^0+/, "").replace(/호선$/, "호선");
+  // "수도권 4호선" -> "4호선" 등
+  if (cleanLine.includes("호선") && !cleanLine.endsWith("호선")) {
+    // 4호선(수도권) 이런식으로 올 수도 있음.
+    // 그냥 contains check
+  }
+
+  // 단순 포함 여부 체크 (매핑 키에 포함되는지)
+  for (const key in map) {
+    if (line.includes(key)) return map[key];
+  }
+
+  // 기본값 (회색)
+  return { bg: "#E5E7EB", text: "#374151" };
+};
+
 export default function SearchScreen() {
   const router = useRouter();
   const [from, setFrom] = useState("");
@@ -134,11 +176,20 @@ export default function SearchScreen() {
       <Text style={styles.stationName}>{item.name}</Text>
 
       <View style={styles.badgeWrap}>
-        {item.lines.map((line) => (
-          <Text key={`${item.id}-${line}`} style={styles.lineBadge}>
-            {line}
-          </Text>
-        ))}
+        {item.lines.map((line) => {
+          const style = getLineColor(line);
+          return (
+            <Text
+              key={`${item.id}-${line}`}
+              style={[
+                styles.lineBadge,
+                { backgroundColor: style.bg, color: style.text }
+              ]}
+            >
+              {line}
+            </Text>
+          );
+        })}
       </View>
     </TouchableOpacity>
   );
@@ -152,89 +203,89 @@ export default function SearchScreen() {
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : undefined}
       >
-          {/* 헤더 */}
-          <View style={styles.header}>
-            <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-              <ArrowLeft size={24} color="#1F2937" />
-            </TouchableOpacity>
-            <Text style={styles.headerTitle}>경로 검색</Text>
-          </View>
+        {/* 헤더 */}
+        <View style={styles.header}>
+          <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
+            <ArrowLeft size={24} color="#1F2937" />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>경로 검색</Text>
+        </View>
 
-          <View style={styles.content}>
-            {/* 입력값 카드 */}
-            <View style={styles.inputCard}>
-              {/* 출발역 */}
-              <View style={styles.inputRow}>
-                <View style={styles.iconContainer}>
-                  <MapPin size={18} color="#3B82F6" />
-                </View>
-                <TextInput
-                  value={from}
-                  onChangeText={(text) => {
-                    setFrom(text);
-                    setSearchMode("from");
-                  }}
-                  onFocus={() => setSearchMode("from")}
-                  returnKeyType="done"
-                  placeholder="출발역 입력"
-                  style={styles.input}
-                  placeholderTextColor="#9CA3AF"
-                />
+        <View style={styles.content}>
+          {/* 입력값 카드 */}
+          <View style={styles.inputCard}>
+            {/* 출발역 */}
+            <View style={styles.inputRow}>
+              <View style={styles.iconContainer}>
+                <MapPin size={18} color="#3B82F6" />
               </View>
-
-              <View style={styles.divider} />
-
-              {/* 도착역 */}
-              <View style={styles.inputRow}>
-                <View style={styles.iconContainer}>
-                  <Target size={18} color="#EF4444" />
-                </View>
-                <TextInput
-                  value={to}
-                  onChangeText={(text) => {
-                    setTo(text);
-                    setSearchMode("to");
-                  }}
-                  onFocus={() => setSearchMode("to")}
-                  returnKeyType="search"
-                  placeholder="도착역 입력"
-                  style={styles.input}
-                  placeholderTextColor="#9CA3AF"
-                  onSubmitEditing={handleSearch}
-                />
-              </View>
+              <TextInput
+                value={from}
+                onChangeText={(text) => {
+                  setFrom(text);
+                  setSearchMode("from");
+                }}
+                onFocus={() => setSearchMode("from")}
+                returnKeyType="done"
+                placeholder="출발역 입력"
+                style={styles.input}
+                placeholderTextColor="#9CA3AF"
+              />
             </View>
 
-            {/* 자동완성 목록 (FlatList로 스크롤 가능 + 키보드 유지) */}
-            {searchMode && queryText.trim().length > 0 && (
-              <View style={styles.suggestionList}>
-                <FlatList
-                  data={suggestions}
-                  keyExtractor={(item) => item.id}
-                  renderItem={renderSuggestionItem}
-                  keyboardShouldPersistTaps="handled"
-                  keyboardDismissMode="on-drag"
-                  style={{ maxHeight: 320 }} // ✅ 키보드 올라와도 적당히 스크롤되게
-                  ListEmptyComponent={
-                    <View style={styles.emptyState}>
-                      <Text style={styles.emptyText}>검색 결과가 없어요</Text>
-                    </View>
-                  }
-                />
+            <View style={styles.divider} />
+
+            {/* 도착역 */}
+            <View style={styles.inputRow}>
+              <View style={styles.iconContainer}>
+                <Target size={18} color="#EF4444" />
               </View>
-            )}
+              <TextInput
+                value={to}
+                onChangeText={(text) => {
+                  setTo(text);
+                  setSearchMode("to");
+                }}
+                onFocus={() => setSearchMode("to")}
+                returnKeyType="search"
+                placeholder="도착역 입력"
+                style={styles.input}
+                placeholderTextColor="#9CA3AF"
+                onSubmitEditing={handleSearch}
+              />
+            </View>
           </View>
 
-          {/* 하단 검색 버튼 */}
-          <View style={styles.footer}>
-            <TouchableOpacity
-              onPress={handleSearch}
-              disabled={!from || !to}
-              style={[styles.searchButton, (!from || !to) && styles.disabledButton]}
-            >
-              <Text style={styles.searchButtonText}>경로 검색하기</Text>
-            </TouchableOpacity>
-          </View>
+          {/* 자동완성 목록 (FlatList로 스크롤 가능 + 키보드 유지) */}
+          {searchMode && queryText.trim().length > 0 && (
+            <View style={styles.suggestionList}>
+              <FlatList
+                data={suggestions}
+                keyExtractor={(item) => item.id}
+                renderItem={renderSuggestionItem}
+                keyboardShouldPersistTaps="handled"
+                keyboardDismissMode="on-drag"
+                style={{ maxHeight: 320 }} // ✅ 키보드 올라와도 적당히 스크롤되게
+                ListEmptyComponent={
+                  <View style={styles.emptyState}>
+                    <Text style={styles.emptyText}>검색 결과가 없어요</Text>
+                  </View>
+                }
+              />
+            </View>
+          )}
+        </View>
+
+        {/* 하단 검색 버튼 */}
+        <View style={styles.footer}>
+          <TouchableOpacity
+            onPress={handleSearch}
+            disabled={!from || !to}
+            style={[styles.searchButton, (!from || !to) && styles.disabledButton]}
+          >
+            <Text style={styles.searchButtonText}>경로 검색하기</Text>
+          </TouchableOpacity>
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

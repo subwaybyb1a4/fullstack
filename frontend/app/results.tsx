@@ -59,49 +59,33 @@ export default function RouteResults() {
     const fetchResults = async () => {
       try {
         setLoading(true);
+        console.log("🚀 현재 호출 중인 주소:", process.env.EXPO_PUBLIC_API_URL);
 
         // 1. 서버에 경로 검색 요청 (POST 방식)
         const response = await axios.post(
-          "http://172.16.30.230:8000/api/routes/search",
+          `${process.env.EXPO_PUBLIC_API_URL}/api/routes/search`, {
+          from_station: fromStation,
+          to_station: toStation,
+          // searched_time: new Date().toISOString(), // 서버 분석용 현재 시간 전송
+        },
           {
-            from_station: fromStation,
-            to_station: toStation,
-            searched_time: new Date().toISOString(), // 서버 분석용 현재 시간 전송
-          },
+            headers: {
+              "ngrok-skip-browser-warning": "69420",
+            },
+          }
         );
 
         const data = response.data;
 
         // 2. API 응답(Object)을 처리하기 쉬운 배열(Array) 형태로 변환
-        const rawRoutes = [
-          { ...data.min_crowding, route_key: "min_crowding" },
-          { ...data.min_time, route_key: "min_time" },
-          { ...data.min_walking, route_key: "min_walking" },
-        ];
+        // 백엔드에서 이미 통합된 routes 리스트와 태그를 제공함
+        if (data.routes && Array.isArray(data.routes)) {
+          setRouteList(data.routes);
+        } else {
+          // Fallback for older backend or empty
+          setRouteList([]);
+        }
 
-        /**
-         * 3. [중요] 경로 중복 제거 및 태그 합치기 로직
-         * 최단시간과 최소도보 경로가 물리적으로 같을 경우(동일한 route_id),
-         * 카드를 두 개 띄우지 않고 하나의 카드에 두 개의 뱃지를 모두 표시합니다.
-         */
-        const merged = rawRoutes.reduce((acc: any[], current) => {
-          // 이미 누적된 배열(acc)에 동일한 route_id가 있는지 확인
-          const existing = acc.find(
-            (item) => item.route_id === current.route_id,
-          );
-
-          if (existing) {
-            // 이미 존재한다면 해당 객체의 allKeys 배열에 새로운 타입만 추가
-            if (!existing.allKeys.includes(current.route_key)) {
-              existing.allKeys.push(current.route_key);
-            }
-            return acc;
-          }
-          // 새로운 경로라면 allKeys 배열을 초기화하여 추가
-          return [...acc, { ...current, allKeys: [current.route_key] }];
-        }, []);
-
-        setRouteList(merged); // 가공 완료된 리스트를 상태에 저장
       } catch (error) {
         console.error("API 호출 실패:", error);
         Alert.alert("오류", "경로 정보를 불러오지 못했습니다.");
@@ -222,7 +206,7 @@ export default function RouteResults() {
             {/* 상단: 경로 타입 뱃지들 및 혼잡도 정보 */}
             <View style={styles.cardTop}>
               <View style={{ flexDirection: "row", gap: 6 }}>
-                {route.allKeys.map((k: string) => (
+                {route.tags && route.tags.map((k: string) => (
                   <View
                     key={k}
                     style={[

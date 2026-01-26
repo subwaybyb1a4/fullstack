@@ -1,24 +1,16 @@
-"""
-LLM 서비스 (Azure OpenAI를 사용한 경로 설명 생성)
-"""
-from typing import Optional, Dict, Any, List
+from typing import Dict, Any, List
 from app.core.config import settings
 from openai import AzureOpenAI
-import json
 from pathlib import Path
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings
 from langchain_core.documents import Document
 
 
 class LLMService:
     """Azure OpenAI LLM 서비스"""
-    
+
     def __init__(self):
-        """
-        Azure OpenAI 클라이언트 초기화
-        """
+
         if not settings.AZURE_OPENAI_API_KEY:
             self.client = None
             print("경고: Azure OpenAI API 키가 설정되지 않았습니다.")
@@ -29,10 +21,10 @@ class LLMService:
                 azure_endpoint=settings.AZURE_OPENAI_ENDPOINT
             )
             self.deployment_name = settings.AZURE_OPENAI_DEPLOYMENT_NAME
-        
+
         # RAG 초기화
         self.congestion_chunks = self._load_congestion_rag()
-    
+
     def _load_congestion_rag(self):
         """혼잡 규칙 RAG 로드"""
         rag_path = Path(__file__).parent.parent.parent / "congestion_rules.txt"
@@ -42,50 +34,36 @@ class LLMService:
             splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
             return splitter.create_documents([congestion_rules_text])
         return []
-    
+
     def retrieve_congestion_rules(self, route_data: Dict[str, Any]) -> str:
         """RAG에서 혼잡 참고 데이터 검색 (실제 환승역만 매칭)"""
         if not self.congestion_chunks:
             return ""
 
-        # 실제 환승이 발생하는 역만 수집 (transfers 정보 활용)
         transfers = route_data.get("transfers", [])
-        transfer_stations = set()
-        for transfer in transfers:
-            station_name = transfer.get("station", {}).get("station_name", "")
-            if station_name:
-                transfer_stations.add(station_name.replace("역", "").strip())
-        
-        # 환승이 없으면 RAG 불필요
+        transfer_stations = {t.get("station", {}).get("station_name", "").replace("역", "").strip() for t in transfers if t.get("station")}
         if not transfer_stations:
             return ""
 
-        # 시간대 확인
         time_str = route_data.get("time_str", "09:00")
         try:
             hour = int(time_str.split(":")[0])
             is_peak = hour in [7, 8, 9, 18, 19]
         except:
             is_peak = False
-        
         if not is_peak:
             return ""
 
-        # 실제 환승역이 포함된 청크만 검색
         retrieved_texts = []
         for chunk in self.congestion_chunks:
             chunk_text = chunk.page_content
-            # 청크에 환승역 이름이 포함되어 있는지 확인
-            for station in transfer_stations:
-                if station in chunk_text:
-                    retrieved_texts.append(chunk_text)
-                    break  # 하나라도 매칭되면 추가하고 다음 청크로
-            
-            if len(retrieved_texts) >= 3:  # 최대 3개
+            if any(station in chunk_text for station in transfer_stations):
+                retrieved_texts.append(chunk_text)
+            if len(retrieved_texts) >= 3:
                 break
 
         return "\n".join(retrieved_texts)
-    
+
     async def generate_route_explanation(
         self,
         route_data: Dict[str, Any],
@@ -93,49 +71,28 @@ class LLMService:
         congestion_level: str,
         segment_details: List[Dict[str, Any]]
     ) -> str:
-        """
-        경로 설명 생성 (Azure OpenAI 사용)
-        
-        Args:
-            route_data: 경로 정보
-            congestion_score: 혼잡도 점수
-            congestion_level: 혼잡도 레벨
-            segment_details: 구간별 상세 정보
-        
-        Returns:
-            경로 설명
-        """
         if not self.client:
-            return self._generate_rule_based_description(
-                route_data, congestion_score, congestion_level, segment_details
-            )
-        
+            return self._generate_rule_based_description(route_data, congestion_score, congestion_level, segment_details)
+
         try:
             num_transfers = len(route_data.get("transfers", []))
-            total_time = route_data.get("total_duration", 0) / 60  # 초 -> 분
-            avg_congestion = sum(seg['congestion'] for seg in segment_details) / len(segment_details)
-            max_congestion = max(seg['congestion'] for seg in segment_details)
+            total_time = route_data.get("total_duration", 0) / 60
+            if segment_details and len(segment_details) > 0:
+                avg_congestion = sum(seg['congestion'] for seg in segment_details) / len(segment_details)
+                max_congestion = max(seg['congestion'] for seg in segment_details)
+            else:
+                avg_congestion = 0.0
+                max_congestion = 0.0
 
-            # RAG에서 혼잡 참고 데이터 검색
             congestion_context = self.retrieve_congestion_rules(route_data)
-
-            # 실제 환승역 목록 생성
-            transfer_stations = []
-            for transfer in route_data.get("transfers", []):
-                station_name = transfer.get("station", {}).get("station_name", "")
-                if station_name:
-                    transfer_stations.append(station_name)
-            
+            transfer_stations = [t.get("station", {}).get("station_name", "") for t in route_data.get("transfers", []) if t.get("station")]
             transfer_info = f"실제 환승역: {', '.join(transfer_stations)}" if transfer_stations else "환승 없음"
-            
+
             prompt = f"""
 너는 지하철 경로 안내 전문가이다.
-실제 환승역 정보를 확인하고, 사용자가 환승할 때 도움이 되는 실용적인 조언을 제공하라.
-
-**중요 지침**:
-1. 반드시 아래 "실제 환승역" 목록에 있는 역만 언급할 것.
-2. **"데이터가 없다", "정보가 부족하다"는 식의 표현은 절대 사용하지 말 것.**
-3. 모든 정보는 확신 있는 어조로 제공할 것.
+실제 환승역 정보를 확인하고, 사용자가 환승할 때 도움이 되는 실용적인 조언을 1~2문장의 짧고 간결한 줄글(-입니다 체)로 작성하라.
+**절대 100자를 넘기지 마라.**
+개조식이나 불렛 포인트를 절대 사용하지 마라.
 
 [실제 경로 정보]
 {transfer_info}
@@ -147,51 +104,40 @@ class LLMService:
 - 총 소요시간: {total_time:.0f}분
 - 환승 횟수: {num_transfers}회
 - 혼잡도: {congestion_level}
-- 평균 혼잡도: {avg_congestion:.1f}%
-- 최대 혼잡도: {max_congestion:.1f}%
 
-조건:
-- 2-3문장으로 구성 (최대 150자)
-- 첫 문장: 전체적인 혼잡도 체감 표현 (예: "이번 열차는 여유롭네요!", "약간 붐빌 수 있어요")
-- 둘째 문장: 구체적인 팁이나 주의사항 (환승역 위치, 빠른 환승 칸, 이동 편의 등)
-- **반드시 실제 환승역 목록에 있는 역만 언급**
-- 친근하고 실용적인 톤 유지
-
-예시:
-- "이번 열차는 여유롭네요! 동대문역사문화공원 환승은 1-1 칸을 이용하면 빠르게 갈아탈 수 있어요."
-- "이동 시간이 짧고 쾌적한 경로입니다. 환승 시 앞쪽 칸을 이용하면 더욱 편리하게 이동 가능합니다."
-- "전반적으로 쾌적한 경로예요! 환승역은 이동 거리가 있을 수 있으니 미리 여유 있게 준비하세요."
-
-설명:
+작성 예시:
+"약수역은 3호선과 6호선이 만나는 역으로 환승 동선이 짧아 편리합니다. 이번 경로는 소요시간과 혼잡도 모두 적당하여 쾌적하게 이동하실 수 있습니다."
 """
-            
+
             response = self.client.chat.completions.create(
                 model=self.deployment_name,
                 messages=[
-                    {"role": "system", "content": "당신은 지하철 경로 안내 전문가입니다. 친근하고 실용적인 조언을 제공합니다."},
+                    {"role": "system", "content": "당신은 지하철 경로 안내 전문가입니다. 항상 '-입니다' 체로 친절하고 간결하게 줄글로 설명합니다."},
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=250,
-                temperature=0.8,
+                max_tokens=200,
+                temperature=0.7,
             )
-            
+
             description = response.choices[0].message.content.strip()
-            
-            if len(description) > 150:
-                description = description[:150] + "..."
+            # 말줄임표(...) 처리는 UI에서 하거나, 여기서 너무 길면 그냥 자르지 말고 프롬프트로 제어 시도.
+            # 그래도 안전장치로 120자 정도로 컷.
+            if len(description) > 120:
+                 # 문장 단위로 자르기 시도
+                 sentences = description.split('.')
+                 if len(sentences) > 2:
+                     description = '.'.join(sentences[:2]) + '.'
+                 else:
+                     description = description[:117] + "..."
             
             if not description or len(description) < 10:
-                return self._generate_rule_based_description(
-                    route_data, congestion_score, congestion_level, segment_details
-                )
-            
+                return self._generate_rule_based_description(route_data, congestion_score, congestion_level, segment_details)
+
             return description
-            
+
         except Exception as e:
             print(f"LLM 설명 생성 실패: {e}")
-            return self._generate_rule_based_description(
-                route_data, congestion_score, congestion_level, segment_details
-            )
+            return self._generate_rule_based_description(route_data, congestion_score, congestion_level, segment_details)
     
     def _generate_rule_based_description(
         self,
@@ -204,8 +150,12 @@ class LLMService:
         
         num_transfers = len(route_data.get("transfers", []))
         total_time = route_data.get("total_duration", 0) / 60
-        avg_congestion = sum(seg['congestion'] for seg in segment_details) / len(segment_details)
-        max_congestion = max(seg['congestion'] for seg in segment_details)
+        if segment_details and len(segment_details) > 0:
+            avg_congestion = sum(seg['congestion'] for seg in segment_details) / len(segment_details)
+            max_congestion = max(seg['congestion'] for seg in segment_details)
+        else:
+            avg_congestion = 0.0
+            max_congestion = 0.0
         
         description_parts = []
         

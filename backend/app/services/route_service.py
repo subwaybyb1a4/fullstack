@@ -322,7 +322,7 @@ class RouteService:
         departure: str, 
         arrival: str,
         departure_time: Optional[str] = None
-    ) -> Route:
+    ) -> Optional[Route]:
         """
         최단 경로 조회 (ODSay API 사용)
         
@@ -373,41 +373,17 @@ class RouteService:
             return self._parse_odsay_route(odsay_data, RouteType.FASTEST)
         
         except Exception as e:
-            # API 호출 실패 시 더미 데이터 반환 (개발 중)
+            # API 호출 실패 시 None 반환
             import traceback
-            print(f"[RouteService] ODSay API 호출 실패: {str(e)}")
-            print(f"[RouteService] 에러 상세:")
-            traceback.print_exc()
-            # 더미 데이터는 실제 역 정보 없이 반환
-            return Route(
-                route_type=RouteType.FASTEST,
-                total_duration=1800,
-                total_walking_time=300,
-                segments=[
-                    RouteSegment(
-                        from_station=StationInfo(
-                            station_id="",
-                            station_name=departure,
-                            line_number=""
-                        ),
-                        to_station=StationInfo(
-                            station_id="",
-                            station_name=arrival,
-                            line_number=""
-                        ),
-                        line_number="",
-                        duration=600
-                    )
-                ],
-                transfers=[]
-            )
+            print(f"[RouteService] 최단 경로 조회 실패: {str(e)}")
+            return None
     
     async def get_min_walk_route(
         self,
         departure: str,
         arrival: str,
         departure_time: Optional[str] = None
-    ) -> Route:
+    ) -> Optional[Route]:
         """
         최소 걸음 경로 조회 (ODSay API 사용)
         
@@ -458,34 +434,11 @@ class RouteService:
             return self._parse_odsay_route(odsay_data, RouteType.MIN_WALK)
         
         except Exception as e:
-            # API 호출 실패 시 더미 데이터 반환 (개발 중)
+            # API 호출 실패 시 None 반환 (메인 로직에서 처리)
             import traceback
-            print(f"[RouteService] ODSay API 호출 실패: {str(e)}")
-            print(f"[RouteService] 에러 상세:")
-            traceback.print_exc()
-            # 더미 데이터는 실제 역 정보 없이 반환
-            return Route(
-                route_type=RouteType.MIN_WALK,
-                total_duration=2100,
-                total_walking_time=120,
-                segments=[
-                    RouteSegment(
-                        from_station=StationInfo(
-                            station_id="",
-                            station_name=departure,
-                            line_number=""
-                        ),
-                        to_station=StationInfo(
-                            station_id="",
-                            station_name=arrival,
-                            line_number=""
-                        ),
-                        line_number="",
-                        duration=1980
-                    )
-                ],
-                transfers=[]
-            )
+            print(f"[RouteService] 최소 걸음 경로 조회 실패: {str(e)}")
+            # traceback.print_exc()
+            return None
 
 
 class ComfortRouteService:
@@ -578,7 +531,8 @@ class ComfortRouteService:
                     all_routes.extend(routes_from_type)
                     print(f"[ComfortRouteService] search_type={search_type}에서 {len(routes_from_type)}개 경로 조회")
                 except Exception as e:
-                    print(f"[ComfortRouteService] search_type={search_type} 조회 실패: {str(e)}")
+                    # ODSay에서 특정 타입 경로가 없을 때 500 에러 등을 줄 수 있음. 무시하고 진행.
+                    print(f"[ComfortRouteService] search_type={search_type} 조회 실패 (경로 없음 추정): {str(e)}")
                     continue
             
             # 중복 경로 제거 (같은 segments를 가진 경로는 하나만 유지)
@@ -610,11 +564,12 @@ class ComfortRouteService:
                 segments_with_congestion = route.segments
                 
                 # 편안함 근거 설명 생성 (LLM 사용)
+                # 편안함 근거 설명 생성 (LLM 사용)
                 route_info = {
                         "segments": [
                             {
-                                "from_station": seg.from_station,
-                                "to_station": seg.to_station,
+                                "from_station": seg.from_station.model_dump(),
+                                "to_station": seg.to_station.model_dump(),
                                 "line_number": seg.line_number,
                                 "duration": seg.duration
                             }
@@ -622,7 +577,7 @@ class ComfortRouteService:
                         ],
                         "transfers": [
                             {
-                                "station": transfer.station,
+                                "station": transfer.station.model_dump(),
                                 "from_line": transfer.from_line,
                                 "to_line": transfer.to_line,
                                 "walking_time": transfer.walking_time

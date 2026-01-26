@@ -106,9 +106,13 @@ class RouteDetail(BaseModel):
     transfer_count: int = Field(..., description="환승 횟수")
     segments: List[SegmentResponse] = Field(..., description="경로 구간 배열")
     summary: Optional[str] = Field(None, description="AI 꿀팁 한줄")
+    tags: List[str] = Field(default_factory=list, description="경로 태그 (최단 시간, 최소 도보 등)")
 
 class SearchResponse(BaseModel):
     search_group_id: str = Field(..., description="검색 결과 묶음 ID")
-    min_time: RouteDetail = Field(..., description="최단 시간 경로")
-    min_crowding: RouteDetail = Field(..., description="덜 붐비는 경로")
-    min_walking: RouteDetail = Field(..., description="최소 도보 경로")
+    routes: List[RouteDetail] = Field(default_factory=list, description="추천 경로 리스트 (최대 3개)")
+    # Legacy fields
+    min_time: Optional[RouteDetail] = Field(None, description="최단 시간 경로 (Legacy)")
+    min_crowding: Optional[RouteDetail] = Field(None, description="덜 붐비는 경로 (Legacy)")
+    min_walking: Optional[RouteDetail] = Field(None, description="최소 도보 경로 (Legacy)")
+    alternatives: Optional[List[RouteDetail]] = Field(None, description="대안 경로 (Legacy)")
