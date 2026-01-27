@@ -4,7 +4,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
-from app.api import routes, crowding, explain, favorites
+from app.api import routes
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -22,14 +22,7 @@ app.add_middleware(
 )
 
 # API 라우터 등록
-# app.include_router(routes.router, prefix="/api/v1")
-# app.include_router(crowding.router, prefix="/api/v1")
-# app.include_router(explain.router, prefix="/api/v1")
-# app.include_router(favorites.router, prefix="/api/v1")
 app.include_router(routes.router, prefix="/api")
-app.include_router(crowding.router, prefix="/api")
-app.include_router(explain.router, prefix="/api")
-app.include_router(favorites.router, prefix="/api")
 
 
 @app.get("/")

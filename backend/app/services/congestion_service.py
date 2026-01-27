@@ -202,17 +202,32 @@ class CongestionService:
         # I will modify routes.py to calculate avg from details.
         
         return round(score, 2), segment_details
+    
+    def calculate_avg_congestion(self, segment_details):
+        if not segment_details:
+            return 0.0
+        return round(
+            sum(s["congestion"] for s in segment_details) / len(segment_details),
+            2
+        )
 
-    def get_congestion_level(self, score: float) -> str:
+
+    def get_congestion_level(self, avg_congestion: float) -> str:
         """
-        점수를 혼잡도 레벨로 변환
-        Legacy: score was weighted.
-        New: score should be 'average congestion' (0-100).
+        평균 혼잡도(0–100)를 혼잡도 레벨로 변환 (세분화 버전)
         """
-        if score < 30:
+        if avg_congestion < 20:
+            return "매우 여유 🟢✨"
+        elif avg_congestion < 30:
             return "여유 🟢"
-        elif score < 50:
+        elif avg_congestion < 40:
+            return "쾌적 🟡✨"
+        elif avg_congestion < 50:
             return "보통 🟡"
-        elif score < 70:
-            return "혼잡 🟠"
-        return "매우 혼잡 🔴"
+        elif avg_congestion < 60:
+            return "약간 혼잡 🟠"
+        elif avg_congestion < 70:
+            return "혼잡 🟠🔥"
+        else:
+            return "매우 혼잡 🔴"
+
