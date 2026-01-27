@@ -49,3 +49,10 @@ backend/dist/
 bin/
 obj/
 
+# .gitignore 파일에 추가
+.venv/
+backend/.venv/
+**/__pycache__/
+backend/.venv/
+**/.venv/
+__pycache__/
