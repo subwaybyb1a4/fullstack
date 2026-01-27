@@ -613,8 +613,8 @@ class ComfortRouteService:
                 route_info = {
                         "segments": [
                             {
-                                "from_station": seg.from_station,
-                                "to_station": seg.to_station,
+                                "from_station": seg.from_station.dict(),
+                                "to_station": seg.to_station.dict(),
                                 "line_number": seg.line_number,
                                 "duration": seg.duration
                             }
@@ -622,7 +622,7 @@ class ComfortRouteService:
                         ],
                         "transfers": [
                             {
-                                "station": transfer.station,
+                                "station": transfer.station.dict(),
                                 "from_line": transfer.from_line,
                                 "to_line": transfer.to_line,
                                 "walking_time": transfer.walking_time

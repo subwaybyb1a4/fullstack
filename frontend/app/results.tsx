@@ -213,12 +213,14 @@ export default function RouteResults() {
             onPress={() =>
               // 상세 페이지 이동 시 전체 데이터를 문자열로 변환하여 전달 (추가 API 호출 방지)
               router.push({
+                //pathname: "/tracking/[id]",
                 pathname: "/detail/[id]",
                 params: {
-                  id: route.route_id,
-                  from: fromStation,
-                  to: toStation,
-                  routeData: JSON.stringify(route),
+                id: route.route_id,
+                from: fromStation,
+                to: toStation,
+                //routeData: JSON.stringify(route),
+                routeData: encodeURIComponent(JSON.stringify(route)),
                 },
               })
             }

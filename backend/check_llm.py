@@ -1,14 +1,41 @@
-import requests 
+import requests
+import json
+import sys
 
-resp = requests.get("http://localhost:8000/api/v1/routes", params={"departure": "서울역", "arrival": "강남역"})
-data = resp.json()
+# Set encoding to utf-8 for console output
+sys.stdout.reconfigure(encoding='utf-8')
 
-print("=== Min Crowding Summary ===")
-print(data['min_crowding']['summary'])
+url = "http://localhost:8000/api/routes/search"
+payload = {
+    "from_station": "서울역",
+    "to_station": "강남역",
+    "searched_time": "2024-01-26T09:00:00"
+}
+headers = {
+    "Content-Type": "application/json"
+}
 
-print("\n=== Min Time Summary ===")
-print(data['min_time']['summary'])
+try:
+    print(f"Sending request to {url}...")
+    response = requests.post(url, json=payload, headers=headers)
+    response.raise_for_status()
+    
+    data = response.json()
+    
+    print("\n=== Min Crowding Summary (LLM) ===")
+    summary = data.get('min_crowding', {}).get('summary')
+    print(summary)
+    
+    print("\n=== Min Time Summary (LLM) ===")
+    summary_time = data.get('min_time', {}).get('summary')
+    print(summary_time)
+    
+    if summary and "," in summary and "경로" in summary and len(summary) < 50:
+         print("\n[Analysis] The output looks like Rule-based (Fallback).")
+    else:
+         print("\n[Analysis] The output looks like LLM-generated (Natural Language).")
 
-# Rule-based descriptions typically have very specific patterns like:
-# "빠른 경로, 1회 환승, 여유로운 구간. 추천 경로입니다."
-# LLM descriptions are more natural and varied
+except Exception as e:
+    print(f"Error: {e}")
+    if hasattr(e, 'response') and e.response:
+        print(f"Response text: {e.response.text}")
