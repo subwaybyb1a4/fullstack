@@ -9,3 +9,16 @@ expo-env.d.ts
 .venv/
 backend/.venv/
 **/__pycache__/
+# .gitignore 파일에 추가
+.env
+
+# 의존성 및 환경 변수 제외
+node_modules/
+.env
+*.log
+
+# 빌드 결과물 및 캐시
+.expo/
+dist/
+__pycache__/
+*.pyc

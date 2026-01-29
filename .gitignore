@@ -1,4 +1,4 @@
-# --- 공통 (OS 및 IDE) ---
+# --- OS 및 IDE 설정 ---
 .DS_Store
 .DS_Store?
 ._*
@@ -8,51 +8,42 @@
 *.log
 *.tmp
 
-# --- 보안 및 환경 변수 (매우 중요) ---
-# 루트와 각 폴더 내의 모든 .env 파일을 무시합니다.
+# --- 보안 및 환경 변수 (절대 금지) ---
 .env
-.env*.local
+.env.*
 *.pem
 *.key
-.env.development
+**/ .env
+**/.env.*
 
 # --- Frontend (Expo / React Native / Node) ---
-# 프로젝트 관련 프론트엔드 설정
 node_modules/
-frontend/node_modules/
+**/node_modules/
 .expo/
-frontend/.expo/
-frontend/dist/
-frontend/web-build/
-frontend/ios/
-frontend/android/
-frontend/expo-env.d.ts
+dist/
+web-build/
+ios/
+android/
+expo-env.d.ts
 *.jks
 *.p12
 *.mobileprovision
 
 # --- Backend (Python / Django / FastAPI) ---
-# 지하철 경로 안내 프로젝트 관련 백엔드 설정
 __pycache__/
-backend/__pycache__/
+**/__pycache__/
 *.py[cod]
 *$py.class
-backend/venv/
-backend/env/
-backend/ENV/
-backend/db.sqlite3
-backend/build/
-backend/dist/
+venv/
+.venv/
+env/
+ENV/
+**/venv/
+**/.venv/
+db.sqlite3
+build/
 .ipynb_checkpoints/
 
 # --- 기타 빌드 결과물 ---
 bin/
 obj/
-
-# .gitignore 파일에 추가
-.venv/
-backend/.venv/
-**/__pycache__/
-backend/.venv/
-**/.venv/
-__pycache__/

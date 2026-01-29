@@ -1,13 +1,11 @@
-// app/search.tsx
 import { useRouter } from "expo-router";
-import { ArrowLeft, MapPin, Search, Target } from "lucide-react-native";
+import { ArrowLeft, MapPin, Search, Target, Clock } from "lucide-react-native";
 import { useMemo, useState } from "react";
 import {
   FlatList,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
@@ -15,9 +13,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-
+// ✅ [수정] react-native의 SafeAreaView 대신 safe-area-context 사용 (튕김 방지)
+import { SafeAreaView } from "react-native-safe-area-context";
+import DateTimePicker from "@react-native-community/datetimepicker";
 import stationsJson from "../data/stations.json";
 
+// --- 데이터 타입 정의 ---
 type StationRow = {
   id: string | number;
   name: string;
@@ -27,14 +28,14 @@ type StationRow = {
 };
 
 type GroupedStation = {
-  id: string; // name 기반
+  id: string; 
   name: string;
-  lines: string[]; // 여러 노선 배지
+  lines: string[];
 };
 
 const STATIONS = stationsJson as unknown as StationRow[];
 
-// ✅ 자동완성 개선: 공백/대소문자 무시 + "역" 접미사 무시 + startsWith 우선 정렬
+// ✅ [자동완성 로직]
 const normalize = (v: string) =>
   v.trim().toLowerCase().replace(/\s+/g, "").replace(/역$/g, "");
 
@@ -42,227 +43,237 @@ const rankAndGroupStations = (query: string): GroupedStation[] => {
   const q = normalize(query);
   if (!q) return [];
 
-  // (1) 이름 기준 점수 산정 + 우선순위 정렬
   const scored = STATIONS
     .map((s) => {
       const nameN = normalize(s.name);
       const idx = nameN.indexOf(q);
-
-      // startsWith(0) 최우선, includes는 뒤로 밀기
-      const score = idx === 0 ? 0 : idx > 0 ? 10 + idx : 9999;
-      return { s, score };
+      if (idx === -1) return null;
+      let score = 100;
+      if (nameN === q) score = 0;
+      else if (nameN.startsWith(q)) score = 10 + idx;
+      else score = 50 + idx;
+      return { ...s, score };
     })
-    .filter((x) => x.score < 9999)
-    .sort((a, b) => a.score - b.score || a.s.name.length - b.s.name.length);
+    .filter((s): s is StationRow & { score: number } => s !== null)
+    .sort((a, b) => a.score - b.score);
 
-  // (2) 동일 역명 groupBy: name -> lines set
-  const map = new Map<string, { score: number; lines: Set<string> }>();
+  const map = new Map<string, Set<string>>();
+  scored.forEach((s) => {
+    let name = s.name;
+    if (name === "서울역") name = "서울";
+    if (!map.has(name)) map.set(name, new Set());
+    map.get(name)?.add(s.line);
+  });
 
-  for (const item of scored) {
-    const name = item.s.name;
-    const line = item.s.line ?? "";
-    const prev = map.get(name);
-
-    if (!prev) {
-      map.set(name, { score: item.score, lines: new Set([line]) });
-    } else {
-      // 더 좋은 score(작을수록) 유지
-      if (item.score < prev.score) prev.score = item.score;
-      prev.lines.add(line);
-    }
+  const results: GroupedStation[] = [];
+  for (const [name, lineSet] of map.entries()) {
+    if (results.length >= 20) break;
+    const sortedLines = Array.from(lineSet).sort();
+    results.push({ id: name, name, lines: sortedLines });
   }
-
-  // (3) 그룹 결과 정렬 + 라인 정렬 + 최대 개수 제한
-  const grouped = Array.from(map.entries())
-    .map(([name, v]) => ({
-      id: name,
-      name,
-      score: v.score,
-      lines: Array.from(v.lines).filter(Boolean),
-    }))
-    .sort((a, b) => a.score - b.score || a.name.localeCompare(b.name, "ko"))
-    .slice(0, 20) // ✅ 너무 길면 여기 숫자 줄이면 됨 (예: 12)
-    .map((g) => ({
-      id: g.id,
-      name: g.name,
-      lines: g.lines.sort((a, b) => a.localeCompare(b, "ko")),
-    }));
-
-  return grouped;
+  return results;
 };
 
-// 1. 호선별 색상을 정의한 함수
-const getLineColor = (line: string) => {
-  const lineColors: { [key: string]: { bg: string; text: string } } = {
-    "01호선": { bg: "#E5F0F9", text: "#0052A4" },
-    "02호선": { bg: "#ECF7ED", text: "#3CB44A" },
-    "03호선": { bg: "#FDF2E8", text: "#EF7C1C" },
-    "04호선": { bg: "#E5F6FC", text: "#00A5DE" },
-    "05호선": { bg: "#F5F0F7", text: "#996CAC" },
-    "06호선": { bg: "#FAF2EB", text: "#CD7C2F" },
-    "07호선": { bg: "#F1F2E5", text: "#747F00" },
-    "08호선": { bg: "#FCE8F0", text: "#E6186C" },
-    "09호선": { bg: "#F8F7F4", text: "#BDB092" },
-    "경의선": { bg: "#E9F5F3", text: "#77C4A3" },
-    "공항철도": { bg: "#E5F2F9", text: "#0090D2" },
-    "수인분당": { bg: "#FFF9E6", text: "#F5A200" },
+// 🎨 [호선별 색상]
+const getLineStyle = (line: string) => {
+  const styles: any = {
+    "01호선": { bg: "#E5F0F9", color: "#0052A4" },
+    "02호선": { bg: "#ECF7ED", color: "#3CB44A" },
+    "03호선": { bg: "#FDF2E8", color: "#EF7C1C" },
+    "04호선": { bg: "#E5F6FC", color: "#00A5DE" },
+    "05호선": { bg: "#F5F0F7", color: "#996CAC" },
+    "06호선": { bg: "#FAF2EB", color: "#CD7C2F" },
+    "07호선": { bg: "#F1F2E5", color: "#747F00" },
+    "08호선": { bg: "#FCE8F0", color: "#E6186C" },
+    "09호선": { bg: "#F8F7F4", color: "#BDB092" },
+    "수인분당선": { bg: "#FDF4E5", color: "#F5A200" },
+    "신분당선": { bg: "#FDE8EE", color: "#D4003B" },
+    "경의선": { bg: "#E9F6F1", color: "#77C4A3" },
+    "공항철도": { bg: "#E5F4FB", color: "#0090D2" },
+    "GTX-A": { bg: "#F4EFFF", color: "#9A62F7" },
   };
-  // 해당하는 호선이 없으면 기본 회색 처리
-  return lineColors[line] || { bg: "#F3F4F6", text: "#6B7280" };
+  return styles[line] || { bg: "#F3F4F6", color: "#6B7280" };
 };
 
 export default function SearchScreen() {
   const router = useRouter();
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
-  const [searchMode, setSearchMode] = useState<"from" | "to" | null>(null);
+  
+  // ✅ [수정] 초기값을 확실한 Date 객체로 고정 (Invalid Date 방지)
+  const [commuteTime, setCommuteTime] = useState<Date>(new Date());
+  
+  const [isTimeEnabled, setIsTimeEnabled] = useState(false);
+  const [focusField, setFocusField] = useState<"from" | "to" | null>(null);
+  
+  const query = focusField === "from" ? from : focusField === "to" ? to : "";
+  const suggestions = useMemo(() => rankAndGroupStations(query), [query]);
 
-  const queryText = searchMode === "from" ? from : to;
-
-  const suggestions = useMemo(() => {
-    if (!searchMode) return [];
-    return rankAndGroupStations(queryText);
-  }, [searchMode, queryText]);
-
-  const handleStationSelect = (stationName: string) => {
-    if (searchMode === "from") {
-      setFrom(stationName);
-    } else if (searchMode === "to") {
-      setTo(stationName);
-    }
-    setSearchMode(null);
+  const onSelectStation = (stName: string) => {
+    if (focusField === "from") setFrom(stName);
+    else if (focusField === "to") setTo(stName);
+    setFocusField(null);
     Keyboard.dismiss();
   };
 
   const handleSearch = () => {
     if (from && to) {
+      // ✅ [수정] 날짜가 유효한지 한 번 더 확인 후 전송
+      const validTime = commuteTime instanceof Date && !isNaN(commuteTime.getTime()) 
+        ? commuteTime 
+        : new Date();
+        
       router.push({
         pathname: "/results",
-        params: { from, to },
+        params: { 
+          from, 
+          to,
+          searchTime: isTimeEnabled ? validTime.toISOString() : new Date().toISOString()
+        },
       });
     }
   };
 
-  // ✅ 키보드만 내리고, 검색 상태(searchMode)는 유지
-  const renderSuggestionItem = ({ item }: { item: GroupedStation }) => (
-    <TouchableOpacity
-      onPress={() => handleStationSelect(item.name)}
-      style={styles.suggestionItem}
-      activeOpacity={0.7}
-    >
-      <Search size={16} color="#9CA3AF" style={{ marginRight: 10 }} />
-      <Text style={styles.stationName}>{item.name}</Text>
-
-      <View style={styles.badgeWrap}>
-        {item.lines.map((line) => {
-          const { bg, text } = getLineColor(line);
-          // ✅ line이 "01호선" 형태일 때 앞의 '0'을 제거 (예: 1호선)
-          const displayLine = line.replace(/^0/, "");
-          return (
-            <Text
-              key={`${item.id}-${line}`}
-              style={[styles.lineBadge, { backgroundColor: bg, color: text }]}
-            >
-              {displayLine}
-            </Text>
-          );
-        })}
-      </View>
-    </TouchableOpacity>
-  );
+  const onChangeTime = (event: any, selectedDate?: Date) => {
+    // ✅ [수정] 취소했거나 날짜가 없으면 무시
+    if (event.type === 'dismissed') {
+        return;
+    }
+    if (selectedDate) {
+      setCommuteTime(selectedDate);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
+          <ArrowLeft size={24} color="#1F2937" />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>경로 검색</Text>
+      </View>
 
-      {/* 바깥 터치로 키보드만 내리기 */}
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === "ios" ? "padding" : undefined}
       >
-          {/* 헤더 */}
-          <View style={styles.header}>
-            <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-              <ArrowLeft size={24} color="#1F2937" />
-            </TouchableOpacity>
-            <Text style={styles.headerTitle}>경로 검색</Text>
-          </View>
-
-          <View style={styles.content}>
-            {/* 입력값 카드 */}
-            <View style={styles.inputCard}>
-              {/* 출발역 */}
-              <View style={styles.inputRow}>
-                <View style={styles.iconContainer}>
-                  <MapPin size={18} color="#3B82F6" />
-                </View>
-                <TextInput
-                  value={from}
-                  onChangeText={(text) => {
-                    setFrom(text);
-                    setSearchMode("from");
-                  }}
-                  onFocus={() => setSearchMode("from")}
-                  returnKeyType="done"
-                  placeholder="출발역 입력"
-                  style={styles.input}
-                  placeholderTextColor="#9CA3AF"
-                />
-              </View>
-
-              <View style={styles.divider} />
-
-              {/* 도착역 */}
-              <View style={styles.inputRow}>
-                <View style={styles.iconContainer}>
-                  <Target size={18} color="#EF4444" />
-                </View>
-                <TextInput
-                  value={to}
-                  onChangeText={(text) => {
-                    setTo(text);
-                    setSearchMode("to");
-                  }}
-                  onFocus={() => setSearchMode("to")}
-                  returnKeyType="search"
-                  placeholder="도착역 입력"
-                  style={styles.input}
-                  placeholderTextColor="#9CA3AF"
-                  onSubmitEditing={handleSearch}
-                />
-              </View>
+        <View style={styles.content}>
+          <View style={styles.inputCard}>
+            <View style={styles.inputRow}>
+              <MapPin size={20} color="#2563EB" />
+              <TextInput
+                style={styles.textInput}
+                placeholder="출발역 입력"
+                value={from}
+                onChangeText={setFrom}
+                onFocus={() => setFocusField("from")}
+              />
             </View>
+            <View style={styles.divider} />
+            <View style={styles.inputRow}>
+              <Target size={20} color="#EF4444" />
+              <TextInput
+                style={styles.textInput}
+                placeholder="도착역 입력"
+                value={to}
+                onChangeText={setTo}
+                onFocus={() => setFocusField("to")}
+              />
+            </View>
+          </View>
 
-            {/* 자동완성 목록 (FlatList로 스크롤 가능 + 키보드 유지) */}
-            {searchMode && queryText.trim().length > 0 && (
-              <View style={styles.suggestionList}>
-                <FlatList
-                  data={suggestions}
-                  keyExtractor={(item) => item.id}
-                  renderItem={renderSuggestionItem}
-                  keyboardShouldPersistTaps="handled"
-                  keyboardDismissMode="on-drag"
-                  style={{ maxHeight: 320 }} // ✅ 키보드 올라와도 적당히 스크롤되게
-                  ListEmptyComponent={
-                    <View style={styles.emptyState}>
-                      <Text style={styles.emptyText}>검색 결과가 없어요</Text>
+          {/* 자동완성 목록 */}
+          {focusField && query.trim().length > 0 && (
+            <View style={styles.suggestionList}>
+              <FlatList
+                data={suggestions}
+                keyboardShouldPersistTaps="handled"
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                  <TouchableOpacity
+                    style={styles.suggestionItem}
+                    onPress={() => onSelectStation(item.name)}
+                  >
+                    <Search size={18} color="#9CA3AF" style={{ marginRight: 10 }} />
+                    <Text style={styles.stationName}>{item.name}</Text>
+                    <View style={styles.badgeWrap}>
+                      {item.lines.map((line) => {
+                        const s = getLineStyle(line);
+                        return (
+                          <Text 
+                            key={line} 
+                            style={[styles.lineBadge, { backgroundColor: s.bg, color: s.color }]}
+                          >
+                            {line.replace("수도권", "").replace("호선", "").trim().replace(/^0+/, "")}
+                          </Text>
+                        );
+                      })}
                     </View>
-                  }
-                />
-              </View>
-            )}
-          </View>
+                  </TouchableOpacity>
+                )}
+                ListEmptyComponent={
+                  <View style={styles.emptyState}>
+                    <Text style={styles.emptyText}>검색 결과가 없습니다.</Text>
+                  </View>
+                }
+              />
+            </View>
+          )}
 
-          {/* 하단 검색 버튼 */}
-          <View style={styles.footer}>
-            <TouchableOpacity
-              onPress={handleSearch}
-              disabled={!from || !to}
-              style={[styles.searchButton, (!from || !to) && styles.disabledButton]}
-            >
-              <Text style={styles.searchButtonText}>경로 검색하기</Text>
-            </TouchableOpacity>
-          </View>
+          {/* ⏰ 시간 설정 버튼 */}
+          <TouchableOpacity 
+            style={[styles.timeToggle, isTimeEnabled && styles.timeToggleActive]} 
+            onPress={() => setIsTimeEnabled(!isTimeEnabled)}
+          >
+            <Clock size={20} color={isTimeEnabled ? "#2563EB" : "#9CA3AF"} />
+            <Text style={[styles.timeToggleText, { color: isTimeEnabled ? "#2563EB" : "#9CA3AF" }]}>
+              고정 시간 설정하기
+            </Text>
+          </TouchableOpacity>
+
+          {/* ✅ 시간 선택기 (안전한 버전) */}
+          {isTimeEnabled && (
+            <View style={styles.pickerContainer}>
+              {Platform.OS === 'web' ? (
+                /* 웹 환경 */
+                <View style={{ padding: 20, alignItems: 'center' }}>
+                  <input
+                    type="time"
+                    style={{ fontSize: '18px', padding: '10px', borderRadius: '8px', border: '1px solid #ccc', marginBottom: '10px' }}
+                    value={commuteTime.toTimeString().slice(0, 5)}
+                    onChange={(e) => {
+                      const [h, m] = e.target.value.split(':');
+                      const newDate = new Date();
+                      newDate.setHours(Number(h), Number(m));
+                      setCommuteTime(newDate);
+                    }}
+                  />
+                </View>
+              ) : (
+                /* 모바일 환경 */
+                <DateTimePicker
+                  value={commuteTime instanceof Date ? commuteTime : new Date()} // ✅ 날짜 객체 보장
+                  mode="time"
+                  display="spinner"
+                  onChange={onChangeTime}
+                  textColor="black"
+                  themeVariant="light"
+                />
+              )}
+            </View>
+          )}
+        </View>
+
+        <View style={styles.footer}>
+          <TouchableOpacity
+            style={[styles.searchButton, (!from || !to) && styles.searchButtonDisabled]}
+            onPress={handleSearch}
+            disabled={!from || !to}
+          >
+            <Text style={styles.searchButtonText}>경로 검색하기</Text>
+          </TouchableOpacity>
+        </View>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );
@@ -278,36 +289,29 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#F3F4F6",
   },
-  backButton: { padding: 8, marginRight: 8 },
+  backButton: { padding: 4, marginRight: 8 },
   headerTitle: { fontSize: 18, fontWeight: "700", color: "#111827" },
-
   content: { flex: 1, padding: 20 },
-
   inputCard: {
     backgroundColor: "white",
     borderRadius: 16,
-    padding: 8,
     borderWidth: 1,
     borderColor: "#E5E7EB",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 4,
+    overflow: "hidden",
     elevation: 2,
   },
-  inputRow: { flexDirection: "row", alignItems: "center", padding: 8 },
-  iconContainer: {
-    width: 32,
-    height: 32,
+  inputRow: {
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#F3F4F6",
-    borderRadius: 8,
-    marginRight: 12,
+    padding: 16,
   },
-  input: { flex: 1, fontSize: 16, color: "#111827", height: 40 },
+  textInput: {
+    flex: 1,
+    marginLeft: 12,
+    fontSize: 16,
+    color: "#1F2937",
+  },
   divider: { height: 1, backgroundColor: "#F3F4F6", marginLeft: 52 },
-
   suggestionList: {
     marginTop: 16,
     backgroundColor: "white",
@@ -316,6 +320,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#E5E7EB",
     elevation: 4,
+    maxHeight: 300, 
   },
   suggestionItem: {
     flexDirection: "row",
@@ -326,8 +331,6 @@ const styles = StyleSheet.create({
     borderBottomColor: "#F3F4F6",
   },
   stationName: { fontSize: 16, color: "#1F2937", flex: 1 },
-
-  // ✅ 여러 배지 감싸기 (공덕: 05호선 06호선 경의선 공항철도)
   badgeWrap: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -336,25 +339,20 @@ const styles = StyleSheet.create({
     maxWidth: 160,
   },
   lineBadge: {
-    fontSize: 12,
-    //color: "#15803D",
-    //backgroundColor: "#DCFCE7",
-    paddingHorizontal: 8,
-    paddingVertical: 3,
-    borderRadius: 999,
-    fontWeight: "600",
+    fontSize: 11,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 6,
+    fontWeight: "700",
     overflow: "hidden",
   },
-
   emptyState: { padding: 18, alignItems: "center" },
   emptyText: { color: "#9CA3AF" },
-
-  footer: {
-    padding: 20,
-    backgroundColor: "white",
-    borderTopWidth: 1,
-    borderTopColor: "#F3F4F6",
-  },
+  timeToggle: { flexDirection: "row", alignItems: "center", backgroundColor: "white", marginTop: 20, padding: 16, borderRadius: 16, gap: 10, borderWidth: 1, borderColor: "#E5E7EB" },
+  timeToggleActive: { borderColor: "#2563EB", backgroundColor: "#EFF6FF" },
+  timeToggleText: { fontSize: 15, fontWeight: "600" },
+  pickerContainer: { marginTop: 10, backgroundColor: "white", borderRadius: 16, overflow: "hidden" },
+  footer: { padding: 20, backgroundColor: "transparent" },
   searchButton: {
     backgroundColor: "#2563EB",
     paddingVertical: 16,
@@ -366,6 +364,6 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 4,
   },
-  disabledButton: { backgroundColor: "#E5E7EB", shadowOpacity: 0 },
-  searchButtonText: { color: "white", fontSize: 16, fontWeight: "700" },
+  searchButtonDisabled: { backgroundColor: "#D1D5DB", shadowOpacity: 0, elevation: 0 },
+  searchButtonText: { color: "white", fontSize: 18, fontWeight: "700" },
 });

@@ -4,6 +4,7 @@ ODSay API 서비스
 import httpx
 from typing import Optional, Dict, Any, List
 from app.core.config import settings
+from app.services.rate_limiter import RateLimiter
 
 
 class ODSayService:
@@ -21,6 +22,14 @@ class ODSayService:
         
         if not self.api_key:
             raise ValueError("ODSay API 키가 필요합니다. 환경변수 ODSAY_API_KEY를 설정하세요.")
+        
+        # Rate Limiter 초기화
+        # 초당: 2회, 분당: 30회, 5분당: 100회
+        self.rate_limiter = RateLimiter(
+            per_second=2,
+            per_minute=30,
+            per_5minutes=100
+        )
     
     async def search_station(
         self,
@@ -37,6 +46,9 @@ class ODSayService:
         Returns:
             검색된 역 정보 리스트
         """
+        # Rate limit 체크 및 대기
+        await self.rate_limiter.wait_if_needed()
+        
         url = f"{self.base_url}/searchStation"
         params = {
             "apiKey": self.api_key,
@@ -125,6 +137,9 @@ class ODSayService:
         Returns:
             경로 정보
         """
+        # Rate limit 체크 및 대기
+        await self.rate_limiter.wait_if_needed()
+        
         url = f"{self.base_url}/searchPubTransPath"
         params = {
             "apiKey": self.api_key,

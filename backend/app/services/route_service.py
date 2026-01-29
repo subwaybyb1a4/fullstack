@@ -7,6 +7,7 @@ from app.schemas.route import (
 )
 from app.services.odsay_service import ODSayService
 from datetime import datetime
+from app.schemas.route import RouteType
 
 
 class RouteService:
@@ -24,6 +25,55 @@ class RouteService:
         except ValueError as e:
             print(f"[RouteService] ODSay 서비스 초기화 실패: {str(e)}")
             self.odsay = None
+
+    # RouteService 클래스 안에 추가
+    def _make_cache_key(self, departure: str, arrival: str, time: Optional[str]):
+        return f"{departure}:{arrival}:{time or 'now'}"
+
+    async def get_all_routes_once(
+        self,
+        departure: str,
+        arrival: str,
+        departure_time: Optional[str] = None
+    ) -> List[Route]:
+        """
+        ODSay 단 1회 호출로 모든 경로 가져오기 (캐시 포함)
+        """
+        if not self.odsay:
+            print("[RouteService] ODSay 없음, 더미 반환")
+            return []
+
+        # 캐시 초기화
+        if not hasattr(self, "_route_cache"):
+            self._route_cache = {}
+
+        key = self._make_cache_key(departure, arrival, departure_time)
+
+        # 🔒 캐시 hit
+        if key in self._route_cache:
+            print("[RouteService] 캐시 사용, ODSay 재호출 안 함")
+            return self._route_cache[key]
+
+        print(f"[RouteService] ODSay 단일 호출: {departure} → {arrival}")
+
+        # search_type=0 하나만 호출해도 path 안에 여러 대안경로 들어 있음
+        odsay_data = await self.odsay.search_route_by_station_name(
+            departure_station=departure,
+            arrival_station=arrival,
+            search_type=0,        # 최단 기준
+            search_path_type=1   # 지하철만
+        )
+
+        # ⭐ 기존에 잘 만들어둔 전체 파싱 함수 그대로 사용
+        routes = self._parse_all_odsay_routes(odsay_data, RouteType.COMFORT)
+
+        # 캐시에 저장
+        self._route_cache[key] = routes
+
+        print(f"[RouteService] 단일 호출로 {len(routes)}개 경로 확보 완료")
+
+        return routes
+
     
     def _parse_odsay_path(
         self,
@@ -317,175 +367,25 @@ class RouteService:
         print(f"[RouteService] 총 {len(routes)}개 경로 파싱 완료")
         return routes
     
-    async def get_fastest_route(
-        self, 
-        departure: str, 
-        arrival: str,
-        departure_time: Optional[str] = None
-    ) -> Route:
-        """
-        최단 경로 조회 (ODSay API 사용)
-        
-        Args:
-            departure: 출발역 이름
-            arrival: 도착역 이름
-            departure_time: 출발 시간 (None이면 현재 시간 사용)
-        
-        Returns:
-            최단 경로 정보
-        """
-        if not self.odsay:
-            print(f"[RouteService] ODSay 서비스가 없어 더미 데이터 반환")
-            return Route(
-                route_type=RouteType.FASTEST,
-                total_duration=1800,
-                total_walking_time=300,
-                segments=[
-                    RouteSegment(
-                        from_station=StationInfo(
-                            station_id="",
-                            station_name=departure,
-                            line_number=""
-                        ),
-                        to_station=StationInfo(
-                            station_id="",
-                            station_name=arrival,
-                            line_number=""
-                        ),
-                        line_number="",
-                        duration=600
-                    )
-                ],
-                transfers=[]
-            )
-        
-        try:
-            # ODSay API 호출 (최단시간: search_type=0)
-            print(f"[RouteService] 최단 경로 조회 시작: {departure} → {arrival}")
-            odsay_data = await self.odsay.search_route_by_station_name(
-                departure_station=departure,
-                arrival_station=arrival,
-                search_type=0,  # 최단시간
-                search_path_type=1  # 지하철만
-            )
-            
-            print(f"[RouteService] ODSay API 호출 성공, 경로 파싱 시작")
-            return self._parse_odsay_route(odsay_data, RouteType.FASTEST)
-        
-        except Exception as e:
-            # API 호출 실패 시 더미 데이터 반환 (개발 중)
-            import traceback
-            print(f"[RouteService] ODSay API 호출 실패: {str(e)}")
-            print(f"[RouteService] 에러 상세:")
-            traceback.print_exc()
-            # 더미 데이터는 실제 역 정보 없이 반환
-            return Route(
-                route_type=RouteType.FASTEST,
-                total_duration=1800,
-                total_walking_time=300,
-                segments=[
-                    RouteSegment(
-                        from_station=StationInfo(
-                            station_id="",
-                            station_name=departure,
-                            line_number=""
-                        ),
-                        to_station=StationInfo(
-                            station_id="",
-                            station_name=arrival,
-                            line_number=""
-                        ),
-                        line_number="",
-                        duration=600
-                    )
-                ],
-                transfers=[]
-            )
-    
-    async def get_min_walk_route(
-        self,
-        departure: str,
-        arrival: str,
-        departure_time: Optional[str] = None
-    ) -> Route:
-        """
-        최소 걸음 경로 조회 (ODSay API 사용)
-        
-        Args:
-            departure: 출발역 이름
-            arrival: 도착역 이름
-            departure_time: 출발 시간 (None이면 현재 시간 사용)
-        
-        Returns:
-            최소 걸음 경로 정보
-        """
-        if not self.odsay:
-            print(f"[RouteService] ODSay 서비스가 없어 더미 데이터 반환")
-            return Route(
-                route_type=RouteType.MIN_WALK,
-                total_duration=2100,
-                total_walking_time=120,
-                segments=[
-                    RouteSegment(
-                        from_station=StationInfo(
-                            station_id="",
-                            station_name=departure,
-                            line_number=""
-                        ),
-                        to_station=StationInfo(
-                            station_id="",
-                            station_name=arrival,
-                            line_number=""
-                        ),
-                        line_number="",
-                        duration=1980
-                    )
-                ],
-                transfers=[]
-            )
-        
-        try:
-            # ODSay API 호출 (최소도보: search_type=3)
-            print(f"[RouteService] 최소 걸음 경로 조회 시작: {departure} → {arrival}")
-            odsay_data = await self.odsay.search_route_by_station_name(
-                departure_station=departure,
-                arrival_station=arrival,
-                search_type=3,  # 최소도보
-                search_path_type=1  # 지하철만
-            )
-            
-            print(f"[RouteService] ODSay API 호출 성공, 경로 파싱 시작")
-            return self._parse_odsay_route(odsay_data, RouteType.MIN_WALK)
-        
-        except Exception as e:
-            # API 호출 실패 시 더미 데이터 반환 (개발 중)
-            import traceback
-            print(f"[RouteService] ODSay API 호출 실패: {str(e)}")
-            print(f"[RouteService] 에러 상세:")
-            traceback.print_exc()
-            # 더미 데이터는 실제 역 정보 없이 반환
-            return Route(
-                route_type=RouteType.MIN_WALK,
-                total_duration=2100,
-                total_walking_time=120,
-                segments=[
-                    RouteSegment(
-                        from_station=StationInfo(
-                            station_id="",
-                            station_name=departure,
-                            line_number=""
-                        ),
-                        to_station=StationInfo(
-                            station_id="",
-                            station_name=arrival,
-                            line_number=""
-                        ),
-                        line_number="",
-                        duration=1980
-                    )
-                ],
-                transfers=[]
-            )
+    async def get_fastest_route(self, departure: str, arrival: str, departure_time: Optional[str] = None) -> Route:
+        routes = await self.get_all_routes_once(departure, arrival, departure_time)
+
+        if not routes:
+            raise ValueError("경로 없음")
+
+        fastest = min(routes, key=lambda r: r.total_duration)
+        fastest.route_type = RouteType.FASTEST
+        return fastest
+
+    async def get_min_walk_route(self, departure: str, arrival: str, departure_time: Optional[str] = None) -> Route:
+        routes = await self.get_all_routes_once(departure, arrival, departure_time)
+
+        if not routes:
+            raise ValueError("경로 없음")
+
+        min_walk = min(routes, key=lambda r: r.total_walking_time)
+        min_walk.route_type = RouteType.MIN_WALK
+        return min_walk
 
 
 class ComfortRouteService:
@@ -556,30 +456,18 @@ class ComfortRouteService:
             ]
         
         try:
-            # ODSay API 호출 (모든 search_type으로 경로 조회)
-            # search_type: 0=최단시간, 1=최소환승, 2=최소비용, 3=최소도보
             print(f"[ComfortRouteService] 시간부자 경로 조회 시작: {departure} → {arrival}")
             
-            all_routes = []
-            search_types = [0, 1, 2, 3]  # 모든 검색 타입
-            
-            for search_type in search_types:
-                try:
-                    print(f"[ComfortRouteService] search_type={search_type} 경로 조회 중...")
-                    odsay_data = await self.route_service.odsay.search_route_by_station_name(
-                        departure_station=departure,
-                        arrival_station=arrival,
-                        search_type=search_type,
-                        search_path_type=1  # 지하철만
-                    )
-                    
-                    # 각 search_type의 모든 경로 파싱
-                    routes_from_type = self.route_service._parse_all_odsay_routes(odsay_data, RouteType.COMFORT)
-                    all_routes.extend(routes_from_type)
-                    print(f"[ComfortRouteService] search_type={search_type}에서 {len(routes_from_type)}개 경로 조회")
-                except Exception as e:
-                    print(f"[ComfortRouteService] search_type={search_type} 조회 실패: {str(e)}")
-                    continue
+            # 1. ODSay 단 1회 호출로 모든 경로 확보
+            print("[ComfortRouteService] 단일 호출로 모든 경로 조회 중...")
+            all_routes = await self.route_service.get_all_routes_once(
+                departure=departure,
+                arrival=arrival,
+                departure_time=departure_time
+            )
+
+            print(f"[ComfortRouteService] 단일 호출로 {len(all_routes)}개 경로 확보")
+
             
             # 중복 경로 제거 (같은 segments를 가진 경로는 하나만 유지)
             unique_routes = []

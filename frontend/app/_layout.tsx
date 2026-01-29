@@ -1,19 +1,43 @@
-/**
- * 루트 레이아웃
- */
 import { Stack } from "expo-router";
-import { GestureHandlerRootView } from "react-native-gesture-handler"; // 👈 임포트 확인
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { StatusBar } from "react-native";
 
 export default function RootLayout() {
   return (
-    // 👈 반드시 GestureHandlerRootView로 전체를 감싸야 합니다!
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <Stack screenOptions={{ headerShown: false }}>
-        {/* (tabs) 폴더를 메인 화면으로 지정 */}
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        {/* 검색 화면 등 다른 화면들은 Stack으로 쌓임 */}
-        <Stack.Screen name="search" options={{ headerShown: false }} />
-      </Stack>
-    </GestureHandlerRootView>
+    // 1. iOS 튕김 방지용 안전장치 (가장 바깥쪽 필수!)
+    <SafeAreaProvider>
+      {/* 2. 제스처(스와이프 뒤로가기 등) 처리를 위한 필수 뷰 */}
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        
+        <StatusBar barStyle="dark-content" />
+
+        <Stack screenOptions={{ headerShown: false }}>
+          {/* 메인 탭 화면 연결 */}
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          
+          {/* 검색 화면 연결 */}
+          <Stack.Screen 
+            name="search" 
+            options={{ 
+              headerShown: false,
+              presentation: 'card',
+              animation: 'default'
+            }} 
+          />
+          
+          {/* 결과 화면 연결 */}
+          <Stack.Screen 
+            name="results" 
+            options={{ 
+              headerShown: false,
+              presentation: 'card',
+              animation: 'default'
+            }} 
+          />
+        </Stack>
+
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
   );
 }

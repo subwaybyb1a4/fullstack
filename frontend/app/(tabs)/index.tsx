@@ -1,13 +1,12 @@
-/**
- * 홈 화면 (즐겨찾기 디자인 통일 버전)
- */
 import { useFocusEffect, useRouter } from "expo-router";
 import {
   Bell,
   ChevronRight,
   Navigation,
   Search,
-  Star
+  Star,
+  Clock,
+  Plus, // 👈 플러스 아이콘 추가
 } from "lucide-react-native";
 import { useCallback, useState } from "react";
 import {
@@ -46,7 +45,7 @@ export default function Home() {
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" />
 
-      {/* 히어로 섹션 */}
+      {/* 히어로 섹션 (검색창 영역) */}
       <View style={styles.heroSection}>
         <SafeAreaView edges={["top"]}>
           <View style={styles.topBar}>
@@ -87,6 +86,7 @@ export default function Home() {
       </View>
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
+        
         {/* 즐겨찾기 섹션 헤더 */}
         <View style={styles.sectionHeader}>
           <View style={styles.sectionTitleRow}>
@@ -98,6 +98,7 @@ export default function Home() {
           </TouchableOpacity>
         </View>
 
+        {/* 즐겨찾기 리스트 */}
         <View style={styles.cardList}>
           {favorites.length === 0 ? (
             <View style={styles.emptyContainer}>
@@ -116,13 +117,13 @@ export default function Home() {
                     params: {
                       from: route.from,
                       to: route.to,
+                      searchTime: route.savedSearchTime, // 저장된 시간 전달
                     },
                   })
                 }
                 style={styles.card}
               >
                 <View style={styles.cardContent}>
-                  {/* 별칭: 크고 볼드하게 */}
                   <View style={styles.titleRow}>
                     <Star
                       size={18}
@@ -135,22 +136,33 @@ export default function Home() {
                     </Text>
                   </View>
 
-                  {/* 경로 정보: 작고 회색으로 아래에 배치 */}
                   <View style={styles.routeSection}>
                     <Text style={styles.routeStation}>{route.from}</Text>
                     <Text style={styles.arrowText}>{">"}</Text>
                     <Text style={styles.routeStation}>{route.to}</Text>
                   </View>
+                  
+                  {/* 🔥 [시간 뱃지] 리스트 안에 깔끔하게 표시 */}
+                  {route.savedSearchTime && (
+                    <View style={styles.timeBadgeRow}>
+                      <Clock size={12} color="#2563EB" />
+                      <Text style={styles.timeBadgeText}>
+                        매일 {new Date(route.savedSearchTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} 기준
+                      </Text>
+                    </View>
+                  )}
                 </View>
               </TouchableOpacity>
             ))
           )}
 
+          {/* 추가 버튼 */}
           <TouchableOpacity
             onPress={() => router.push("/search")}
             style={styles.addButton}
           >
-            <Text style={styles.addButtonText}>+ 새 경로 추가하기</Text>
+            <Plus size={20} color="#9CA3AF" />
+            <Text style={styles.addButtonText}>새 경로 추가하기</Text>
           </TouchableOpacity>
         </View>
 
@@ -198,12 +210,7 @@ const styles = StyleSheet.create({
     borderColor: "#F3F4F6",
   },
   greetingContainer: { marginBottom: 24 },
-  greetingSub: {
-    fontSize: 16,
-    color: "#6B7280",
-    fontWeight: "500",
-    marginBottom: 4,
-  },
+  greetingSub: { fontSize: 16, color: "#6B7280", fontWeight: "500", marginBottom: 4 },
   greetingMain: { fontSize: 28, color: "#111827", fontWeight: "800" },
   bigSearchBar: {
     flexDirection: "row",
@@ -223,11 +230,7 @@ const styles = StyleSheet.create({
   searchTextContainer: { flex: 1, marginLeft: 16 },
   searchPlaceholder: { fontSize: 18, fontWeight: "700", color: "#1F2937" },
   searchSubPlaceholder: { fontSize: 13, color: "#9CA3AF", marginTop: 2 },
-  searchButtonCircle: {
-    backgroundColor: "#2563EB",
-    padding: 10,
-    borderRadius: 99,
-  },
+  searchButtonCircle: { backgroundColor: "#2563EB", padding: 10, borderRadius: 99 },
   content: { flex: 1, paddingHorizontal: 24, paddingTop: 32 },
   sectionHeader: {
     flexDirection: "row",
@@ -265,6 +268,26 @@ const styles = StyleSheet.create({
   routeSection: { flexDirection: "row", alignItems: "center", marginLeft: 28 },
   routeStation: { fontSize: 16, color: "#9CA3AF", fontWeight: "400" },
   arrowText: { fontSize: 14, color: "#D1D5DB", marginHorizontal: 8 },
+  
+  // ✅ [복구] 시간 뱃지 스타일
+  timeBadgeRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F3F4F6',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+    alignSelf: 'flex-start',
+    marginTop: 8,
+    marginLeft: 28,
+  },
+  timeBadgeText: {
+    fontSize: 13,
+    color: '#2563EB',
+    marginLeft: 4,
+    fontWeight: '600',
+  },
+
   addButton: {
     flexDirection: "row",
     alignItems: "center",
